@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b1lmv3cpuyolp"]
+
+[ext_resource type="Script" uid="uid://b66xci4ixfcbk" path="res://cauldron_ui.gd" id="1_bqmht"]
+
+[node name="CaldronUI" type="Control" unique_id=1254936007]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqmht")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=474244988]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 20.0
+offset_right = 375.0
+offset_bottom = 60.0
+scale = Vector2(12.451345, 15.082197)
+color = Color(0.5294118, 0.5294118, 0.5294118, 1)
+
+[node name="Label" type="Label" parent="." unique_id=975526709]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 35.0
+offset_right = 741.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 39
+text = "cauldron time!"
+
+[node name="Button" type="Button" parent="." unique_id=645750713]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 343.0
+offset_right = 576.0
+offset_bottom = 374.0
+scale = Vector2(2, 2)
+text = "make potion"
+
+[node name="Label2" type="Label" parent="." unique_id=1351061348]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 234.0
+offset_right = 589.0
+offset_bottom = 257.0
+scale = Vector2(2, 2)
+text = "press button to make potion"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
