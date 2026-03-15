@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1lmv3cpuyolp"]
 
-[ext_resource type="Script" uid="uid://b66xci4ixfcbk" path="res://cauldron_ui.gd" id="1_bqmht"]
+[ext_resource type="Script" uid="uid://b66xci4ixfcbk" path="res://old_template/cauldron_ui.gd" id="1_bqmht"]
 
 [node name="CaldronUI" type="Control" unique_id=1254936007]
 process_mode = 2

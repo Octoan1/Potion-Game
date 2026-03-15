@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cd710lmq5s0w6"]
 
-[ext_resource type="Script" uid="uid://b7c2a88swx6d3" path="res://cauldron.gd" id="1_0t22i"]
-[ext_resource type="TileSet" uid="uid://b1p46f40gmd14" path="res://tileset.tres" id="1_5qdwy"]
+[ext_resource type="Script" uid="uid://b7c2a88swx6d3" path="res://old_template/cauldron.gd" id="1_0t22i"]
+[ext_resource type="TileSet" uid="uid://b1p46f40gmd14" path="res://old_template/template_tileset.tres" id="1_5qdwy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0t22i"]
 radius = 80.1561
