@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cm0exuvfce03m"]
+
+[ext_resource type="Texture2D" uid="uid://dbnkk5gkxh5rg" path="res://assets/apple_tree.png" id="1_478de"]
+[ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/apple_tree/harvestable.gd" id="1_mun4u"]
+[ext_resource type="Resource" uid="uid://bp4mqpynk5x6x" path="res://items/apple.tres" id="2_yl5wm"]
+[ext_resource type="Texture2D" uid="uid://dfi70k6dpc5k4" path="res://assets/apple_tree_harvested.png" id="3_o6yuy"]
+[ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_10d83"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_478de"]
+radius = 22.022715
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_478de"]
+size = Vector2(4, 5)
+
+[node name="AppleTree" type="Node2D" unique_id=1972355215]
+script = ExtResource("1_mun4u")
+item = ExtResource("2_yl5wm")
+amount = 1
+
+[node name="BaseSprite" type="Sprite2D" parent="." unique_id=177816685]
+position = Vector2(0, -16)
+texture = ExtResource("1_478de")
+
+[node name="HarvestedSprite" type="Sprite2D" parent="." unique_id=1752622817]
+visible = false
+position = Vector2(0, -16)
+texture = ExtResource("3_o6yuy")
+
+[node name="CollectableRadius" type="Area2D" parent="." unique_id=1398148609]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableRadius" unique_id=680156109]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_478de")
+debug_color = Color(0, 0.6392157, 0.3764706, 0.05490196)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1923445049]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=393281659]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_478de")
+
+[node name="Text" type="Sprite2D" parent="." unique_id=748975023]
+z_index = 1
+position = Vector2(5, 11)
+texture = ExtResource("5_10d83")
+
+[connection signal="body_entered" from="CollectableRadius" to="." method="_on_collectable_radius_body_entered"]
+[connection signal="body_exited" from="CollectableRadius" to="." method="_on_collectable_radius_body_exited"]

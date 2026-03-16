@@ -1,16 +1,8 @@
 extends CharacterBody2D
 
-signal update_display(amount: int)
-
-
-const SPEED = 300.0
-
-var ingredient_count: int = 0
-
+const SPEED = 200.0
 
 func _physics_process(_delta: float) -> void:
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if direction:
 		velocity = direction * SPEED
@@ -20,14 +12,12 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action("interact"):
+		try_harvest()
 
-func _on_tree_harvest() -> void:
-	ingredient_count += 1
-	
-	update_display.emit(ingredient_count)
-
-
-func _on_cauldron_ui_craft_potion() -> void:
-	ingredient_count -= 1
-	
-	update_display.emit(ingredient_count)
+func try_harvest() -> void:
+	for area: Area2D in $InteractionArea.get_overlapping_areas():
+		var body: Node2D = area.get_parent()
+		if body.has_method("harvest"):
+			body.harvest()

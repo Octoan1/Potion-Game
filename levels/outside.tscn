@@ -2,6 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://ditavxpwkejwt" path="res://assets/test_tileset.tres" id="1_isq0c"]
 [ext_resource type="PackedScene" uid="uid://ihsppejsfafh" path="res://entities/objects/door/door.tscn" id="2_isq0c"]
+[ext_resource type="PackedScene" uid="uid://cm0exuvfce03m" path="res://entities/objects/apple_tree/apple_tree.tscn" id="3_q1mgl"]
+[ext_resource type="PackedScene" uid="uid://dxop7ilgxbp60" path="res://entities/objects/bug/bug.tscn" id="4_upk2x"]
 
 [node name="Outside" type="Node2D" unique_id=1178197563]
 
@@ -23,3 +25,9 @@ offset_left = -172.0
 offset_right = -117.0
 offset_bottom = 23.0
 text = "HOUSE"
+
+[node name="AppleTree" parent="." unique_id=1972355215 instance=ExtResource("3_q1mgl")]
+position = Vector2(71, 78)
+
+[node name="Bug" parent="." unique_id=660905390 instance=ExtResource("4_upk2x")]
+position = Vector2(70, 6)

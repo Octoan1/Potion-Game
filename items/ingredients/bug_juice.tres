@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cncme354uog5x"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_71cfb"]
+[ext_resource type="Texture2D" uid="uid://bwyd3xvbbs7rr" path="res://assets/bug_juice.png" id="1_js50p"]
+
+[resource]
+script = ExtResource("1_71cfb")
+name = "Bug Juice"
+icon = ExtResource("1_js50p")
+description = "juice from a bug, "
+metadata/_custom_type_script = "uid://bsj305oo16mvm"
