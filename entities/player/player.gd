@@ -1,13 +1,23 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-func _physics_process(_delta: float) -> void:
+@export var max_speed: float = 200.0
+@export var acceleration: float = 2000.0
+@export var friction: float = 1700.0
+
+func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
 	if direction:
-		velocity = direction * SPEED
+		velocity = velocity.move_toward(direction * max_speed, acceleration * delta)
+		
+		animated_sprite_2d.flip_h = direction.x > 0
+		animated_sprite_2d.play("walk")
 	else:
-		velocity = Vector2.ZERO
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+		
+		animated_sprite_2d.play("default")
 		#velocity = move_toward(velocity, Vector2.ZERO, SPEED)
 
 	move_and_slide()
