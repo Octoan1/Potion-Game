@@ -4,7 +4,7 @@ extends Node2D
 
 @export var item: Item
 @export var amount: int
-@export var respawn_time: float = 0.5 # 0 = never respawn
+@export var respawn_time: float = 0.75 # 0 = never respawn
 
 @onready var base_sprite: Sprite2D = $BaseSprite
 @onready var harvested_sprite: Sprite2D = $HarvestedSprite

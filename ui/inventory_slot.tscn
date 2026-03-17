@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cw8bohuaslw2s"]
+
+[ext_resource type="Script" uid="uid://c4plyfkdh7m2q" path="res://ui/inventory_slot.gd" id="1_d1f1n"]
+[ext_resource type="Texture2D" uid="uid://bcwyv4c8ak0u6" path="res://assets/inventory_slot_test.png" id="2_6t8ig"]
+[ext_resource type="FontFile" uid="uid://cldi6wluk1m3u" path="res://assets/numbers.png" id="3_jwt35"]
+
+[node name="InventorySlot" type="Control" unique_id=411698676]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d1f1n")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1065405743]
+modulate = Color(0.74138474, 0.7413847, 0.74138457, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("2_6t8ig")
+
+[node name="ItemAmount" type="Label" parent="." unique_id=386135916]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("3_jwt35")
+theme_override_font_sizes/font_size = 8
+text = "-1"
+horizontal_alignment = 2

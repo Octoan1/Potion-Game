@@ -1,6 +1,8 @@
 extends Node
 class_name Inventory
 
+signal inventory_updated
+
 var debug: bool = true
 
 var items: Dictionary[Item, int] = {}
@@ -11,6 +13,7 @@ func add_item(item: Item, amount: int = 1) -> void:
 	else:
 		items[item] = amount
 
+	inventory_updated.emit()
 	if debug: print(items)
 
 func remove_item(item: Item, amount: int = 1) -> void:
@@ -19,6 +22,7 @@ func remove_item(item: Item, amount: int = 1) -> void:
 		if items[item] <= 0:
 			items.erase(item)
 	
+	inventory_updated.emit()
 	if debug: print(items)
 
 

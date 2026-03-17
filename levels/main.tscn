@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://entities/player/player.tscn" id="1_2262g"]
 [ext_resource type="Script" uid="uid://wqynnxoa3e4d" path="res://levels/main.gd" id="1_wdj6m"]
+[ext_resource type="PackedScene" uid="uid://df1a1j1v7e3qx" path="res://ui/inventory_ui.tscn" id="3_l8qe7"]
 
 [node name="Main" type="Node2D" unique_id=311730625]
 script = ExtResource("1_wdj6m")
@@ -12,3 +13,8 @@ script = ExtResource("1_wdj6m")
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1770425059]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1178534440]
+
+[node name="InventoryUI" parent="CanvasLayer" unique_id=871811778 instance=ExtResource("3_l8qe7")]
+visible = false

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cnehq1ntvmk25"]
+
+[ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/apple_tree/harvestable.gd" id="1_7a7q1"]
+[ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_dpuot"]
+[ext_resource type="Texture2D" uid="uid://ctg7m0oqmfxsd" path="res://assets/mushroom.png" id="3_dpuot"]
+[ext_resource type="Texture2D" uid="uid://docv6palwxi8h" path="res://assets/mushroom_harvested.png" id="4_dpuot"]
+[ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_tquek"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_478de"]
+radius = 22.022715
+
+[node name="Mushroom" type="Node2D" unique_id=1972355215]
+script = ExtResource("1_7a7q1")
+item = ExtResource("2_dpuot")
+amount = 4
+
+[node name="BaseSprite" type="Sprite2D" parent="." unique_id=177816685]
+position = Vector2(0, -7)
+texture = ExtResource("3_dpuot")
+
+[node name="HarvestedSprite" type="Sprite2D" parent="." unique_id=1752622817]
+position = Vector2(0, -7)
+texture = ExtResource("4_dpuot")
+
+[node name="CollectableRadius" type="Area2D" parent="." unique_id=1398148609]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableRadius" unique_id=680156109]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_478de")
+debug_color = Color(0, 0.6392157, 0.3764706, 0.05490196)
+
+[node name="Text" type="Sprite2D" parent="." unique_id=748975023]
+z_index = 1
+position = Vector2(5, 11)
+texture = ExtResource("5_tquek")
+
+[connection signal="body_entered" from="CollectableRadius" to="." method="_on_collectable_radius_body_entered"]
+[connection signal="body_exited" from="CollectableRadius" to="." method="_on_collectable_radius_body_exited"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://ditavxpwkejwt" path="res://assets/test_tileset.tres" id="1_u4vj8"]
 [ext_resource type="PackedScene" uid="uid://ihsppejsfafh" path="res://entities/objects/door/door.tscn" id="2_lbews"]
+[ext_resource type="PackedScene" uid="uid://bt7tael7u8tyw" path="res://entities/objects/cauldron/cauldron.tscn" id="3_4khaa"]
 
 [node name="House" type="Node2D" unique_id=1212328192]
 
@@ -17,3 +18,6 @@ spawn_point = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Door" unique_id=1939213826]
 position = Vector2(-18, 0)
+
+[node name="Cauldron" parent="." unique_id=1084316473 instance=ExtResource("3_4khaa")]
+position = Vector2(0, 13)

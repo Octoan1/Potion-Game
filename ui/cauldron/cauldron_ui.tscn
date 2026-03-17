@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://jw0xa4522p3u"]
+
+[ext_resource type="Script" uid="uid://b8x1tejp1yxsf" path="res://ui/cauldron/cauldron_ui.gd" id="1_noiky"]
+[ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_c0j88"]
+[ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/bug_juice.tres" id="3_oaa8u"]
+[ext_resource type="Resource" uid="uid://bp4mqpynk5x6x" path="res://items/apple.tres" id="4_hxuau"]
+[ext_resource type="Texture2D" uid="uid://bcwyv4c8ak0u6" path="res://assets/inventory_slot_test.png" id="5_oaa8u"]
+
+[node name="CauldronUI" type="Control" unique_id=698506239]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_noiky")
+mushroom = ExtResource("2_c0j88")
+bug = ExtResource("3_oaa8u")
+fire = ExtResource("4_hxuau")
+
+[node name="Panel" type="Panel" parent="." unique_id=1448362670]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IngredientSlot1" type="TextureRect" parent="Panel" unique_id=364126177]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 47.0
+offset_right = 111.0
+offset_bottom = 63.0
+texture = ExtResource("5_oaa8u")
+
+[node name="IngredientSlot2" type="TextureRect" parent="Panel" unique_id=640544959]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 47.0
+offset_right = 147.0
+offset_bottom = 63.0
+texture = ExtResource("5_oaa8u")
+
+[node name="BrewButton" type="Button" parent="Panel" unique_id=1589638975]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 69.0
+offset_right = 145.0
+offset_bottom = 100.0
+text = "Brew!"
+
+[node name="Result Label" type="Label" parent="Panel" unique_id=1642385389]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 106.0
+offset_right = 142.0
+offset_bottom = 129.0
+text = "Result: "
+
+[node name="Label" type="Label" parent="." unique_id=410243958]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "(presss [esc] to close)"
+
+[connection signal="pressed" from="Panel/BrewButton" to="." method="_on_brew_button_pressed"]
