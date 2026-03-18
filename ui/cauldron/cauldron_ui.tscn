@@ -3,8 +3,12 @@
 [ext_resource type="Script" uid="uid://b8x1tejp1yxsf" path="res://ui/cauldron/cauldron_ui.gd" id="1_noiky"]
 [ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_c0j88"]
 [ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/bug_juice.tres" id="3_oaa8u"]
-[ext_resource type="Resource" uid="uid://bp4mqpynk5x6x" path="res://items/apple.tres" id="4_hxuau"]
+[ext_resource type="Resource" uid="uid://byqxbw5txub1t" path="res://items/ingredients/wood.tres" id="4_hxuau"]
+[ext_resource type="Resource" uid="uid://b2g3cygpeylqv" path="res://items/potions/sped_potion.tres" id="5_2qsyq"]
+[ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="5_hrby0"]
 [ext_resource type="Texture2D" uid="uid://bcwyv4c8ak0u6" path="res://assets/inventory_slot_test.png" id="5_oaa8u"]
+[ext_resource type="Resource" uid="uid://dm6yarqb04u28" path="res://items/potions/health_potion.tres" id="6_1uavu"]
+[ext_resource type="Resource" uid="uid://kvshm0esng67" path="res://items/potions/fire_potion.tres" id="7_j4hgf"]
 
 [node name="CauldronUI" type="Control" unique_id=698506239]
 process_mode = 2
@@ -17,7 +21,11 @@ grow_vertical = 2
 script = ExtResource("1_noiky")
 mushroom = ExtResource("2_c0j88")
 bug = ExtResource("3_oaa8u")
-fire = ExtResource("4_hxuau")
+wood = ExtResource("4_hxuau")
+potion_mushroom_bug = ExtResource("5_2qsyq")
+potion_mushroom_wood = ExtResource("6_1uavu")
+potion_wood_bug = ExtResource("7_j4hgf")
+slot_scene = ExtResource("5_hrby0")
 
 [node name="Panel" type="Panel" parent="." unique_id=1448362670]
 layout_mode = 1
@@ -51,7 +59,7 @@ offset_right = 145.0
 offset_bottom = 100.0
 text = "Brew!"
 
-[node name="Result Label" type="Label" parent="Panel" unique_id=1642385389]
+[node name="ResultLabel" type="Label" parent="Panel" unique_id=1642385389]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 106.0
@@ -64,5 +72,13 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "(presss [esc] to close)"
+
+[node name="InventoryGrid" type="GridContainer" parent="." unique_id=532482846]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 31.0
+offset_right = 215.0
+offset_bottom = 71.0
+columns = 4
 
 [connection signal="pressed" from="Panel/BrewButton" to="." method="_on_brew_button_pressed"]

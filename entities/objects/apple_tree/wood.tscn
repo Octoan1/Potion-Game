@@ -1,48 +1,49 @@
-[gd_scene format=3 uid="uid://dxop7ilgxbp60"]
+[gd_scene format=3 uid="uid://dx6nsn71kn58c"]
 
-[ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/apple_tree/harvestable.gd" id="1_tmcfs"]
-[ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/bug_juice.tres" id="2_u7f6x"]
-[ext_resource type="Texture2D" uid="uid://8nuoctaoautt" path="res://assets/beetle.png" id="3_5a2vv"]
-[ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_5a2vv"]
+[ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/apple_tree/harvestable.gd" id="1_en80n"]
+[ext_resource type="Resource" uid="uid://byqxbw5txub1t" path="res://items/ingredients/wood.tres" id="2_3qj88"]
+[ext_resource type="Texture2D" uid="uid://cp61m8gmxg2l8" path="res://assets/tree bark.png" id="3_3qj88"]
+[ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_jpwrm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_478de"]
-radius = 18.0
+radius = 22.022715
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_478de"]
-size = Vector2(9, 12)
+size = Vector2(7, 8)
 
-[node name="Bug" type="Node2D" unique_id=1972355215]
-script = ExtResource("1_tmcfs")
-item = ExtResource("2_u7f6x")
+[node name="Wood" type="Node2D" unique_id=1972355215]
+script = ExtResource("1_en80n")
+item = ExtResource("2_3qj88")
 amount = 1
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=177816685]
 position = Vector2(0, -8)
-texture = ExtResource("3_5a2vv")
+texture = ExtResource("3_3qj88")
 
 [node name="HarvestedSprite" type="Sprite2D" parent="." unique_id=1752622817]
 visible = false
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
+modulate = Color(0.36810192, 0.36810198, 0.36810192, 1)
 position = Vector2(0, -8)
-texture = ExtResource("3_5a2vv")
+texture = ExtResource("3_3qj88")
 
 [node name="CollectableRadius" type="Area2D" parent="." unique_id=1398148609]
+position = Vector2(0, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableRadius" unique_id=680156109]
-position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_478de")
 debug_color = Color(0, 0.6392157, 0.3764706, 0.05490196)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1923445049]
+position = Vector2(0, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=393281659]
-position = Vector2(0.5, -8)
+position = Vector2(-0.5, -3)
 shape = SubResource("RectangleShape2D_478de")
 
-[node name="Text" type="Sprite2D" parent="." unique_id=1905620591]
+[node name="Text" type="Sprite2D" parent="." unique_id=748975023]
 z_index = 1
 position = Vector2(5, 11)
-texture = ExtResource("5_5a2vv")
+texture = ExtResource("5_jpwrm")
 
 [connection signal="body_entered" from="CollectableRadius" to="." method="_on_collectable_radius_body_entered"]
 [connection signal="body_exited" from="CollectableRadius" to="." method="_on_collectable_radius_body_exited"]

@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://bp4mqpynk5x6x"]
 
-[ext_resource type="Texture2D" uid="uid://dkkqdixppv2la" path="res://assets/apple.png" id="1_dumep"]
-[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_pv0u0"]
+[ext_resource type="Texture2D" uid="uid://dkkqdixppv2la" path="res://assets/apple.png" id="1_xw7br"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_gqln0"]
 
 [resource]
-script = ExtResource("1_pv0u0")
+script = ExtResource("2_gqln0")
 name = "Apple"
-icon = ExtResource("1_dumep")
+icon = ExtResource("1_xw7br")
 description = "testing apple"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

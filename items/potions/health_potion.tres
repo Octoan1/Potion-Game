@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dm6yarqb04u28"]
+
+[ext_resource type="Texture2D" uid="uid://bpcogahye6ipc" path="res://assets/health potion.png" id="1_r414l"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_7sjbl"]
+
+[resource]
+script = ExtResource("2_7sjbl")
+name = "Health Potion"
+icon = ExtResource("1_r414l")
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

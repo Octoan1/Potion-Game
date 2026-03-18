@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/apple_tree/harvestable.gd" id="1_7a7q1"]
 [ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_dpuot"]
-[ext_resource type="Texture2D" uid="uid://ctg7m0oqmfxsd" path="res://assets/mushroom.png" id="3_dpuot"]
-[ext_resource type="Texture2D" uid="uid://docv6palwxi8h" path="res://assets/mushroom_harvested.png" id="4_dpuot"]
+[ext_resource type="Texture2D" uid="uid://bvmrols8p84if" path="res://assets/mushrooms.png" id="3_pbuuy"]
 [ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_tquek"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_478de"]
@@ -12,15 +11,17 @@ radius = 22.022715
 [node name="Mushroom" type="Node2D" unique_id=1972355215]
 script = ExtResource("1_7a7q1")
 item = ExtResource("2_dpuot")
-amount = 4
+amount = 2
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=177816685]
-position = Vector2(0, -7)
-texture = ExtResource("3_dpuot")
+position = Vector2(0, -8)
+texture = ExtResource("3_pbuuy")
 
 [node name="HarvestedSprite" type="Sprite2D" parent="." unique_id=1752622817]
-position = Vector2(0, -7)
-texture = ExtResource("4_dpuot")
+visible = false
+modulate = Color(0.6190818, 0.6190819, 0.6190818, 1)
+position = Vector2(0, -8)
+texture = ExtResource("3_pbuuy")
 
 [node name="CollectableRadius" type="Area2D" parent="." unique_id=1398148609]
 

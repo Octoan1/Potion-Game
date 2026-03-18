@@ -26,6 +26,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action("interact"):
 		try_harvest()
 		try_cauldron()
+		try_interact()
 	
 	if event.is_action_pressed("inventory"):
 		$"../CanvasLayer/InventoryUI".visible = not $"../CanvasLayer/InventoryUI".visible
@@ -39,6 +40,11 @@ func try_harvest() -> void:
 func try_cauldron() -> void:
 	for area: Area2D in $InteractionArea.get_overlapping_areas():
 		var body: Node2D = area.get_parent()
-		print(body.name)
 		if body.has_method("activate_cauldron"):
 			body.activate_cauldron()
+			
+func try_interact() -> void:
+	for area: Area2D in $InteractionArea.get_overlapping_areas():
+		var body: Node2D = area.get_parent()
+		if body.has_method("interact"):
+			body.interact()
