@@ -19,3 +19,10 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if item != null:
 			item_clicked.emit(item)
+			
+			if item.name == "Speed Potion":
+				PlayerInventory.use_speed_potion(item)
+				
+			if item.name == "Health Potion":
+				PlayerInventory.use_health_potion(item)
+				

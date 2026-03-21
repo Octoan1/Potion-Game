@@ -49,6 +49,24 @@ offset_right = 154.0
 offset_bottom = 165.0
 text = "pick up ingredient to make potion"
 
+[node name="Label4" type="Label" parent="." unique_id=898553951]
+offset_left = -113.0
+offset_top = -124.0
+offset_right = 149.0
+offset_bottom = -75.0
+text = "pick up ingredient to make potion"
+
+[node name="Label5" type="Label" parent="." unique_id=547007740]
+offset_left = 101.0
+offset_top = -26.0
+offset_right = 336.0
+offset_bottom = 75.0
+text = "get here 
+to win!
+(need potion to
+ destroy wall...)"
+horizontal_alignment = 1
+
 [node name="Bug" parent="." unique_id=660905390 instance=ExtResource("4_upk2x")]
 position = Vector2(70, 6)
 
