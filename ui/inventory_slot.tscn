@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4plyfkdh7m2q" path="res://ui/inventory_slot.gd" id="1_d1f1n"]
 [ext_resource type="Texture2D" uid="uid://bcwyv4c8ak0u6" path="res://assets/inventory_slot_test.png" id="2_6t8ig"]
+[ext_resource type="Texture2D" uid="uid://beudpvgy8o2rf" path="res://assets/ui/inv_highlight.png" id="2_tld60"]
 [ext_resource type="FontFile" uid="uid://cldi6wluk1m3u" path="res://assets/numbers.png" id="3_jwt35"]
 
 [node name="InventorySlot" type="Control" unique_id=411698676]
@@ -14,19 +15,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d1f1n")
 
+[node name="Highlight" type="TextureRect" parent="." unique_id=51125814]
+visible = false
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_tld60")
+
 [node name="ItemIcon" type="TextureRect" parent="." unique_id=1065405743]
 modulate = Color(0.74138474, 0.7413847, 0.74138457, 1)
 layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
 texture = ExtResource("2_6t8ig")
 
 [node name="ItemAmount" type="Label" parent="." unique_id=386135916]
 layout_mode = 0
-offset_top = 8.0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 18.0
 theme_override_fonts/font = ExtResource("3_jwt35")
 theme_override_font_sizes/font_size = 8
 text = "-1"
 horizontal_alignment = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnehq1ntvmk25"]
 
-[ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/apple_tree/harvestable.gd" id="1_7a7q1"]
+[ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/harvestable.gd" id="1_7a7q1"]
 [ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_dpuot"]
 [ext_resource type="Texture2D" uid="uid://bvmrols8p84if" path="res://assets/mushrooms.png" id="3_pbuuy"]
 [ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_tquek"]

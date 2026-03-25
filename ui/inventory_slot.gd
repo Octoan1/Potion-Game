@@ -26,3 +26,10 @@ func _gui_input(event: InputEvent) -> void:
 			if item.name == "Health Potion":
 				PlayerInventory.use_health_potion(item)
 				
+
+
+func _on_mouse_entered() -> void:
+	$Highlight.show()
+
+func _on_mouse_exited() -> void:
+	$Highlight.hide()

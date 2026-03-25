@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dx6nsn71kn58c"]
 
-[ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/apple_tree/harvestable.gd" id="1_en80n"]
+[ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/harvestable.gd" id="1_en80n"]
 [ext_resource type="Resource" uid="uid://byqxbw5txub1t" path="res://items/ingredients/wood.tres" id="2_3qj88"]
 [ext_resource type="Texture2D" uid="uid://cp61m8gmxg2l8" path="res://assets/tree bark.png" id="3_3qj88"]
 [ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_jpwrm"]
