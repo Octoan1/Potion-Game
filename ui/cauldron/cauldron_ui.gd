@@ -12,57 +12,70 @@ extends Control
 @onready var grid: GridContainer = $InventoryGrid
 
 
-var slot1: Item = null
-var slot2: Item = null
+@onready var slot1: InventorySlot = $Panel/IngredientSlot1
+@onready var slot2: InventorySlot = $Panel/IngredientSlot2
 
 func _ready() -> void:
 	get_tree().paused = true
+	
+	$/root/Main/CanvasLayer/InventoryUI.visible = false
 	load_inventory()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
+		if slot1.item:
+			PlayerInventory.add_item(slot1.item)
+		if slot2.item:
+			PlayerInventory.add_item(slot2.item)
 		close()
 
 func add_ingredient(item: Item) -> void:
 	if not PlayerInventory.has_item(item, 1):
 		return
 	
-	if slot1 == null:
-		slot1 = item
-	elif slot2 == null:
-		slot2 = item
+	if slot1.item == null:
+		slot1.item = item
+		slot1.icon.texture = item.icon
+		PlayerInventory.remove_item(item)
+	elif slot2.item == null:
+		slot2.item = item
+		slot2.icon.texture = item.icon
+		PlayerInventory.remove_item(item)
 	else:
 		print("Slots full")
 
+	load_inventory()
 	update_ui()
 
 func brew() -> void:
-	if slot1 == null or slot2 == null:
+	if slot1.item == null or slot2.item == null:
 		print("Need 2 ingredients")
 		return
 
-	var result: Item = get_result(slot1, slot2)
+	var result: Item = get_result(slot1.item, slot2.item)
 
 	if result == null:
+		PlayerInventory.add_item(slot1.item)
+		slot1.clear_item()
+		PlayerInventory.add_item(slot2.item)
+		slot2.clear_item()
+		
 		print("Invalid combo")
-
+		
+		$Panel/ResultLabel.text = "Invalid combo"
 	
-	if result:
+	elif result:
 		# remove ingredients
-		PlayerInventory.remove_item(slot1, 1)
-		PlayerInventory.remove_item(slot2, 1)
+		#PlayerInventory.remove_item(slot1.item)
+		#PlayerInventory.remove_item(slot2.item)
+		slot1.clear_item()
+		slot2.clear_item()
 
 		# add potion
 		PlayerInventory.add_item(result, 1)
 
-	if result:
 		$Panel/ResultLabel.text = "Created: " + result.name
-	else:
-		$Panel/ResultLabel.text = "Invalid combo"
 
-	# clear slots
-	slot1 = null
-	slot2 = null
 	
 	load_inventory()   # update inventory display
 	update_ui()
@@ -99,9 +112,25 @@ func close() -> void:
 	queue_free()
 
 func update_ui() -> void:
-	$Panel/IngredientSlot1.texture = slot1.icon if slot1 else null
-	$Panel/IngredientSlot2.texture = slot2.icon if slot2 else null
-
+	#$Panel/IngredientSlot1.texture = slot1.icon if slot1 else null
+	#$Panel/IngredientSlot2.texture = slot2.icon if slot2 else null
+	pass
 
 func _on_brew_button_pressed() -> void:
 	brew()
+
+
+func _on_ingredient_slot_1_item_clicked(item: Item) -> void:
+	if slot1.item != null:
+		PlayerInventory.add_item(slot1.item)
+		slot1.clear_item()
+		
+		load_inventory()
+
+
+func _on_ingredient_slot_2_item_clicked(item: Item) -> void:
+	if slot2.item != null:
+		PlayerInventory.add_item(slot2.item)
+		slot2.clear_item()
+		
+		load_inventory()

@@ -3,7 +3,7 @@ class_name Inventory
 
 signal inventory_updated
 
-var debug: bool = false
+var debug: bool = true
 
 var items: Dictionary[Item, int] = {}
 

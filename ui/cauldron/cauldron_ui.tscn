@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://byqxbw5txub1t" path="res://items/ingredients/wood.tres" id="4_hxuau"]
 [ext_resource type="Resource" uid="uid://b2g3cygpeylqv" path="res://items/potions/sped_potion.tres" id="5_2qsyq"]
 [ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="5_hrby0"]
-[ext_resource type="Texture2D" uid="uid://bcwyv4c8ak0u6" path="res://assets/inventory_slot_test.png" id="5_oaa8u"]
 [ext_resource type="Resource" uid="uid://dm6yarqb04u28" path="res://items/potions/health_potion.tres" id="6_1uavu"]
 [ext_resource type="Resource" uid="uid://kvshm0esng67" path="res://items/potions/fire_potion.tres" id="7_j4hgf"]
 
@@ -35,21 +34,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="IngredientSlot1" type="TextureRect" parent="Panel" unique_id=364126177]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 47.0
-offset_right = 111.0
-offset_bottom = 63.0
-texture = ExtResource("5_oaa8u")
+[node name="IngredientSlot1" parent="Panel" unique_id=411698676 instance=ExtResource("5_hrby0")]
+layout_mode = 1
+offset_left = 92.0
+offset_top = 45.0
+offset_right = 112.0
+offset_bottom = 65.0
+show_item_count = false
 
-[node name="IngredientSlot2" type="TextureRect" parent="Panel" unique_id=640544959]
-layout_mode = 0
-offset_left = 131.0
-offset_top = 47.0
-offset_right = 147.0
-offset_bottom = 63.0
-texture = ExtResource("5_oaa8u")
+[node name="IngredientSlot2" parent="Panel" unique_id=1286564138 instance=ExtResource("5_hrby0")]
+layout_mode = 1
+offset_left = 122.0
+offset_top = 45.0
+offset_right = 142.0
+offset_bottom = 65.0
+show_item_count = false
 
 [node name="BrewButton" type="Button" parent="Panel" unique_id=1589638975]
 layout_mode = 0
@@ -79,6 +78,8 @@ offset_left = 175.0
 offset_top = 31.0
 offset_right = 215.0
 offset_bottom = 71.0
-columns = 4
+columns = 3
 
+[connection signal="item_clicked" from="Panel/IngredientSlot1" to="." method="_on_ingredient_slot_1_item_clicked"]
+[connection signal="item_clicked" from="Panel/IngredientSlot2" to="." method="_on_ingredient_slot_2_item_clicked"]
 [connection signal="pressed" from="Panel/BrewButton" to="." method="_on_brew_button_pressed"]
