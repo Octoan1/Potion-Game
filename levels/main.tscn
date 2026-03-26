@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dwc7c4hnecc36" path="res://levels/level_manager.gd" id="2_ifaiv"]
 [ext_resource type="PackedScene" uid="uid://df1a1j1v7e3qx" path="res://ui/inventory_ui.tscn" id="3_l8qe7"]
 [ext_resource type="Texture2D" uid="uid://dkslo1fsni01x" path="res://assets/healthbar_test.png" id="4_m1504"]
+[ext_resource type="Script" uid="uid://dboy0yq0g81by" path="res://ui/test/gold_count_label.gd" id="5_ifaiv"]
 
 [node name="Main" type="Node2D" unique_id=311730625]
 
@@ -39,3 +40,14 @@ offset_right = 50.0
 offset_bottom = 28.0
 theme_override_font_sizes/font_size = 9
 text = "health"
+
+[node name="GoldCountLabel" type="Label" parent="CanvasLayer" unique_id=986631895]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_right = -5.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Gold: 0"
+script = ExtResource("5_ifaiv")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://biwhe7ktye75b"]
 
-[ext_resource type="Script" uid="uid://ckdkgtiwqg4gg" path="res://ui/shop/shop_ui.gd" id="1_lqgw1"]
-[ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="8_ydll3"]
+[ext_resource type="Script" uid="uid://ckdkgtiwqg4gg" path="res://ui/sell/sell_ui.gd" id="1_nv2v7"]
+[ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="2_457jv"]
 
 [node name="ShopUI" type="Control" unique_id=698506239]
 process_mode = 2
@@ -11,8 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lqgw1")
-slot_scene = ExtResource("8_ydll3")
+script = ExtResource("1_nv2v7")
+slot_scene = ExtResource("2_457jv")
 
 [node name="Panel" type="Panel" parent="." unique_id=1448362670]
 layout_mode = 1
@@ -22,7 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SellSlot" parent="Panel" unique_id=411698676 instance=ExtResource("8_ydll3")]
+[node name="SellSlot" parent="Panel" unique_id=411698676 instance=ExtResource("2_457jv")]
 layout_mode = 1
 offset_left = 105.0
 offset_top = 42.0
@@ -68,7 +68,7 @@ offset_right = 106.0
 offset_bottom = 44.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 12
-text = "can only sell potions"
+text = "you can only sell potions"
 
 [node name="InventoryGrid" type="GridContainer" parent="." unique_id=532482846]
 layout_mode = 0

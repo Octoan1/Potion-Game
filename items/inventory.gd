@@ -4,6 +4,7 @@ class_name Inventory
 signal inventory_updated
 
 var debug: bool = true
+var drinking: bool = true
 
 var items: Dictionary[Item, int] = {}
 
@@ -35,12 +36,12 @@ func has_item(item: Item, amount: int = 1) -> bool:
 # testing
 func use_speed_potion(item: Item) -> void:
 	remove_item(item, 1)
-	get_tree().get_nodes_in_group("Player").get(0).max_speed = 200.0 * 5
-	get_tree().get_nodes_in_group("Player").get(0).friction = 1700.0 * 5
-	await get_tree().create_timer(3.0).timeout
+	get_tree().get_nodes_in_group("Player").get(0).max_speed *= 3
+	get_tree().get_nodes_in_group("Player").get(0).friction *= 3
+	await get_tree().create_timer(5.0).timeout
 	print("hi")
-	get_tree().get_nodes_in_group("Player").get(0).max_speed = 200.0
-	get_tree().get_nodes_in_group("Player").get(0).friction = 1700.0
+	get_tree().get_nodes_in_group("Player").get(0).max_speed /= 3
+	get_tree().get_nodes_in_group("Player").get(0).friction /= 3
 	
 func use_health_potion(item: Item) -> void:
 	remove_item(item, 1)

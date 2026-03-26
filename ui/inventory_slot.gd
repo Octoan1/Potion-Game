@@ -12,6 +12,8 @@ signal item_clicked(item: Item)
 @onready var show_name_timer: Timer = $ShowNameTimer
 @onready var item_name: Label = $ItemName
 
+var mouse_hovering: bool = false
+
 func _ready() -> void:
 	$ItemAmount.visible = show_item_count
 	item_name.hide()
@@ -31,15 +33,20 @@ func clear_item() -> void:
 	amount.text = "-1"
 
 func _gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if item != null:
 			item_clicked.emit(item)
 			
-			#if item.name == "Speed Potion":
-				#PlayerInventory.use_speed_potion(item)
-				#
-			#if item.name == "Health Potion":
-				#PlayerInventory.use_health_potion(item)
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		print("aljsefoiaje")
+		if item != null and PlayerInventory.drinking:
+			
+			if item.name == "Speed Potion":
+				PlayerInventory.use_speed_potion(item)
+				
+			if item.name == "Health Potion":
+				PlayerInventory.use_health_potion(item)
+			
 				
 
 
@@ -47,11 +54,15 @@ func _on_mouse_entered() -> void:
 	#if item:
 	$Highlight.show()
 	show_name_timer.start()
+	
+	mouse_hovering = true
 
 func _on_mouse_exited() -> void:
 	$Highlight.hide()
 	item_name.hide()
 	show_name_timer.stop()
+	
+	mouse_hovering = false
 
 
 func _on_show_name_timer_timeout() -> void:

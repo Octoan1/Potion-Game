@@ -3,6 +3,7 @@ extends Control
 @export var slot_scene: PackedScene
 @onready var grid: GridContainer = $Panel/GridContainer
 
+
 func _ready() -> void:
 	update_inventory()
 	PlayerInventory.inventory_updated.connect(update_inventory)

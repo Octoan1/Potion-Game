@@ -1,19 +1,17 @@
-[gd_scene format=3 uid="uid://by0wevddk63rg"]
+[gd_scene format=3 uid="uid://b2vl3jcmv3aja"]
 
-[ext_resource type="Script" uid="uid://dm621iyeap36e" path="res://entities/objects/shop/shop.gd" id="1_yr212"]
-[ext_resource type="PackedScene" uid="uid://biwhe7ktye75b" path="res://ui/sell/sell_ui.tscn" id="2_7iovj"]
-[ext_resource type="Texture2D" uid="uid://i6g241yjhn57" path="res://assets/placeholder_shop.png" id="3_ugt4r"]
-[ext_resource type="Texture2D" uid="uid://3xyxup682k3" path="res://assets/iteraction_prompt2.png" id="4_6kv5n"]
+[ext_resource type="Script" uid="uid://cblggf7q6igko" path="res://entities/objects/sell/sell.gd" id="1_nwfg2"]
+[ext_resource type="Texture2D" uid="uid://i6g241yjhn57" path="res://assets/placeholder_shop.png" id="3_4um6a"]
+[ext_resource type="Texture2D" uid="uid://3xyxup682k3" path="res://assets/iteraction_prompt2.png" id="4_qkomg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_084cg"]
 radius = 30.016663
 
-[node name="Shop" type="Node2D" unique_id=1084316473]
-script = ExtResource("1_yr212")
-shop_ui_scene = ExtResource("2_7iovj")
+[node name="Sell" type="Node2D" unique_id=1084316473]
+script = ExtResource("1_nwfg2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=95026775]
-texture = ExtResource("3_ugt4r")
+texture = ExtResource("3_4um6a")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=277285293]
 
@@ -25,7 +23,7 @@ debug_color = Color(0.23921569, 0.62352943, 0.39607844, 0.09411765)
 visible = false
 z_index = 1
 position = Vector2(7, 17)
-texture = ExtResource("4_6kv5n")
+texture = ExtResource("4_qkomg")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

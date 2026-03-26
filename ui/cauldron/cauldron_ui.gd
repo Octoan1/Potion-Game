@@ -17,7 +17,7 @@ extends Control
 
 func _ready() -> void:
 	get_tree().paused = true
-	
+	PlayerInventory.drinking = false
 	$/root/Main/CanvasLayer/InventoryUI.visible = false
 	load_inventory()
 
@@ -110,6 +110,7 @@ func load_inventory() -> void:
 func close() -> void:
 	get_tree().paused = false
 	queue_free()
+	PlayerInventory.drinking = true
 
 func update_ui() -> void:
 	#$Panel/IngredientSlot1.texture = slot1.icon if slot1 else null
