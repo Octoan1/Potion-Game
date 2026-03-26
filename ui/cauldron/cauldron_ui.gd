@@ -58,7 +58,7 @@ func add_ingredient(item: Item) -> void:
 
 func brew() -> void:
 	if slot1.item == null or slot2.item == null:
-		print("Need 2 ingredients")
+		$Panel/ResultLabel.text = "Need at least 2 Ingredients"
 		return
 
 	var result: Item = null
@@ -70,8 +70,9 @@ func brew() -> void:
 		slot1.clear_item()
 		PlayerInventory.add_item(slot2.item)
 		slot2.clear_item()
-		PlayerInventory.add_item(slot3.item)
-		slot3.clear_item()
+		if slot3.item:
+			PlayerInventory.add_item(slot3.item)
+			slot3.clear_item()
 		
 		print("Invalid combo")
 		
