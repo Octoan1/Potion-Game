@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://dtennrtvww8ql"]
+
+[ext_resource type="Texture2D" uid="uid://8nuoctaoautt" path="res://assets/beetle.png" id="1_g5yj5"]
+[ext_resource type="Script" uid="uid://c7bqqlbb25n0g" path="res://ui/recipe_book/recipe_book.gd" id="1_nq2gg"]
+[ext_resource type="Texture2D" uid="uid://bvmrols8p84if" path="res://assets/mushrooms.png" id="2_fjmgh"]
+[ext_resource type="Texture2D" uid="uid://c3i43u7p4g1m6" path="res://assets/speed potion.png" id="3_61gjc"]
+[ext_resource type="Texture2D" uid="uid://cp61m8gmxg2l8" path="res://assets/tree bark.png" id="4_61gjc"]
+[ext_resource type="Texture2D" uid="uid://bpcogahye6ipc" path="res://assets/health potion.png" id="5_hj7tg"]
+[ext_resource type="Texture2D" uid="uid://cnhu0wmqy2tu6" path="res://assets/fire potion.png" id="6_hj7tg"]
+[ext_resource type="Texture2D" uid="uid://cusl6jpvftrli" path="res://assets/dude.png" id="7_asxet"]
+
+[node name="RecipeBook" type="Control" unique_id=481756411]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nq2gg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1321845686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1254902, 0.1254902, 0.1254902, 0.3647059)
+
+[node name="Panel" type="Panel" parent="." unique_id=321179896]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1599219030]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 18.0
+offset_right = 134.0
+offset_bottom = 122.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1527441274]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer" unique_id=602622807]
+layout_mode = 2
+texture = ExtResource("1_g5yj5")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1378030861]
+layout_mode = 2
+text = "+"
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1516308190]
+layout_mode = 2
+texture = ExtResource("2_fjmgh")
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1374527758]
+layout_mode = 2
+text = "="
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer" unique_id=612534193]
+layout_mode = 2
+texture = ExtResource("3_61gjc")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=144989297]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=1760164870]
+layout_mode = 2
+texture = ExtResource("4_61gjc")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=599944271]
+layout_mode = 2
+text = "+"
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=86379023]
+layout_mode = 2
+texture = ExtResource("2_fjmgh")
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=272956500]
+layout_mode = 2
+text = "="
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=1212310515]
+layout_mode = 2
+texture = ExtResource("5_hj7tg")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1519217724]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer3" unique_id=533408732]
+layout_mode = 2
+texture = ExtResource("4_61gjc")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer3" unique_id=429799085]
+layout_mode = 2
+text = "+"
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer3" unique_id=1790126359]
+layout_mode = 2
+texture = ExtResource("1_g5yj5")
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer3" unique_id=2119506158]
+layout_mode = 2
+text = "="
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer3" unique_id=1365434457]
+layout_mode = 2
+texture = ExtResource("6_hj7tg")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=480242902]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=1901520423]
+layout_mode = 2
+texture = ExtResource("4_61gjc")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=115109369]
+layout_mode = 2
+text = "+"
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=874372824]
+layout_mode = 2
+texture = ExtResource("1_g5yj5")
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=443945181]
+layout_mode = 2
+text = "+"
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=607180234]
+layout_mode = 2
+texture = ExtResource("2_fjmgh")
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=158646480]
+layout_mode = 2
+text = "="
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=1292149141]
+layout_mode = 2
+texture = ExtResource("7_asxet")
+
+[node name="Label" type="Label" parent="." unique_id=83051994]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 20.0
+offset_right = 255.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 13
+text = "recipe book wip
+(will be more like collecting pokedex)"
+autowrap_mode = 3

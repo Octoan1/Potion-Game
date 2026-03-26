@@ -7,18 +7,21 @@ extends Control
 @export var potion_mushroom_bug: Item
 @export var potion_mushroom_wood: Item
 @export var potion_wood_bug: Item
+@export var potion_wood_bug_mushroom: Item
 
 @export var slot_scene: PackedScene
 @onready var grid: GridContainer = $InventoryGrid
 
 
-@onready var slot1: InventorySlot = $Panel/IngredientSlot1
-@onready var slot2: InventorySlot = $Panel/IngredientSlot2
+@onready var slot1: InventorySlot = $Panel/HBoxContainer/IngredientSlot1
+@onready var slot2: InventorySlot = $Panel/HBoxContainer/IngredientSlot2
+@onready var slot3: InventorySlot = $Panel/HBoxContainer/IngredientSlot3
 
 func _ready() -> void:
 	get_tree().paused = true
 	PlayerInventory.drinking = false
 	$/root/Main/CanvasLayer/InventoryUI.visible = false
+	slot3.visible = GameState.cauldron_3_slot
 	load_inventory()
 
 func _process(_delta: float) -> void:
@@ -27,6 +30,8 @@ func _process(_delta: float) -> void:
 			PlayerInventory.add_item(slot1.item)
 		if slot2.item:
 			PlayerInventory.add_item(slot2.item)
+		if slot3.item:
+			PlayerInventory.add_item(slot3.item)
 		close()
 
 func add_ingredient(item: Item) -> void:
@@ -41,6 +46,10 @@ func add_ingredient(item: Item) -> void:
 		slot2.item = item
 		slot2.icon.texture = item.icon
 		PlayerInventory.remove_item(item)
+	elif GameState.cauldron_3_slot and slot3.item == null:
+		slot3.item = item
+		slot3.icon.texture = item.icon
+		PlayerInventory.remove_item(item)
 	else:
 		print("Slots full")
 
@@ -52,13 +61,17 @@ func brew() -> void:
 		print("Need 2 ingredients")
 		return
 
-	var result: Item = get_result(slot1.item, slot2.item)
+	var result: Item = null
+	if slot3.item: result = get_result(slot1.item, slot2.item, slot3.item)
+	else: result = get_result(slot1.item, slot2.item)
 
 	if result == null:
 		PlayerInventory.add_item(slot1.item)
 		slot1.clear_item()
 		PlayerInventory.add_item(slot2.item)
 		slot2.clear_item()
+		PlayerInventory.add_item(slot3.item)
+		slot3.clear_item()
 		
 		print("Invalid combo")
 		
@@ -70,6 +83,7 @@ func brew() -> void:
 		#PlayerInventory.remove_item(slot2.item)
 		slot1.clear_item()
 		slot2.clear_item()
+		slot3.clear_item()
 
 		# add potion
 		PlayerInventory.add_item(result, 1)
@@ -80,16 +94,21 @@ func brew() -> void:
 	load_inventory()   # update inventory display
 	update_ui()
 	
-func get_result(a: Item, b: Item) -> Item:
+func get_result(a: Item, b: Item, c: Item = null) -> Item:
 
-	if (a == mushroom and b == bug) or (a == bug and b == mushroom):
+	if ((a == mushroom and b == bug) or (a == bug and b == mushroom)) and c == null:
 		return potion_mushroom_bug
 
-	if (a == mushroom and b == wood) or (a == wood and b == mushroom):
+	if ((a == mushroom and b == wood) or (a == wood and b == mushroom)) and c == null:
 		return potion_mushroom_wood
 
-	if (a == wood and b == bug) or (a == bug and b == wood):
+	if ((a == wood and b == bug) or (a == bug and b == wood)) and c == null:
 		return potion_wood_bug
+	
+	if (a == wood and b == bug and c == mushroom) or (a == wood and b == mushroom and c == bug) \
+	or (a == mushroom and b == wood and c == bug) or (a == mushroom and b == bug and c == wood) \
+	or (a == bug and b == mushroom and c == wood) or (a == bug and b == wood and c == mushroom):
+		return potion_wood_bug_mushroom
 
 	return null
 
@@ -135,3 +154,13 @@ func _on_ingredient_slot_2_item_clicked(item: Item) -> void:
 		slot2.clear_item()
 		
 		load_inventory()
+		
+func _on_ingredient_slot_3_item_clicked(item: Item) -> void:
+	if slot3.item != null:
+		PlayerInventory.add_item(slot3.item)
+		slot3.clear_item()
+		
+		load_inventory()
+
+func upgrade() -> void:
+	slot3.visible = GameState.cauldron_3_slot

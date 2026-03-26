@@ -35,6 +35,7 @@ func add_potion(item: Item) -> void:
 func sell() -> void:
 	if slot1.item == null:
 		print("Need something to sell")
+		$Panel/ResultLabel.text = "Result: Nothing to Sell"
 		return
 
 

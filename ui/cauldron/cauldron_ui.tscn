@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="5_hrby0"]
 [ext_resource type="Resource" uid="uid://dm6yarqb04u28" path="res://items/potions/health_potion.tres" id="6_1uavu"]
 [ext_resource type="Resource" uid="uid://kvshm0esng67" path="res://items/potions/fire_potion.tres" id="7_j4hgf"]
+[ext_resource type="Resource" uid="uid://m7w2i5qdf11x" path="res://items/potions/super_potion.tres" id="8_2qsyq"]
 
 [node name="CauldronUI" type="Control" unique_id=698506239]
 process_mode = 2
@@ -24,6 +25,7 @@ wood = ExtResource("4_hxuau")
 potion_mushroom_bug = ExtResource("5_2qsyq")
 potion_mushroom_wood = ExtResource("6_1uavu")
 potion_wood_bug = ExtResource("7_j4hgf")
+potion_wood_bug_mushroom = ExtResource("8_2qsyq")
 slot_scene = ExtResource("5_hrby0")
 
 [node name="Panel" type="Panel" parent="." unique_id=1448362670]
@@ -33,22 +35,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="IngredientSlot1" parent="Panel" unique_id=411698676 instance=ExtResource("5_hrby0")]
-layout_mode = 1
-offset_left = 92.0
-offset_top = 45.0
-offset_right = 112.0
-offset_bottom = 65.0
-show_item_count = false
-
-[node name="IngredientSlot2" parent="Panel" unique_id=1286564138 instance=ExtResource("5_hrby0")]
-layout_mode = 1
-offset_left = 122.0
-offset_top = 45.0
-offset_right = 142.0
-offset_bottom = 65.0
-show_item_count = false
 
 [node name="BrewButton" type="Button" parent="Panel" unique_id=1589638975]
 layout_mode = 0
@@ -70,6 +56,27 @@ offset_bottom = -14.0
 grow_vertical = 0
 text = "Result: "
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=435026409]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 36.0
+offset_right = 156.0
+offset_bottom = 76.0
+alignment = 1
+
+[node name="IngredientSlot1" parent="Panel/HBoxContainer" unique_id=411698676 instance=ExtResource("5_hrby0")]
+layout_mode = 2
+show_item_count = false
+
+[node name="IngredientSlot2" parent="Panel/HBoxContainer" unique_id=1286564138 instance=ExtResource("5_hrby0")]
+layout_mode = 2
+show_item_count = false
+
+[node name="IngredientSlot3" parent="Panel/HBoxContainer" unique_id=828386002 instance=ExtResource("5_hrby0")]
+visible = false
+layout_mode = 2
+show_item_count = false
+
 [node name="Label" type="Label" parent="." unique_id=410243958]
 layout_mode = 1
 anchors_preset = 5
@@ -89,6 +96,7 @@ offset_right = 215.0
 offset_bottom = 71.0
 columns = 3
 
-[connection signal="item_clicked" from="Panel/IngredientSlot1" to="." method="_on_ingredient_slot_1_item_clicked"]
-[connection signal="item_clicked" from="Panel/IngredientSlot2" to="." method="_on_ingredient_slot_2_item_clicked"]
 [connection signal="pressed" from="Panel/BrewButton" to="." method="_on_brew_button_pressed"]
+[connection signal="item_clicked" from="Panel/HBoxContainer/IngredientSlot1" to="." method="_on_ingredient_slot_1_item_clicked"]
+[connection signal="item_clicked" from="Panel/HBoxContainer/IngredientSlot2" to="." method="_on_ingredient_slot_2_item_clicked"]
+[connection signal="item_clicked" from="Panel/HBoxContainer/IngredientSlot3" to="." method="_on_ingredient_slot_3_item_clicked"]

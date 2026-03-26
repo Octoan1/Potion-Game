@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://df1a1j1v7e3qx" path="res://ui/inventory_ui.tscn" id="3_l8qe7"]
 [ext_resource type="Texture2D" uid="uid://dkslo1fsni01x" path="res://assets/healthbar_test.png" id="4_m1504"]
 [ext_resource type="Script" uid="uid://dboy0yq0g81by" path="res://ui/test/gold_count_label.gd" id="5_ifaiv"]
+[ext_resource type="Script" uid="uid://d3kdsdtbrlh3x" path="res://scripts/resetter.gd" id="6_5k4jt"]
+[ext_resource type="PackedScene" uid="uid://dtennrtvww8ql" path="res://ui/recipe_book/recipe_book.tscn" id="6_qy63d"]
 
 [node name="Main" type="Node2D" unique_id=311730625]
 
@@ -51,3 +53,11 @@ offset_bottom = 23.0
 grow_horizontal = 0
 text = "Gold: 0"
 script = ExtResource("5_ifaiv")
+
+[node name="RecipeBook" parent="CanvasLayer" unique_id=481756411 instance=ExtResource("6_qy63d")]
+visible = false
+z_index = 1
+
+[node name="Resetter" type="Node" parent="." unique_id=533554427]
+process_mode = 3
+script = ExtResource("6_5k4jt")
