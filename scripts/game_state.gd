@@ -2,6 +2,7 @@ extends Node
 #class_name Game
 
 signal update_gold(curr_gold: int)
+signal got_upgrade
 
 var gold: int = 0
 

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ihsppejsfafh" path="res://entities/objects/door/door.tscn" id="2_lbews"]
 [ext_resource type="PackedScene" uid="uid://bt7tael7u8tyw" path="res://entities/objects/cauldron/cauldron.tscn" id="3_4khaa"]
 [ext_resource type="PackedScene" uid="uid://b2vl3jcmv3aja" path="res://entities/objects/sell/sell.tscn" id="4_0bg5l"]
+[ext_resource type="PackedScene" uid="uid://by0wevddk63rg" path="res://entities/objects/shop/shop.tscn" id="6_olatg"]
 
 [node name="House" type="Node2D" unique_id=1212328192]
 script = ExtResource("1_srnql")
@@ -35,4 +36,7 @@ position = Vector2(-18, 0)
 position = Vector2(22, 12)
 
 [node name="SellSpot" parent="." unique_id=1001959168 instance=ExtResource("4_0bg5l")]
-position = Vector2(-68, 15)
+position = Vector2(-54, 49)
+
+[node name="ShopSpot" parent="." unique_id=627438800 instance=ExtResource("6_olatg")]
+position = Vector2(-52, -20)

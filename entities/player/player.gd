@@ -44,6 +44,8 @@ func try_cauldron() -> void:
 			body.activate_cauldron()
 		if body.has_method("activate_shop"):
 			body.activate_shop()
+		if body.has_method("activate_sell"):
+			body.activate_sell()
 			
 func try_interact() -> void:
 	for area: Area2D in $InteractionArea.get_overlapping_areas():
