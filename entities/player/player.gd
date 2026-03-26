@@ -42,6 +42,8 @@ func try_cauldron() -> void:
 		var body: Node2D = area.get_parent()
 		if body.has_method("activate_cauldron"):
 			body.activate_cauldron()
+		if body.has_method("activate_shop"):
+			body.activate_shop()
 			
 func try_interact() -> void:
 	for area: Area2D in $InteractionArea.get_overlapping_areas():

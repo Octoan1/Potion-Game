@@ -7,4 +7,5 @@
 script = ExtResource("2_5obi6")
 name = "Speed Potion"
 icon = ExtResource("1_kmnwq")
+type = 1
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

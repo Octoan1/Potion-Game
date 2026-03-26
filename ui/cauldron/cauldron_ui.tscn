@@ -59,18 +59,27 @@ offset_bottom = 100.0
 text = "Brew!"
 
 [node name="ResultLabel" type="Label" parent="Panel" unique_id=1642385389]
-layout_mode = 0
-offset_left = 85.0
-offset_top = 106.0
-offset_right = 142.0
-offset_bottom = 129.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -37.0
+offset_right = 91.0
+offset_bottom = -14.0
+grow_vertical = 0
 text = "Result: "
 
 [node name="Label" type="Label" parent="." unique_id=410243958]
-layout_mode = 0
-offset_right = 40.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.5
+offset_right = 81.5
 offset_bottom = 23.0
-text = "(presss [esc] to close)"
+grow_horizontal = 2
+text = "Cauldron: (presss [esc] to close)"
 
 [node name="InventoryGrid" type="GridContainer" parent="." unique_id=532482846]
 layout_mode = 0

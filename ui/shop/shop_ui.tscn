@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://biwhe7ktye75b"]
+
+[ext_resource type="Script" uid="uid://ckdkgtiwqg4gg" path="res://ui/shop/shop_ui.gd" id="1_lqgw1"]
+[ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="8_ydll3"]
+
+[node name="ShopUI" type="Control" unique_id=698506239]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lqgw1")
+slot_scene = ExtResource("8_ydll3")
+
+[node name="Panel" type="Panel" parent="." unique_id=1448362670]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SellSlot" parent="Panel" unique_id=411698676 instance=ExtResource("8_ydll3")]
+layout_mode = 1
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 125.0
+offset_bottom = 62.0
+show_item_count = false
+
+[node name="SellButton" type="Button" parent="Panel" unique_id=1589638975]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 69.0
+offset_right = 145.0
+offset_bottom = 100.0
+text = "Sell!"
+
+[node name="ResultLabel" type="Label" parent="Panel" unique_id=1642385389]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 105.0
+offset_right = 98.0
+offset_bottom = 128.0
+text = "Result: "
+
+[node name="Label" type="Label" parent="." unique_id=410243958]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.5
+offset_right = 105.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Sell: (presss [esc] to close)"
+
+[node name="Label2" type="Label" parent="." unique_id=153481014]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.0
+offset_top = 21.0
+offset_right = 106.0
+offset_bottom = 44.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 12
+text = "can only sell potions"
+
+[node name="InventoryGrid" type="GridContainer" parent="." unique_id=532482846]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 31.0
+offset_right = 215.0
+offset_bottom = 71.0
+columns = 3
+
+[connection signal="item_clicked" from="Panel/SellSlot" to="." method="_on_sell_slot_item_clicked"]
+[connection signal="pressed" from="Panel/SellButton" to="." method="_on_sell_button_pressed"]

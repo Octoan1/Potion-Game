@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bt7tael7u8tyw"]
+
+[ext_resource type="Texture2D" uid="uid://bommii734i7p2" path="res://assets/cauldron_test.png" id="1_084cg"]
+[ext_resource type="Script" uid="uid://dee1qig44ghl7" path="res://entities/objects/cauldron/cauldron.gd" id="1_pts2o"]
+[ext_resource type="Texture2D" uid="uid://3xyxup682k3" path="res://assets/iteraction_prompt2.png" id="3_w5eqq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_084cg"]
+radius = 30.016663
+
+[node name="Cauldron" type="Node2D" unique_id=1084316473]
+script = ExtResource("1_pts2o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=95026775]
+texture = ExtResource("1_084cg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=277285293]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=197490257]
+shape = SubResource("CircleShape2D_084cg")
+debug_color = Color(0.23921569, 0.62352943, 0.39607844, 0.09411765)
+
+[node name="Text" type="Sprite2D" parent="." unique_id=732592035]
+z_index = 1
+position = Vector2(7, 17)
+texture = ExtResource("3_w5eqq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
