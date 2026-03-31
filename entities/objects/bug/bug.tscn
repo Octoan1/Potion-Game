@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/bug_juice.tres" id="2_u7f6x"]
 [ext_resource type="Texture2D" uid="uid://8nuoctaoautt" path="res://assets/beetle.png" id="3_5a2vv"]
 [ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_5a2vv"]
+[ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="5_c5i37"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_478de"]
 radius = 18.0
@@ -11,10 +12,16 @@ radius = 18.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_478de"]
 size = Vector2(9, 12)
 
-[node name="Bug" type="Node2D" unique_id=1972355215]
+[node name="Bug" type="StaticBody2D" unique_id=2094764493]
+collision_layer = 5
+collision_mask = 0
 script = ExtResource("1_tmcfs")
 item = ExtResource("2_u7f6x")
 amount = 1
+
+[node name="Interactable" type="Node" parent="." unique_id=1953840483]
+script = ExtResource("5_c5i37")
+metadata/_custom_type_script = "uid://bw0jtgebb15w5"
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=177816685]
 position = Vector2(0, -8)
@@ -33,16 +40,14 @@ position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_478de")
 debug_color = Color(0, 0.6392157, 0.3764706, 0.05490196)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1923445049]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=393281659]
-position = Vector2(0.5, -8)
-shape = SubResource("RectangleShape2D_478de")
-
 [node name="Text" type="Sprite2D" parent="." unique_id=1905620591]
 z_index = 1
 position = Vector2(5, 11)
 texture = ExtResource("5_5a2vv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=393281659]
+position = Vector2(0.5, -8)
+shape = SubResource("RectangleShape2D_478de")
 
 [connection signal="body_entered" from="CollectableRadius" to="." method="_on_collectable_radius_body_entered"]
 [connection signal="body_exited" from="CollectableRadius" to="." method="_on_collectable_radius_body_exited"]

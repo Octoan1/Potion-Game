@@ -9,7 +9,7 @@ func _ready() -> void:
 	get_tree().paused = true
 	PlayerInventory.drinking = false
 	
-	$/root/Main/CanvasLayer/InventoryUI.visible = false
+	$/root/Main/CanvasLayer/PlayerInventoryUI.visible = false
 	load_inventory()
 
 func _process(_delta: float) -> void:

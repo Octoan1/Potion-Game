@@ -7,7 +7,7 @@ func _ready() -> void:
 	get_tree().paused = true
 	PlayerInventory.drinking = false
 	
-	$/root/Main/CanvasLayer/InventoryUI.visible = false
+	$/root/Main/CanvasLayer/PlayerInventoryUI.visible = false
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):

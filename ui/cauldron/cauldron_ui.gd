@@ -20,7 +20,7 @@ extends Control
 func _ready() -> void:
 	get_tree().paused = true
 	PlayerInventory.drinking = false
-	$/root/Main/CanvasLayer/InventoryUI.visible = false
+	$/root/Main/CanvasLayer/PlayerInventoryUI.visible = false
 	slot3.visible = GameState.cauldron_3_slot
 	load_inventory()
 

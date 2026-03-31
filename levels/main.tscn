@@ -15,15 +15,16 @@ script = ExtResource("2_ifaiv")
 starting_level = "res://levels/outside.tscn"
 player = NodePath("../Player")
 
-[node name="Player" parent="." unique_id=807103536 instance=ExtResource("1_2262g")]
+[node name="Player" parent="." unique_id=807103536 node_paths=PackedStringArray("inventory_ui") instance=ExtResource("1_2262g")]
 z_index = 1
 position = Vector2(-66, 8)
+inventory_ui = NodePath("../CanvasLayer/PlayerInventoryUI")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1770425059]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1178534440]
 
-[node name="InventoryUI" parent="CanvasLayer" unique_id=871811778 instance=ExtResource("3_l8qe7")]
+[node name="PlayerInventoryUI" parent="CanvasLayer" unique_id=871811778 instance=ExtResource("3_l8qe7")]
 visible = false
 
 [node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=2028763872]

@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://dm6yarqb04u28" path="res://items/potions/health_potion.tres" id="6_1uavu"]
 [ext_resource type="Resource" uid="uid://kvshm0esng67" path="res://items/potions/fire_potion.tres" id="7_j4hgf"]
 [ext_resource type="Resource" uid="uid://m7w2i5qdf11x" path="res://items/potions/super_potion.tres" id="8_2qsyq"]
+[ext_resource type="Texture2D" uid="uid://c1kvinxlfbyc8" path="res://assets/brewing area.png" id="10_1uavu"]
 
 [node name="CauldronUI" type="Control" unique_id=698506239]
 process_mode = 2
@@ -27,6 +28,15 @@ potion_mushroom_wood = ExtResource("6_1uavu")
 potion_wood_bug = ExtResource("7_j4hgf")
 potion_wood_bug_mushroom = ExtResource("8_2qsyq")
 slot_scene = ExtResource("5_hrby0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1032425472]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_1uavu")
 
 [node name="Panel" type="Panel" parent="." unique_id=1448362670]
 layout_mode = 1

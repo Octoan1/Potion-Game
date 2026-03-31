@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://m7w2i5qdf11x"]
 
-[ext_resource type="Texture2D" uid="uid://cusl6jpvftrli" path="res://assets/dude.png" id="1_lamiv"]
+[ext_resource type="Texture2D" uid="uid://ctfff3p1jclew" path="res://assets/super potion.png" id="1_lamiv"]
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_0qd4f"]
 
 [resource]
