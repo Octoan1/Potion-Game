@@ -25,6 +25,7 @@ func _ready() -> void:
 	load_inventory()
 
 func _process(_delta: float) -> void:
+	# return items in cauldron
 	if Input.is_action_just_pressed("ui_cancel"):
 		if slot1.item:
 			PlayerInventory.add_item(slot1.item)

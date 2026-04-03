@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bhb331tvw65ym"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_joiaa"]
+[ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_f3yg7"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="2_odb55"]
+[ext_resource type="Resource" uid="uid://byqxbw5txub1t" path="res://items/ingredients/wood.tres" id="3_l4ur0"]
+[ext_resource type="Resource" uid="uid://kvshm0esng67" path="res://items/potions/fire_potion.tres" id="4_gy4lk"]
+
+[resource]
+script = ExtResource("2_odb55")
+ingredients = Array[ExtResource("1_joiaa")]([ExtResource("2_f3yg7"), ExtResource("3_l4ur0")])
+result = ExtResource("4_gy4lk")
+metadata/_custom_type_script = "uid://ciee7sgvou518"

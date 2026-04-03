@@ -40,6 +40,7 @@ folder_colors={
 "res://components/": "gray",
 "res://entities/": "yellow",
 "res://items/": "orange",
+"res://items/recipes/": "red",
 "res://levels/": "pink",
 "res://scripts/": "gray",
 "res://ui/": "teal"
