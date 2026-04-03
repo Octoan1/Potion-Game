@@ -8,4 +8,5 @@ script = ExtResource("1_aixmo")
 name = "Mushroom"
 icon = ExtResource("1_dt5vi")
 description = "testing"
+id = "mushroom"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

@@ -8,4 +8,5 @@ script = ExtResource("2_0qd4f")
 name = "Super Potion"
 icon = ExtResource("1_lamiv")
 type = 1
+id = "super_potion"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

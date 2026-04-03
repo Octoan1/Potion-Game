@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bhb331tvw65ym"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_rnfko"]
+[ext_resource type="Texture2D" uid="uid://8nuoctaoautt" path="res://assets/beetle.png" id="2_htqey"]
+[ext_resource type="Resource" uid="uid://byqxbw5txub1t" path="res://items/ingredients/wood.tres" id="3_yw1dy"]
+[ext_resource type="Resource" uid="uid://kvshm0esng67" path="res://items/potions/fire_potion.tres" id="4_mppea"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="5_qyjcu"]
+
+[sub_resource type="Resource" id="Resource_l4ur0"]
+script = ExtResource("1_rnfko")
+name = "Bug"
+icon = ExtResource("2_htqey")
+description = "juice from a bug, "
+id = "bug"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"
+
+[resource]
+script = ExtResource("5_qyjcu")
+recipe_name = "Fire Potion"
+ingredients = Array[ExtResource("1_rnfko")]([SubResource("Resource_l4ur0"), ExtResource("3_yw1dy")])
+result = ExtResource("4_mppea")
+metadata/_custom_type_script = "uid://ciee7sgvou518"

@@ -5,6 +5,7 @@ class_name Item
 @export var icon: Texture2D
 @export var description: String
 @export var type: ItemType
+@export var id: String
 
 enum ItemType {
 	INGREDIENT,

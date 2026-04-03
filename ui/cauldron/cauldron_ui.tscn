@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://jw0xa4522p3u"]
 
 [ext_resource type="Script" uid="uid://b8x1tejp1yxsf" path="res://ui/cauldron/cauldron_ui.gd" id="1_noiky"]
-[ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_c0j88"]
-[ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/bug_juice.tres" id="3_oaa8u"]
-[ext_resource type="Resource" uid="uid://byqxbw5txub1t" path="res://items/ingredients/wood.tres" id="4_hxuau"]
-[ext_resource type="Resource" uid="uid://b2g3cygpeylqv" path="res://items/potions/sped_potion.tres" id="5_2qsyq"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="2_oaa8u"]
+[ext_resource type="Resource" uid="uid://bhb331tvw65ym" path="res://items/recipes/2_type/fire_potion_recipe.tres" id="3_hxuau"]
+[ext_resource type="Resource" uid="uid://cwy1oc4q17xso" path="res://items/recipes/2_type/speed_potion_recipe.tres" id="4_tupx3"]
+[ext_resource type="Resource" uid="uid://k521fjg8i14l" path="res://items/recipes/2_type/health_potion_recipe.tres" id="5_2qsyq"]
 [ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="5_hrby0"]
-[ext_resource type="Resource" uid="uid://dm6yarqb04u28" path="res://items/potions/health_potion.tres" id="6_1uavu"]
-[ext_resource type="Resource" uid="uid://kvshm0esng67" path="res://items/potions/fire_potion.tres" id="7_j4hgf"]
-[ext_resource type="Resource" uid="uid://m7w2i5qdf11x" path="res://items/potions/super_potion.tres" id="8_2qsyq"]
+[ext_resource type="Resource" uid="uid://04dutlcxaxlb" path="res://items/recipes/3_type/super_potion_recipe.tres" id="6_1uavu"]
 [ext_resource type="Texture2D" uid="uid://c1kvinxlfbyc8" path="res://assets/brewing area.png" id="10_1uavu"]
 
 [node name="CauldronUI" type="Control" unique_id=698506239]
@@ -20,13 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_noiky")
-mushroom = ExtResource("2_c0j88")
-bug = ExtResource("3_oaa8u")
-wood = ExtResource("4_hxuau")
-potion_mushroom_bug = ExtResource("5_2qsyq")
-potion_mushroom_wood = ExtResource("6_1uavu")
-potion_wood_bug = ExtResource("7_j4hgf")
-potion_wood_bug_mushroom = ExtResource("8_2qsyq")
+recipe_list = Array[ExtResource("2_oaa8u")]([ExtResource("3_hxuau"), ExtResource("4_tupx3"), ExtResource("5_2qsyq"), ExtResource("6_1uavu")])
 slot_scene = ExtResource("5_hrby0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1032425472]
