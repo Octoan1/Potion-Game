@@ -18,8 +18,6 @@ func _physics_process(delta: float) -> void:
 	
 	# player interaction
 	if input[InputController.InputType.INTERACT]:
-		try_harvest()
-		try_cauldron()
 		try_interact()
 		
 	# player inventory toggling 
@@ -52,42 +50,40 @@ func toggle_inventory() -> void:
 	inventory_ui.visible = not inventory_ui.visible
 
 
-func try_harvest() -> void:
-	for area: Area2D in $InteractionArea.get_overlapping_areas():
-		var body: Node2D = area.get_parent()
-		if body.has_method("harvest"):
-			body.harvest()
-
-
-func try_cauldron() -> void:
-	for area: Area2D in $InteractionArea.get_overlapping_areas():
-		var body: Node2D = area.get_parent()
-		if body.has_method("activate_cauldron"):
-			body.activate_cauldron()
-		if body.has_method("activate_shop"):
-			body.activate_shop()
-		if body.has_method("activate_sell"):
-			body.activate_sell()
-
-
 func try_interact() -> void:
 	for area: Area2D in $InteractionArea.get_overlapping_areas():
 		var body: Node2D = area.get_parent()
 		if body.has_method("interact"):
 			body.interact()
 			
-	var closest: Node2D = null
-	var prev_dist: float = -1
-	for body: Node in $InteractionArea.get_overlapping_bodies():
-		if body is Interactable:
-			var interactable: Interactable = body
+	var closest: Node2D = get_closest_interactable()
+	if not closest: return
+	print("Closet: ", closest)
+	print("Closest parent: ", closest.get_parent())
+	
+	# interact
+	var interactable: Interactable =	 closest.get_node("Interactable")
+	interactable.interact()
+	
+			
+	
+func get_closest_interactable() -> Node2D:
+	#print($InteractionArea.get_overlapping_bodies())
+	var closest: Node = null
+	var closest_dist: float = -1
+	for body: Node2D in $InteractionArea.get_overlapping_bodies():
+		if not body.get_node("Interactable"): # skip nodes that don't have interactable (shouldn't happen)
+			continue
 		
-		var parent: Node2D = body.get_parent()
-		var distance: float = self.global_position.distance_to(parent.global_position)
+		var distance: float = self.global_position.distance_to(body.global_position)
+		
 		if closest: print("Curr Closest: ", closest.name)
-		if closest == null or distance < prev_dist:
-			closest = parent
-			prev_dist = distance
-	if closest: print("Closest: ", closest.name)
+		if closest == null or distance < closest_dist:
+			#closest = body.get_node("Interactable")
+			closest = body
+			closest_dist = distance
+	
+	return closest
+		
 			
 		

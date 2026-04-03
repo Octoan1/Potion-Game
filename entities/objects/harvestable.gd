@@ -46,3 +46,8 @@ func _on_collectable_radius_body_entered(body: Node2D) -> void:
 func _on_collectable_radius_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		text.hide()
+
+
+
+func _on_interactable_interacted() -> void:
+	harvest()

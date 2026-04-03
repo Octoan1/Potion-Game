@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/harvestable.gd" id="1_en80n"]
 [ext_resource type="Resource" uid="uid://byqxbw5txub1t" path="res://items/ingredients/wood.tres" id="2_3qj88"]
 [ext_resource type="Texture2D" uid="uid://cp61m8gmxg2l8" path="res://assets/tree bark.png" id="3_3qj88"]
+[ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="3_en80n"]
 [ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_jpwrm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_478de"]
@@ -11,10 +12,16 @@ radius = 22.022715
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_478de"]
 size = Vector2(7, 8)
 
-[node name="Wood" type="Node2D" unique_id=1972355215]
+[node name="Wood" type="StaticBody2D" unique_id=912633156]
+collision_layer = 5
+collision_mask = 0
 script = ExtResource("1_en80n")
 item = ExtResource("2_3qj88")
 amount = 1
+
+[node name="Interactable" type="Node" parent="." unique_id=1565636406]
+script = ExtResource("3_en80n")
+metadata/_custom_type_script = "uid://bw0jtgebb15w5"
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=177816685]
 position = Vector2(0, -8)
@@ -33,11 +40,8 @@ position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_478de")
 debug_color = Color(0, 0.6392157, 0.3764706, 0.05490196)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1923445049]
-position = Vector2(0, -5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=393281659]
-position = Vector2(-0.5, -3)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=393281659]
+position = Vector2(-0.5, -8)
 shape = SubResource("RectangleShape2D_478de")
 
 [node name="Text" type="Sprite2D" parent="." unique_id=748975023]
@@ -45,5 +49,6 @@ z_index = 1
 position = Vector2(5, 11)
 texture = ExtResource("5_jpwrm")
 
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="body_entered" from="CollectableRadius" to="." method="_on_collectable_radius_body_entered"]
 [connection signal="body_exited" from="CollectableRadius" to="." method="_on_collectable_radius_body_exited"]

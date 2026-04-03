@@ -49,5 +49,6 @@ texture = ExtResource("5_5a2vv")
 position = Vector2(0.5, -8)
 shape = SubResource("RectangleShape2D_478de")
 
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="body_entered" from="CollectableRadius" to="." method="_on_collectable_radius_body_entered"]
 [connection signal="body_exited" from="CollectableRadius" to="." method="_on_collectable_radius_body_exited"]

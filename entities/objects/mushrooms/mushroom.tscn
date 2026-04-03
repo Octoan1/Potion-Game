@@ -2,16 +2,25 @@
 
 [ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/harvestable.gd" id="1_7a7q1"]
 [ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_dpuot"]
+[ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="3_dpuot"]
 [ext_resource type="Texture2D" uid="uid://bvmrols8p84if" path="res://assets/mushrooms.png" id="3_pbuuy"]
 [ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_tquek"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_478de"]
 radius = 22.022715
 
-[node name="Mushroom" type="Node2D" unique_id=1972355215]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpuot"]
+
+[node name="Mushroom" type="StaticBody2D" unique_id=1839515242]
+collision_layer = 5
+collision_mask = 0
 script = ExtResource("1_7a7q1")
 item = ExtResource("2_dpuot")
 amount = 2
+
+[node name="Interactable" type="Node" parent="." unique_id=1483036977]
+script = ExtResource("3_dpuot")
+metadata/_custom_type_script = "uid://bw0jtgebb15w5"
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=177816685]
 position = Vector2(0, -8)
@@ -35,5 +44,10 @@ z_index = 1
 position = Vector2(5, 11)
 texture = ExtResource("5_tquek")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055954152]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_dpuot")
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="body_entered" from="CollectableRadius" to="." method="_on_collectable_radius_body_entered"]
 [connection signal="body_exited" from="CollectableRadius" to="." method="_on_collectable_radius_body_exited"]
