@@ -3,9 +3,11 @@ extends Node2D
 @onready var walls: TileMapLayer = $Walls
 @onready var floor_tiles: TileMapLayer = $Floor
 
+@export var debug: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if GameState.bridge_upgrade:
+	if GameState.bridge_upgrade or debug:
 		# remove water
 		for i in range(4):
 			for j in range(3):

@@ -7,6 +7,7 @@ var debug: bool = false
 var drinking: bool = true
 
 var items: Dictionary[Item, int] = {}
+const potion_registry = preload("res://items/potion_registry.gd")
 
 func add_item(item: Item, amount: int = 1) -> void:
 	if item in items:
@@ -33,16 +34,20 @@ func has_item(item: Item, amount: int = 1) -> bool:
 	return item in items and items[item] >= amount
 	
 	
-# testing
-func use_speed_potion(item: Item) -> void:
+func use_item(item: Item) -> void:
+	if item.type != Item.ItemType.POTION:
+		return
+
+	# Resolve effects for this potion (registry-based)
+	var effects: Array = []
+	if item.id != "":
+		effects = PotionRegistry.get_effects_for(item.id)
+
+	# Apply each effect (effects may be resources that perform their own timers)
+	@warning_ignore("untyped_declaration")
+	for effect in effects:
+		if effect and effect.has_method("apply"):
+			effect.apply()
+
+	# Remove the consumed potion
 	remove_item(item, 1)
-	get_tree().get_nodes_in_group("Player").get(0).max_speed *= 3
-	get_tree().get_nodes_in_group("Player").get(0).friction *= 3
-	await get_tree().create_timer(5.0).timeout
-	print("hi")
-	get_tree().get_nodes_in_group("Player").get(0).max_speed /= 3
-	get_tree().get_nodes_in_group("Player").get(0).friction /= 3
-	
-func use_health_potion(item: Item) -> void:
-	remove_item(item, 1)
-	get_tree().current_scene.get_node("CanvasLayer/HealthBar").value += 25
