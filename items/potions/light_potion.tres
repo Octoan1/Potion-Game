@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://by3bahjs3lpqa"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_8cuyp"]
+[ext_resource type="Texture2D" uid="uid://d0ein0bd8wdki" path="res://assets/light_potion_temp.png" id="1_epi77"]
+
+[resource]
+script = ExtResource("1_8cuyp")
+name = "Light Potion"
+icon = ExtResource("1_epi77")
+id = "light_potion"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

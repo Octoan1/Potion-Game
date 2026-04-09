@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://xqiyap3lj0m3"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_vyich"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="2_logqd"]
+[ext_resource type="Resource" uid="uid://dq533ym1r0qtm" path="res://items/ingredients/spiky_plant.tres" id="2_ubial"]
+[ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/bug.tres" id="3_fbi0l"]
+[ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="4_4redb"]
+[ext_resource type="Resource" uid="uid://by3bahjs3lpqa" path="res://items/potions/light_potion.tres" id="5_scvgm"]
+
+[resource]
+script = ExtResource("2_logqd")
+recipe_name = "Light Potion Recipe"
+recipe_id = "light_potion_recipe"
+ingredients = Array[ExtResource("1_vyich")]([ExtResource("2_ubial"), ExtResource("3_fbi0l"), ExtResource("4_4redb")])
+result = ExtResource("5_scvgm")
+metadata/_custom_type_script = "uid://ciee7sgvou518"

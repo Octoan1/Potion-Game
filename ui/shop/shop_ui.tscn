@@ -53,14 +53,14 @@ offset_bottom = 74.0
 theme_override_font_sizes/font_size = 10
 text = "Upgrade House: 1 Gold"
 
-[node name="RecipeBook" type="Button" parent="." unique_id=577606494]
+[node name="Bridge" type="Button" parent="." unique_id=577606494]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 78.0
 offset_right = 130.0
 offset_bottom = 100.0
 theme_override_font_sizes/font_size = 10
-text = "Recipe Book: 2 Gold"
+text = "Build Bridge: 2 Gold"
 
 [node name="CauldronCraftSlot" type="Button" parent="." unique_id=1018056643]
 layout_mode = 0
@@ -91,5 +91,5 @@ offset_bottom = 75.0
 text = "Result:"
 
 [connection signal="pressed" from="HouseUpgrade" to="." method="_on_house_upgrade_pressed"]
-[connection signal="pressed" from="RecipeBook" to="." method="_on_recipe_book_pressed"]
+[connection signal="pressed" from="Bridge" to="." method="_on_recipe_book_pressed"]
 [connection signal="pressed" from="CauldronCraftSlot" to="." method="_on_cauldron_craft_slot_pressed"]
