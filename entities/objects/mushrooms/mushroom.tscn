@@ -16,7 +16,7 @@ collision_layer = 5
 collision_mask = 0
 script = ExtResource("1_7a7q1")
 item = ExtResource("2_dpuot")
-amount = 2
+amount = 1
 
 [node name="Interactable" type="Node" parent="." unique_id=1483036977]
 script = ExtResource("3_dpuot")

@@ -9,7 +9,7 @@ signal got_upgrade
 var gold: int = 0
 
 var friends_upgrade: bool = false
-var recipe_book_unlock: bool = false
+var bridge_upgrade: bool = false
 var cauldron_3_slot: bool = false
 
 func give_gold(amount: int = 1) -> void:

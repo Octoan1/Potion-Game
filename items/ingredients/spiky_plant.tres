@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dq533ym1r0qtm"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_fi1go"]
+[ext_resource type="Texture2D" uid="uid://s654yqq5ptwu" path="res://assets/spiky_light_temp.png" id="1_k50uf"]
+
+[resource]
+script = ExtResource("1_fi1go")
+name = "Eye Plant"
+icon = ExtResource("1_k50uf")
+id = "eye_plant"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

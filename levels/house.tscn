@@ -25,18 +25,18 @@ tile_map_data = PackedByteArray("AAD3//r/AAAFAAAAAAD4//r/AAAFAAAAAAD4//n/AAAFAAA
 tile_set = ExtResource("1_u4vj8")
 
 [node name="Door" parent="." unique_id=1685542594 node_paths=PackedStringArray("spawn_point") instance=ExtResource("2_lbews")]
-position = Vector2(120, 18)
+position = Vector2(12, 88)
 target_scene = "res://levels/outside.tscn"
 spawn_point = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Door" unique_id=1939213826]
-position = Vector2(-18, 0)
+position = Vector2(0, -21)
 
 [node name="Cauldron" parent="." unique_id=1084316473 instance=ExtResource("3_4khaa")]
-position = Vector2(20, 17)
+position = Vector2(11, 22)
 
 [node name="SellSpot" parent="." unique_id=1001959168 instance=ExtResource("4_0bg5l")]
-position = Vector2(-80, 73)
+position = Vector2(-84, -43)
 
 [node name="ShopSpot" parent="." unique_id=627438800 instance=ExtResource("6_olatg")]
-position = Vector2(-81, -36)
+position = Vector2(100, -40)

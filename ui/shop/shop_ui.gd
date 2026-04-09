@@ -34,13 +34,13 @@ func _on_house_upgrade_pressed() -> void:
 
 
 func _on_recipe_book_pressed() -> void:
-	if GameState.recipe_book_unlock:
+	if GameState.bridge_upgrade:
 		result_label.text = "Already bought"
 	elif GameState.gold < 2:
 		result_label.text = "Not enough gold"
 	else:
 		GameState.remove_gold(2)
-		GameState.recipe_book_unlock = true
+		GameState.bridge_upgrade = true
 		GameState.got_upgrade.emit()
 		result_label.text = "Unlocked Recipe Book"
 
