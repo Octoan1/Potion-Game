@@ -24,6 +24,8 @@ func _physics_process(delta: float) -> void:
 	# player inventory toggling 
 	if input[InputController.InputType.INVENTORY]:
 		toggle_inventory()
+	if Input.is_action_just_pressed("ui_cancel"):
+		close_inventory()
 	
 	# player movement
 	var direction: Vector2 = input[InputController.InputType.MOVE]
@@ -49,6 +51,9 @@ func handle_movement(direction: Vector2, delta: float) -> void:
 
 func toggle_inventory() -> void:
 	inventory_ui.visible = not inventory_ui.visible
+
+func close_inventory() -> void:
+	inventory_ui.visible = false
 
 
 func try_interact() -> void:
