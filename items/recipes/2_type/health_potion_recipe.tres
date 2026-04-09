@@ -9,6 +9,7 @@
 [resource]
 script = ExtResource("5_wahur")
 recipe_name = "Health Potion"
+recipe_id = "health_potion"
 ingredients = Array[ExtResource("1_v4c0b")]([ExtResource("2_3parx"), ExtResource("3_ndpaj")])
 result = ExtResource("4_r2d8a")
 metadata/_custom_type_script = "uid://ciee7sgvou518"

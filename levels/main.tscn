@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dboy0yq0g81by" path="res://ui/test/gold_count_label.gd" id="5_ifaiv"]
 [ext_resource type="Script" uid="uid://d3kdsdtbrlh3x" path="res://scripts/resetter.gd" id="6_5k4jt"]
 [ext_resource type="PackedScene" uid="uid://dtennrtvww8ql" path="res://ui/recipe_book/recipe_book.tscn" id="6_qy63d"]
+[ext_resource type="PackedScene" uid="uid://cnrtjsuigcr7v" path="res://ui/recipe_book/recipe_book_ui.tscn" id="7_6et1j"]
 
 [node name="Main" type="Node2D" unique_id=311730625]
 
@@ -58,6 +59,9 @@ script = ExtResource("5_ifaiv")
 [node name="RecipeBook" parent="CanvasLayer" unique_id=481756411 instance=ExtResource("6_qy63d")]
 visible = false
 z_index = 1
+
+[node name="RecipeBookUI" parent="CanvasLayer" unique_id=1331740910 instance=ExtResource("7_6et1j")]
+visible = false
 
 [node name="Resetter" type="Node" parent="." unique_id=533554427]
 process_mode = 3

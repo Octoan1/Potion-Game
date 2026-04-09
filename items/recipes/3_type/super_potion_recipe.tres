@@ -10,6 +10,7 @@
 [resource]
 script = ExtResource("5_1rwuv")
 recipe_name = "Super Potion"
+recipe_id = "super_potion"
 ingredients = Array[ExtResource("1_ceb6l")]([ExtResource("2_tg0vg"), ExtResource("2_465k7"), ExtResource("3_30lo4")])
 result = ExtResource("5_tg0vg")
 metadata/_custom_type_script = "uid://ciee7sgvou518"

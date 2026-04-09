@@ -63,9 +63,9 @@ func brew() -> void:
 		$Panel/ResultLabel.text = "Need at least 2 Ingredients"
 		return
 
-	var result: Item = get_result_from_slots()
+	var recipe: Recipe = get_matching_recipe()
 
-	if result == null:
+	if recipe == null:
 		PlayerInventory.add_item(slot1.item)
 		slot1.clear_item()
 		PlayerInventory.add_item(slot2.item)
@@ -82,8 +82,12 @@ func brew() -> void:
 		slot2.clear_item()
 		slot3.clear_item()
 
-		PlayerInventory.add_item(result, 1)
-		$Panel/ResultLabel.text = "Created: " + result.name
+		PlayerInventory.add_item(recipe.result, 1)
+		
+		# Discover recipe
+		GameState.discover_recipe(recipe)
+		
+		$Panel/ResultLabel.text = "Created: " + recipe.result.name
 
 	load_inventory()
 	update_ui()
@@ -128,7 +132,7 @@ func matches_recipe(input_items: Array, recipe: Recipe) -> bool:
 	return input_map == recipe_map
 
 
-func get_result_from_slots() -> Item:
+func get_matching_recipe() -> Recipe:
 	var items: Array[Item] = []
 	
 	if slot1.item: items.append(slot1.item)
@@ -137,7 +141,7 @@ func get_result_from_slots() -> Item:
 
 	for recipe in recipe_list:
 		if matches_recipe(items, recipe):
-			return recipe.result
+			return recipe
 	
 	return null
 

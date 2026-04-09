@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bn4jv8l2mwhem"]
+
+[ext_resource type="Texture2D" uid="uid://bcwyv4c8ak0u6" path="res://assets/inventory_slot_test.png" id="1_biitc"]
+[ext_resource type="Script" uid="uid://c84e4l8kb4qgs" path="res://ui/recipe_book/recipe_row.gd" id="1_favm3"]
+[ext_resource type="Texture2D" uid="uid://dpx8bwp842y7m" path="res://assets/ui/plus.png" id="3_je33t"]
+[ext_resource type="Texture2D" uid="uid://dqrfxuvopcilx" path="res://assets/ui/equals.png" id="4_0hspc"]
+
+[node name="RecipeRow" type="HBoxContainer" unique_id=1569950790]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -100.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_favm3")
+
+[node name="Ingredient1" type="TextureRect" parent="." unique_id=314383269]
+layout_mode = 2
+texture = ExtResource("1_biitc")
+stretch_mode = 2
+
+[node name="Plus2" type="TextureRect" parent="." unique_id=1663494413]
+layout_mode = 2
+texture = ExtResource("3_je33t")
+
+[node name="Ingredient2" type="TextureRect" parent="." unique_id=426690839]
+layout_mode = 2
+texture = ExtResource("1_biitc")
+stretch_mode = 2
+
+[node name="Plus3" type="TextureRect" parent="." unique_id=1938627657]
+layout_mode = 2
+texture = ExtResource("3_je33t")
+
+[node name="Ingredient3" type="TextureRect" parent="." unique_id=2146748719]
+layout_mode = 2
+texture = ExtResource("1_biitc")
+stretch_mode = 2
+
+[node name="Equals" type="TextureRect" parent="." unique_id=156699666]
+layout_mode = 2
+texture = ExtResource("4_0hspc")
+
+[node name="Result" type="TextureRect" parent="." unique_id=831792935]
+layout_mode = 2
+texture = ExtResource("1_biitc")
+stretch_mode = 2

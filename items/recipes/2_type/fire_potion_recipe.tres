@@ -17,6 +17,7 @@ metadata/_custom_type_script = "uid://bsj305oo16mvm"
 [resource]
 script = ExtResource("5_qyjcu")
 recipe_name = "Fire Potion"
+recipe_id = "fire_potion"
 ingredients = Array[ExtResource("1_rnfko")]([SubResource("Resource_l4ur0"), ExtResource("3_yw1dy")])
 result = ExtResource("4_mppea")
 metadata/_custom_type_script = "uid://ciee7sgvou518"
