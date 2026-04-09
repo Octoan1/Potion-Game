@@ -34,10 +34,17 @@ respawn_time = 5.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1679405059]
 
-[node name="TextureRect" type="ColorRect" parent="CanvasLayer" unique_id=705881972]
+[node name="Darkness" type="ColorRect" parent="CanvasLayer" unique_id=705881972]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.03137255, 0.043137256, 0.050980393, 0.88235295)
+color = Color(0.03137255, 0.043137256, 0.050980393, 0.9490196)
+
+[node name="Label" type="Label" parent="." unique_id=911004875]
+offset_left = -78.0
+offset_top = -3.0
+offset_right = -23.0
+offset_bottom = 20.0
+text = "<- door"

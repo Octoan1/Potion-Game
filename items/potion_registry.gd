@@ -3,6 +3,7 @@ class_name PotionRegistry
 
 const HealEffect = preload("res://items/effects/heal_effect.gd")
 const SpeedEffect = preload("res://items/effects/speed_effect.gd")
+const LightEffect = preload("res://items/effects/light_effect.gd")
 
 static func get_effects_for(potion_id: String) -> Array:
 	var out: Array = []
@@ -25,8 +26,9 @@ static func get_effects_for(potion_id: String) -> Array:
 			out.append(h2)
 			out.append(s2)
 		"light_potion":
-			# placeholder - no effects yet
-			pass
+			var l = LightEffect.new()
+			l.grant_upgrade = true
+			out.append(l)
 		"fire_potion":
 			# can implement damage-over-time or other behavior later
 			pass
