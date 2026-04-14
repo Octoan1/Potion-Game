@@ -2,20 +2,25 @@
 
 [ext_resource type="Script" uid="uid://hu3n6phnaxg2" path="res://entities/objects/door/door.gd" id="1_b2uvk"]
 [ext_resource type="Texture2D" uid="uid://cvee6wk5o04mh" path="res://assets/test.png" id="1_bulvb"]
+[ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="2_sdjg2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b2uvk"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdjg2"]
 
-[node name="Door" type="Node2D" unique_id=1685542594]
+[node name="Door" type="StaticBody2D" unique_id=1104737495 groups=["doors"]]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_b2uvk")
+
+[node name="Interactable" type="Node" parent="." unique_id=233759913]
+script = ExtResource("2_sdjg2")
+metadata/_custom_type_script = "uid://bw0jtgebb15w5"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1480509697]
 texture = ExtResource("1_bulvb")
 region_enabled = true
 region_rect = Rect2(0, 16, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=197627484]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265736451]
+shape = SubResource("CircleShape2D_sdjg2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=224739539]
-shape = SubResource("CircleShape2D_b2uvk")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

@@ -31,18 +31,20 @@ position = Vector2(516, -238)
 scale = Vector2(1, 0.55771065)
 required_item = ExtResource("3_kr4nc")
 
-[node name="Door" parent="." unique_id=1685542594 node_paths=PackedStringArray("spawn_point") instance=ExtResource("2_isq0c")]
+[node name="Door" parent="." unique_id=1685542594 instance=ExtResource("2_isq0c")]
 position = Vector2(-89, 8)
 target_scene = "res://levels/house.tscn"
-spawn_point = NodePath("Marker2D")
+target_door_id = "house_exit"
+door_id = "house_entrance"
 
 [node name="Marker2D" type="Marker2D" parent="Door" unique_id=761553435]
 position = Vector2(-16, 17)
 
-[node name="Door2" parent="." unique_id=309437643 node_paths=PackedStringArray("spawn_point") instance=ExtResource("2_isq0c")]
+[node name="Door2" parent="." unique_id=309437643 instance=ExtResource("2_isq0c")]
 position = Vector2(347, 388)
 target_scene = "res://levels/cave.tscn"
-spawn_point = NodePath("Marker2D")
+target_door_id = "cave_exit"
+door_id = "cave_entrance"
 
 [node name="Marker2D" type="Marker2D" parent="Door2" unique_id=698272598]
 position = Vector2(-24, 1)
