@@ -7,4 +7,4 @@ signal interacted
 
 func interact() -> void:
 	interacted.emit()
-	print("Interactable Component: interacted with ", self.get_parent().name)
+	#print("Interactable Component: interacted with ", self.get_parent().name)

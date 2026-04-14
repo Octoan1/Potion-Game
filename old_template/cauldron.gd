@@ -24,7 +24,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.is_pressed() and event.keycode == KEY_F and not active and player_next_to:
-			print("used cauldron")
+			#print("used cauldron")
 			cauldron_activate.emit()
 			active = true
 		elif event.is_pressed() and (event.keycode == KEY_F or event.keycode == KEY_ESCAPE) and active:

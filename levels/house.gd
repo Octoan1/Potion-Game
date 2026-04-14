@@ -7,5 +7,5 @@ func _ready() -> void:
 	GameState.got_upgrade.connect(upgrade)
 	
 func upgrade() -> void:
-	print(GameState.friends_upgrade)
+	#print(GameState.friends_upgrade)
 	$Friends.visible = GameState.friends_upgrade

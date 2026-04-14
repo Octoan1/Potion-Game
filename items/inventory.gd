@@ -7,7 +7,6 @@ var debug: bool = false
 var drinking: bool = true
 
 var items: Dictionary[Item, int] = {}
-const potion_registry = preload("res://items/potion_registry.gd")
 
 func add_item(item: Item, amount: int = 1) -> void:
 	if item in items:
@@ -38,16 +37,10 @@ func use_item(item: Item) -> void:
 	if item.type != Item.ItemType.POTION:
 		return
 
-	# Resolve effects for this potion (registry-based)
-	var effects: Array = []
-	if item.id != "":
-		effects = PotionRegistry.get_effects_for(item.id)
+	var player: Player = get_tree().get_nodes_in_group("Player")[0]
 
-	# Apply each effect (effects may be resources that perform their own timers)
-	@warning_ignore("untyped_declaration")
-	for effect in effects:
-		if effect and effect.has_method("apply"):
-			effect.apply()
+	for effect in item.effects:
+		if effect:
+			effect.apply(player)
 
-	# Remove the consumed potion
 	remove_item(item, 1)

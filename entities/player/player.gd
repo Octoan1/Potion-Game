@@ -8,11 +8,13 @@ class_name Player
 @export var inventory_ui: Control
 
 @export_category("Movement Modifiers")
-@export var max_speed: float = 200.0
-@export var acceleration: float = 2000.0
+@export var max_speed: float = 150.0
+var original_max_speed: float = max_speed
+@export var acceleration: float = 1700.0
 @export var friction: float = 1700.0
 
-
+@export_category("Health")
+@export var health: float = 100.0
 
 func _physics_process(delta: float) -> void:
 	var input := input_controller.get_input()
@@ -64,8 +66,8 @@ func try_interact() -> void:
 			
 	var closest: Node2D = get_closest_interactable()
 	if not closest: return
-	print("Closet: ", closest)
-	print("Closest parent: ", closest.get_parent())
+	#print("Closet: ", closest)
+	#print("Closest parent: ", closest.get_parent())
 	
 	# interact
 	var interactable: Interactable =	 closest.get_node("Interactable")
@@ -83,7 +85,7 @@ func get_closest_interactable() -> Node2D:
 		
 		var distance: float = self.global_position.distance_to(body.global_position)
 		
-		if closest: print("Curr Closest: ", closest.name)
+		#if closest: print("Curr Closest: ", closest.name)
 		if closest == null or distance < closest_dist:
 			#closest = body.get_node("Interactable")
 			closest = body
@@ -91,5 +93,17 @@ func get_closest_interactable() -> Node2D:
 	
 	return closest
 		
+# ===== POTION EFFECT HANDLING =====
+func heal(amount: int) -> void:
+	health += amount
+
+func apply_speed_boost(amount: float, duration: float) -> void:
+	max_speed *= amount
+	
+	await get_tree().create_timer(duration).timeout
+	
+	max_speed /= amount
+	if max_speed < original_max_speed:
+		max_speed = original_max_speed
 			
 		

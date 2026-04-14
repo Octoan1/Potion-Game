@@ -1,7 +1,20 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://m7w2i5qdf11x"]
 
 [ext_resource type="Texture2D" uid="uid://ctfff3p1jclew" path="res://assets/super potion.png" id="1_lamiv"]
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_wtuwn"]
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_0qd4f"]
+[ext_resource type="Script" uid="uid://dwqqpn5co2xck" path="res://items/effects/heal_effect.gd" id="2_yma66"]
+[ext_resource type="Script" uid="uid://o8wwu67eu27p" path="res://items/effects/speed_effect.gd" id="3_u6fj8"]
+
+[sub_resource type="Resource" id="Resource_3pcmb"]
+script = ExtResource("2_yma66")
+amount = 50
+metadata/_custom_type_script = "uid://dwqqpn5co2xck"
+
+[sub_resource type="Resource" id="Resource_1yh76"]
+script = ExtResource("3_u6fj8")
+speed_boost = 200.0
+metadata/_custom_type_script = "uid://o8wwu67eu27p"
 
 [resource]
 script = ExtResource("2_0qd4f")
@@ -9,4 +22,5 @@ name = "Super Potion"
 icon = ExtResource("1_lamiv")
 type = 1
 id = "super_potion"
+effects = Array[ExtResource("1_wtuwn")]([SubResource("Resource_3pcmb"), SubResource("Resource_1yh76")])
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

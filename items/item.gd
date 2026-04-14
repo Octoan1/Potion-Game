@@ -11,5 +11,5 @@ enum ItemType {
 	INGREDIENT,
 	POTION,
 }
-#@export var stackable: bool = true
-#@export var max_stack: int = 99
+
+@export var effects: Array[PotionEffect]

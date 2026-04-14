@@ -4,6 +4,7 @@ extends Node
 # ===== GOLD & SHOP UPGRADES =====
 
 signal update_gold(curr_gold: int)
+@warning_ignore("unused_signal")
 signal got_upgrade
 
 var gold: int = 0

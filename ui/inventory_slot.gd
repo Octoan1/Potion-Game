@@ -38,7 +38,7 @@ func _gui_input(event: InputEvent) -> void:
 			item_clicked.emit(item)
 			
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
-		print("aljsefoiaje")
+		#print("Tried to use item: ", item)
 		if item != null and PlayerInventory.drinking:
 			PlayerInventory.use_item(item)
 			

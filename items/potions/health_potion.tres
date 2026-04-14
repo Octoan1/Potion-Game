@@ -1,7 +1,13 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://dm6yarqb04u28"]
 
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_0kaec"]
 [ext_resource type="Texture2D" uid="uid://bpcogahye6ipc" path="res://assets/health potion.png" id="1_r414l"]
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_7sjbl"]
+[ext_resource type="Script" uid="uid://dwqqpn5co2xck" path="res://items/effects/heal_effect.gd" id="2_q078c"]
+
+[sub_resource type="Resource" id="Resource_45db6"]
+script = ExtResource("2_q078c")
+metadata/_custom_type_script = "uid://dwqqpn5co2xck"
 
 [resource]
 script = ExtResource("2_7sjbl")
@@ -9,4 +15,5 @@ name = "Health Potion"
 icon = ExtResource("1_r414l")
 type = 1
 id = "health_potion"
+effects = Array[ExtResource("1_0kaec")]([SubResource("Resource_45db6")])
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

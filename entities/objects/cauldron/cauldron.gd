@@ -7,7 +7,7 @@ var cauldron_ui: Control
 
 
 func activate_cauldron() -> void:
-	print("hia")
+	#print("hia")
 	open_ui()
 
 func open_ui() -> void:
