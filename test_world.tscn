@@ -5,11 +5,6 @@
 
 [node name="TestWorld" type="Node2D" unique_id=1068766747]
 
-[node name="PlayerSpriteExample" type="Sprite2D" parent="." unique_id=2077687474]
-texture = ExtResource("2_gy3sr")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
 [node name="base" type="Node2D" parent="." unique_id=1386633021]
 
 [node name="base" type="TileMapLayer" parent="base" unique_id=1554643175]
@@ -98,3 +93,9 @@ offset_top = -239.0
 offset_right = 685.0
 offset_bottom = -216.0
 text = "cave"
+
+[node name="PlayerSpriteExample" type="Sprite2D" parent="." unique_id=2077687474]
+position = Vector2(86, 19)
+texture = ExtResource("2_gy3sr")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
