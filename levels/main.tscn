@@ -63,6 +63,6 @@ z_index = 1
 [node name="RecipeBookUI" parent="CanvasLayer" unique_id=1331740910 instance=ExtResource("7_6et1j")]
 visible = false
 
-[node name="Resetter" type="Node" parent="." unique_id=533554427]
+[node name="DebuggerTool" type="Node" parent="." unique_id=533554427]
 process_mode = 3
 script = ExtResource("6_5k4jt")

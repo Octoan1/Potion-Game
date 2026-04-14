@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cxp0jfue8lyds"]
+
+[ext_resource type="Script" uid="uid://dk3lhq7b567ty" path="res://entities/player/potion_effects/burn_area.gd" id="1_40u5t"]
+[ext_resource type="Texture2D" uid="uid://dlfloewmrj8vm" path="res://assets/burn_area_placeholder.png" id="1_ad8s2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o0vke"]
+radius = 32.06244
+
+[node name="BurnArea" type="Area2D" unique_id=1048013575]
+collision_layer = 0
+script = ExtResource("1_40u5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1111937047]
+texture = ExtResource("1_ad8s2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=798929820]
+shape = SubResource("CircleShape2D_o0vke")
+debug_color = Color(0.8220609, 0.39941418, 0.10566821, 0.41960785)
+
+[node name="FireLastTimer" type="Timer" parent="." unique_id=637309702]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="FireLastTimer" to="." method="_on_fire_last_timer_timeout"]

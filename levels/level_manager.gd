@@ -36,3 +36,4 @@ func place_player() -> void:
 		if door.door_id == next_door_id:
 			player.global_position = door.global_position
 			break
+			

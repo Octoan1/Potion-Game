@@ -16,6 +16,10 @@ var original_max_speed: float = max_speed
 @export_category("Health")
 @export var health: float = 100.0
 
+@export_category("Potion Effects")
+@onready var stationary_potion_effects_container: Node = $StatPotionEffectsContainer
+@export var burn_area: PackedScene
+
 func _physics_process(delta: float) -> void:
 	var input := input_controller.get_input()
 	
@@ -105,5 +109,11 @@ func apply_speed_boost(amount: float, duration: float) -> void:
 	max_speed /= amount
 	if max_speed < original_max_speed:
 		max_speed = original_max_speed
+
+func burn(radius: float) -> void:
+	var new_burn_area: Area2D = burn_area.instantiate()
+	new_burn_area.global_position = self.global_position
+	
+	stationary_potion_effects_container.add_child(new_burn_area)
 			
 		
