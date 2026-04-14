@@ -1,10 +1,13 @@
 extends Node2D
 
 @export var target_scene : String
-@export var spawn_point : Marker2D
+@export var target_door_id : String   
+@export var door_id : String         
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		#GameManager.spawn_point = spawn_point
-		var level_manager: Node = get_tree().root.get_node("Main").get_node("LevelManager")
-		level_manager.call_deferred("load_level", target_scene)
+func _on_interactable_interacted() -> void:
+	var level_manager: Node = get_tree().root.get_node("Main").get_node("LevelManager")
+	
+	# store which door we want to arrive at
+	level_manager.next_door_id = target_door_id
+	
+	level_manager.call_deferred("load_level", target_scene)
