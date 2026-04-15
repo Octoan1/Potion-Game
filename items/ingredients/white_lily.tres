@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://d3si3tnkxf1vg"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_4csbq"]
+[ext_resource type="Texture2D" uid="uid://bcxk8yxmg8niq" path="res://assets/white_lily_placeholder.png" id="2_28ofw"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_rco1h"]
+
+[resource]
+script = ExtResource("2_rco1h")
+name = "White Lily"
+icon = ExtResource("2_28ofw")
+id = "white_lily"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

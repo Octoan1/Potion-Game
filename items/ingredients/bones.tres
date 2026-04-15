@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bbxhath2ufk1b"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_uubfj"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_7ea4i"]
+[ext_resource type="Texture2D" uid="uid://bn5ca0we387e7" path="res://assets/bones_placeholder.png" id="2_8f135"]
+
+[resource]
+script = ExtResource("2_7ea4i")
+name = "Bones"
+icon = ExtResource("2_8f135")
+id = "bones"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

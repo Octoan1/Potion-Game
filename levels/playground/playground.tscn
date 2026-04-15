@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dx6nsn71kn58c" path="res://entities/objects/apple_tree/wood.tscn" id="8_uqx1c"]
 [ext_resource type="PackedScene" uid="uid://drypmt4ns83cs" path="res://entities/objects/wall/bramble.tscn" id="9_ic5gw"]
 [ext_resource type="PackedScene" uid="uid://dfmb46i8lkn1m" path="res://entities/objects/eye_plant/eye_plant.tscn" id="9_jnc0c"]
+[ext_resource type="PackedScene" uid="uid://br4j3dhflxfek" path="res://entities/ingredient_sources/abondoned_well/spring_water_source.tscn" id="10_5aibr"]
 [ext_resource type="PackedScene" uid="uid://bt7tael7u8tyw" path="res://entities/objects/cauldron/cauldron.tscn" id="10_qukmk"]
 [ext_resource type="PackedScene" uid="uid://cxppfnq53ngsf" path="res://entities/objects/wall/water.tscn" id="11_hq5yy"]
 
@@ -65,6 +66,9 @@ respawn_time = 0.1
 position = Vector2(-165, 65)
 respawn_time = 0.1
 
+[node name="SpringWaterSource" parent="IngContainer" unique_id=2094764493 instance=ExtResource("10_5aibr")]
+position = Vector2(-68, -35)
+
 [node name="Brambles" type="Node2D" parent="." unique_id=565983660]
 position = Vector2(140, 47)
 
@@ -116,41 +120,43 @@ position = Vector2(-14, -125)
 [node name="Bramble16" parent="Brambles" unique_id=1746454661 instance=ExtResource("9_ic5gw")]
 position = Vector2(14, -125)
 
-[node name="Water" parent="." unique_id=2095682866 instance=ExtResource("11_hq5yy")]
+[node name="Water" type="Node2D" parent="." unique_id=2045286307]
+
+[node name="Water" parent="Water" unique_id=2095682866 instance=ExtResource("11_hq5yy")]
 position = Vector2(-54, -95)
 
-[node name="Water2" parent="." unique_id=107710413 instance=ExtResource("11_hq5yy")]
+[node name="Water2" parent="Water" unique_id=107710413 instance=ExtResource("11_hq5yy")]
 position = Vector2(-21, -95)
 push_direction = Vector2(0, 1)
 
-[node name="Water3" parent="." unique_id=813662202 instance=ExtResource("11_hq5yy")]
+[node name="Water3" parent="Water" unique_id=813662202 instance=ExtResource("11_hq5yy")]
 position = Vector2(-21, -111)
 push_direction = Vector2(0, 1)
 
-[node name="Water4" parent="." unique_id=1510908702 instance=ExtResource("11_hq5yy")]
+[node name="Water4" parent="Water" unique_id=1510908702 instance=ExtResource("11_hq5yy")]
 position = Vector2(-21, -127)
 push_direction = Vector2(0, 1)
 
-[node name="Water5" parent="." unique_id=1089300845 instance=ExtResource("11_hq5yy")]
+[node name="Water5" parent="Water" unique_id=1089300845 instance=ExtResource("11_hq5yy")]
 position = Vector2(-5, -95)
 push_direction = Vector2(0, 1)
 
-[node name="Water6" parent="." unique_id=1884118778 instance=ExtResource("11_hq5yy")]
+[node name="Water6" parent="Water" unique_id=1884118778 instance=ExtResource("11_hq5yy")]
 position = Vector2(-5, -111)
 push_direction = Vector2(0, 1)
 
-[node name="Water7" parent="." unique_id=1101608942 instance=ExtResource("11_hq5yy")]
+[node name="Water7" parent="Water" unique_id=1101608942 instance=ExtResource("11_hq5yy")]
 position = Vector2(-5, -127)
 push_direction = Vector2(0, 1)
 
-[node name="Water8" parent="." unique_id=979676295 instance=ExtResource("11_hq5yy")]
+[node name="Water8" parent="Water" unique_id=979676295 instance=ExtResource("11_hq5yy")]
 position = Vector2(11, -95)
 push_direction = Vector2(0, 1)
 
-[node name="Water9" parent="." unique_id=143552769 instance=ExtResource("11_hq5yy")]
+[node name="Water9" parent="Water" unique_id=143552769 instance=ExtResource("11_hq5yy")]
 position = Vector2(11, -111)
 push_direction = Vector2(0, 1)
 
-[node name="Water10" parent="." unique_id=2072383078 instance=ExtResource("11_hq5yy")]
+[node name="Water10" parent="Water" unique_id=2072383078 instance=ExtResource("11_hq5yy")]
 position = Vector2(11, -127)
 push_direction = Vector2(0, 1)

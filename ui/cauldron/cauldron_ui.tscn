@@ -6,8 +6,8 @@
 [ext_resource type="Resource" uid="uid://cwy1oc4q17xso" path="res://items/recipes/2_type/speed_potion_recipe.tres" id="4_tupx3"]
 [ext_resource type="Resource" uid="uid://k521fjg8i14l" path="res://items/recipes/2_type/health_potion_recipe.tres" id="5_2qsyq"]
 [ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="5_hrby0"]
-[ext_resource type="Resource" uid="uid://04dutlcxaxlb" path="res://items/recipes/3_type/super_potion_recipe.tres" id="6_1uavu"]
-[ext_resource type="Resource" uid="uid://xqiyap3lj0m3" path="res://items/recipes/3_type/light_potion_recipe.tres" id="7_2qsyq"]
+[ext_resource type="Resource" uid="uid://04dutlcxaxlb" path="res://items/recipes/3_type/old/super_potion_recipe.tres" id="6_1uavu"]
+[ext_resource type="Resource" uid="uid://xqiyap3lj0m3" path="res://items/recipes/3_type/old/light_potion_recipe.tres" id="7_2qsyq"]
 [ext_resource type="Texture2D" uid="uid://c1kvinxlfbyc8" path="res://assets/brewing area.png" id="10_1uavu"]
 
 [node name="CauldronUI" type="Control" unique_id=698506239]

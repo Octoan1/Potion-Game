@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ukymvtqw220e"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_06isd"]
+[ext_resource type="Texture2D" uid="uid://bt4yp3lmrfvg0" path="res://assets/ectoplasm_placeholder.png" id="2_0y686"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_mqguh"]
+
+[resource]
+script = ExtResource("2_mqguh")
+name = "Ectoplasm"
+icon = ExtResource("2_0y686")
+id = "ectoplasm"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bl53jregs6s1c"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_1t3de"]
+[ext_resource type="Texture2D" uid="uid://c1neawxans5ul" path="res://assets/luminescent_fungus_placeholder.png" id="2_2jm8t"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_ekoae"]
+
+[resource]
+script = ExtResource("2_ekoae")
+name = "Luminescent Fungus"
+icon = ExtResource("2_2jm8t")
+id = "luminescent_fungus"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dto4jclwuu0rh"]
+
+[ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/harvestable.gd" id="1_wvco7"]
+[ext_resource type="Resource" uid="uid://c7fubxo5e4tfv" path="res://items/ingredients/lichen.tres" id="2_wvco7"]
+[ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="3_xr3fs"]
+[ext_resource type="Texture2D" uid="uid://jk45prbur3ni" path="res://assets/lichen_placeholder.png" id="4_wvco7"]
+[ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_ui08k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_478de"]
+radius = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_478de"]
+size = Vector2(9, 12)
+
+[node name="LichenSource" type="StaticBody2D" unique_id=2094764493]
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("1_wvco7")
+item = ExtResource("2_wvco7")
+amount = 1
+
+[node name="Interactable" type="Node" parent="." unique_id=1953840483]
+script = ExtResource("3_xr3fs")
+metadata/_custom_type_script = "uid://bw0jtgebb15w5"
+
+[node name="BaseSprite" type="Sprite2D" parent="." unique_id=177816685]
+position = Vector2(0, -8)
+texture = ExtResource("4_wvco7")
+
+[node name="HarvestedSprite" type="Sprite2D" parent="." unique_id=1752622817]
+visible = false
+modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
+position = Vector2(0, -8)
+texture = ExtResource("4_wvco7")
+
+[node name="CollectableRadius" type="Area2D" parent="." unique_id=1398148609]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableRadius" unique_id=680156109]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_478de")
+debug_color = Color(0, 0.6392157, 0.3764706, 0.05490196)
+
+[node name="Text" type="Sprite2D" parent="." unique_id=1905620591]
+z_index = 1
+position = Vector2(5, 11)
+texture = ExtResource("5_ui08k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=393281659]
+position = Vector2(0.5, -8)
+shape = SubResource("RectangleShape2D_478de")
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="body_entered" from="CollectableRadius" to="." method="_on_collectable_radius_body_entered"]
+[connection signal="body_exited" from="CollectableRadius" to="." method="_on_collectable_radius_body_exited"]

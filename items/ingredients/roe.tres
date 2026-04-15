@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bbnalqsvybia"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_5gjm7"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_envqf"]
+[ext_resource type="Texture2D" uid="uid://dn655qaoxdv1y" path="res://assets/roe_placeholder.png" id="2_hdj3g"]
+
+[resource]
+script = ExtResource("2_envqf")
+name = "Roe"
+icon = ExtResource("2_hdj3g")
+id = "roe"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

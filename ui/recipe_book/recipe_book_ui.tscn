@@ -5,9 +5,9 @@
 [ext_resource type="Resource" uid="uid://bhb331tvw65ym" path="res://items/recipes/2_type/fire_potion_recipe.tres" id="3_8ek7c"]
 [ext_resource type="Resource" uid="uid://cwy1oc4q17xso" path="res://items/recipes/2_type/speed_potion_recipe.tres" id="4_hhedp"]
 [ext_resource type="Resource" uid="uid://k521fjg8i14l" path="res://items/recipes/2_type/health_potion_recipe.tres" id="5_cy2nt"]
-[ext_resource type="Resource" uid="uid://04dutlcxaxlb" path="res://items/recipes/3_type/super_potion_recipe.tres" id="6_qp74e"]
+[ext_resource type="Resource" uid="uid://04dutlcxaxlb" path="res://items/recipes/3_type/old/super_potion_recipe.tres" id="6_qp74e"]
 [ext_resource type="PackedScene" uid="uid://bn4jv8l2mwhem" path="res://ui/recipe_book/recipe_row.tscn" id="7_8ek7c"]
-[ext_resource type="Resource" uid="uid://xqiyap3lj0m3" path="res://items/recipes/3_type/light_potion_recipe.tres" id="7_hhedp"]
+[ext_resource type="Resource" uid="uid://xqiyap3lj0m3" path="res://items/recipes/3_type/old/light_potion_recipe.tres" id="7_hhedp"]
 [ext_resource type="Texture2D" uid="uid://5s03jl2vk7q3" path="res://assets/ui/recipe_book_temp.png" id="8_8ek7c"]
 
 [node name="RecipeBookUI" type="Control" unique_id=1331740910]

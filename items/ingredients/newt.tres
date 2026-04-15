@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b6l531hnwcrwe"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_jfkxs"]
+[ext_resource type="Texture2D" uid="uid://blmg73n3lw522" path="res://assets/newt_placeholder.png" id="2_aqvk2"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_otn6e"]
+
+[resource]
+script = ExtResource("2_otn6e")
+name = "Newt"
+icon = ExtResource("2_aqvk2")
+id = "newt"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

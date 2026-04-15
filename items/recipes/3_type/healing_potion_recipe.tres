@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://dabxifjlt1cg3"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_e3d1n"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="2_h10uf"]
+[ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="2_noyqh"]
+[ext_resource type="Resource" uid="uid://kis42q4vodd7" path="res://items/ingredients/root.tres" id="3_ntjci"]
+[ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="4_t4t4c"]
+[ext_resource type="Resource" uid="uid://dm6yarqb04u28" path="res://items/potions/health_potion.tres" id="5_4y3qj"]
+
+[resource]
+script = ExtResource("2_h10uf")
+recipe_name = "Healing Potion Recipe"
+recipe_id = "healing_potion_recipe"
+ingredients = Array[ExtResource("1_e3d1n")]([ExtResource("2_noyqh"), ExtResource("3_ntjci"), ExtResource("4_t4t4c")])
+result = ExtResource("5_4y3qj")
+metadata/_custom_type_script = "uid://ciee7sgvou518"
