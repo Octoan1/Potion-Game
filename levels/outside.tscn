@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b75e3243ppv2y" path="res://entities/objects/wall/breakable_wall.tscn" id="2_ihcyc"]
 [ext_resource type="PackedScene" uid="uid://ihsppejsfafh" path="res://entities/objects/door/door.tscn" id="2_isq0c"]
 [ext_resource type="Resource" uid="uid://m7w2i5qdf11x" path="res://items/potions/super_potion.tres" id="3_kr4nc"]
-[ext_resource type="PackedScene" uid="uid://dxop7ilgxbp60" path="res://entities/objects/bug/bug.tscn" id="4_upk2x"]
-[ext_resource type="PackedScene" uid="uid://cnehq1ntvmk25" path="res://entities/objects/mushrooms/mushroom.tscn" id="5_c6eir"]
-[ext_resource type="PackedScene" uid="uid://dx6nsn71kn58c" path="res://entities/objects/apple_tree/wood.tscn" id="5_ihcyc"]
+[ext_resource type="PackedScene" uid="uid://dxop7ilgxbp60" path="res://entities/ingredient_sources/1_starting_area/beetle_source.tscn" id="4_upk2x"]
+[ext_resource type="PackedScene" uid="uid://cnehq1ntvmk25" path="res://entities/ingredient_sources/1_starting_area/mushroom_source.tscn" id="5_c6eir"]
+[ext_resource type="PackedScene" uid="uid://dx6nsn71kn58c" path="res://entities/ingredient_sources/great_oak/wood.tscn" id="5_ihcyc"]
 [ext_resource type="PackedScene" uid="uid://dfmb46i8lkn1m" path="res://entities/objects/eye_plant/eye_plant.tscn" id="9_5vovx"]
 
 [node name="Outside" type="Node2D" unique_id=1178197563]

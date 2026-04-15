@@ -4,14 +4,27 @@
 [ext_resource type="PackedScene" uid="uid://ihsppejsfafh" path="res://entities/objects/door/door.tscn" id="2_qukmk"]
 [ext_resource type="PackedScene" uid="uid://b75e3243ppv2y" path="res://entities/objects/wall/breakable_wall.tscn" id="3_wwtle"]
 [ext_resource type="Resource" uid="uid://m7w2i5qdf11x" path="res://items/potions/super_potion.tres" id="4_223gx"]
-[ext_resource type="PackedScene" uid="uid://dxop7ilgxbp60" path="res://entities/objects/bug/bug.tscn" id="6_d6xy2"]
-[ext_resource type="PackedScene" uid="uid://cnehq1ntvmk25" path="res://entities/objects/mushrooms/mushroom.tscn" id="7_dgk06"]
-[ext_resource type="PackedScene" uid="uid://dx6nsn71kn58c" path="res://entities/objects/apple_tree/wood.tscn" id="8_uqx1c"]
+[ext_resource type="PackedScene" uid="uid://dxop7ilgxbp60" path="res://entities/ingredient_sources/1_starting_area/beetle_source.tscn" id="6_d6xy2"]
+[ext_resource type="PackedScene" uid="uid://cnehq1ntvmk25" path="res://entities/ingredient_sources/1_starting_area/mushroom_source.tscn" id="7_dgk06"]
+[ext_resource type="PackedScene" uid="uid://dpt74j45tnj5i" path="res://entities/ingredient_sources/1_starting_area/leaf_source.tscn" id="8_ul8to"]
+[ext_resource type="PackedScene" uid="uid://dx6nsn71kn58c" path="res://entities/ingredient_sources/great_oak/wood.tscn" id="8_uqx1c"]
 [ext_resource type="PackedScene" uid="uid://drypmt4ns83cs" path="res://entities/objects/wall/bramble.tscn" id="9_ic5gw"]
 [ext_resource type="PackedScene" uid="uid://dfmb46i8lkn1m" path="res://entities/objects/eye_plant/eye_plant.tscn" id="9_jnc0c"]
 [ext_resource type="PackedScene" uid="uid://br4j3dhflxfek" path="res://entities/ingredient_sources/abondoned_well/spring_water_source.tscn" id="10_5aibr"]
 [ext_resource type="PackedScene" uid="uid://bt7tael7u8tyw" path="res://entities/objects/cauldron/cauldron.tscn" id="10_qukmk"]
+[ext_resource type="PackedScene" uid="uid://dto4jclwuu0rh" path="res://entities/ingredient_sources/abondoned_well/lichen_source.tscn" id="10_xwm4a"]
 [ext_resource type="PackedScene" uid="uid://cxppfnq53ngsf" path="res://entities/objects/wall/water.tscn" id="11_hq5yy"]
+[ext_resource type="PackedScene" uid="uid://ciapkpcev7tv7" path="res://entities/ingredient_sources/abondoned_well/root_source.tscn" id="12_r15pc"]
+[ext_resource type="PackedScene" uid="uid://bfkg2qph2t7mc" path="res://entities/ingredient_sources/cave/cave_moss_source.tscn" id="13_mhrvg"]
+[ext_resource type="PackedScene" uid="uid://qhmnfd6ydyww" path="res://entities/ingredient_sources/cave/luminescent_fungus_source.tscn" id="14_bsima"]
+[ext_resource type="PackedScene" uid="uid://dtuhkjvksrvm" path="res://entities/ingredient_sources/cave/small_crystal_source.tscn" id="15_oojny"]
+[ext_resource type="PackedScene" uid="uid://bgmsabj0pdoao" path="res://entities/ingredient_sources/pond/cattail_source.tscn" id="16_bsima"]
+[ext_resource type="PackedScene" uid="uid://b5kc6ku45igp1" path="res://entities/ingredient_sources/pond/newt_source.tscn" id="17_72hmb"]
+[ext_resource type="PackedScene" uid="uid://c1vdxl0wnxnbe" path="res://entities/ingredient_sources/pond/roe_source.tscn" id="18_fcaqu"]
+[ext_resource type="PackedScene" uid="uid://jkkr8mcyhq2f" path="res://entities/ingredient_sources/haunted_woods/bones_source.tscn" id="19_mkcq8"]
+[ext_resource type="PackedScene" uid="uid://dtbn2yjdlf63h" path="res://entities/ingredient_sources/haunted_woods/ectoplasm_source.tscn" id="20_xn3bl"]
+[ext_resource type="PackedScene" uid="uid://q4s05vkv3r3a" path="res://entities/ingredient_sources/haunted_woods/nightshade_source.tscn" id="21_ul8to"]
+[ext_resource type="PackedScene" uid="uid://dt1vfurhe0byl" path="res://entities/ingredient_sources/great_oak/white_lily_source.tscn" id="22_xn3bl"]
 
 [node name="Playground" type="Node2D" unique_id=1178197563]
 
@@ -48,26 +61,107 @@ required_item = ExtResource("4_223gx")
 position = Vector2(-81, 3)
 
 [node name="IngContainer" type="Node2D" parent="." unique_id=2115450152]
-position = Vector2(38, -2)
+position = Vector2(5, 2)
 
-[node name="Mushroom" parent="IngContainer" unique_id=1902031807 instance=ExtResource("7_dgk06")]
-position = Vector2(-53, 25)
+[node name="StartingArea" type="Label" parent="IngContainer" unique_id=1985542903]
+offset_left = 78.0
+offset_top = 37.0
+offset_right = 152.0
+offset_bottom = 60.0
+text = "StartArea"
+
+[node name="Mushroom" parent="IngContainer/StartingArea" unique_id=1902031807 instance=ExtResource("7_dgk06")]
+position = Vector2(37, 41)
 respawn_time = 0.1
 
-[node name="Bug" parent="IngContainer" unique_id=660905390 instance=ExtResource("6_d6xy2")]
-position = Vector2(-78, 61)
+[node name="Bug" parent="IngContainer/StartingArea" unique_id=660905390 instance=ExtResource("6_d6xy2")]
+position = Vector2(36, 71)
 respawn_time = 0.1
 
-[node name="Wood" parent="IngContainer" unique_id=1972355215 instance=ExtResource("8_uqx1c")]
-position = Vector2(-186, 30)
+[node name="LeafSource" parent="IngContainer/StartingArea" unique_id=2094764493 instance=ExtResource("8_ul8to")]
+position = Vector2(36, 103)
+
+[node name="Wood" parent="IngContainer/StartingArea" unique_id=1972355215 instance=ExtResource("8_uqx1c")]
+position = Vector2(37, 137)
 respawn_time = 0.1
 
-[node name="EyePlant" parent="IngContainer" unique_id=1930945422 instance=ExtResource("9_jnc0c")]
-position = Vector2(-165, 65)
+[node name="EyePlant" parent="IngContainer/StartingArea" unique_id=1930945422 instance=ExtResource("9_jnc0c")]
+position = Vector2(37, 173)
 respawn_time = 0.1
 
-[node name="SpringWaterSource" parent="IngContainer" unique_id=2094764493 instance=ExtResource("10_5aibr")]
-position = Vector2(-68, -35)
+[node name="AbondonedWell" type="Label" parent="IngContainer" unique_id=186968595]
+offset_left = -13.0
+offset_top = 39.0
+offset_right = 123.0
+offset_bottom = 62.0
+text = "AbdWell"
+
+[node name="LichenSource" parent="IngContainer/AbondonedWell" unique_id=705981811 instance=ExtResource("10_xwm4a")]
+position = Vector2(32, 37)
+
+[node name="SpringWaterSource" parent="IngContainer/AbondonedWell" unique_id=458842904 instance=ExtResource("10_5aibr")]
+position = Vector2(32, 66)
+
+[node name="RootSource" parent="IngContainer/AbondonedWell" unique_id=1956633618 instance=ExtResource("12_r15pc")]
+position = Vector2(32, 95)
+
+[node name="Cave" type="Label" parent="IngContainer" unique_id=1810630218]
+offset_left = -74.0
+offset_top = 38.0
+offset_right = -34.0
+offset_bottom = 61.0
+text = "Cave"
+
+[node name="CaveMossSource" parent="IngContainer/Cave" unique_id=299219035 instance=ExtResource("13_mhrvg")]
+position = Vector2(19, 35)
+
+[node name="LuminescentFungusSource" parent="IngContainer/Cave" unique_id=196335716 instance=ExtResource("14_bsima")]
+position = Vector2(19, 62)
+
+[node name="SmallCrystalSource" parent="IngContainer/Cave" unique_id=602490696 instance=ExtResource("15_oojny")]
+position = Vector2(19, 89)
+
+[node name="Pond" type="Label" parent="IngContainer" unique_id=1802218681]
+offset_left = -140.0
+offset_top = 39.0
+offset_right = -100.0
+offset_bottom = 62.0
+text = "Pond"
+
+[node name="CattailSource" parent="IngContainer/Pond" unique_id=840865758 instance=ExtResource("16_bsima")]
+position = Vector2(20, 37)
+
+[node name="NewtSource" parent="IngContainer/Pond" unique_id=1224822767 instance=ExtResource("17_72hmb")]
+position = Vector2(19, 66)
+
+[node name="RoeSource" parent="IngContainer/Pond" unique_id=1444475321 instance=ExtResource("18_fcaqu")]
+position = Vector2(19, 96)
+
+[node name="HauntedWoods" type="Label" parent="IngContainer" unique_id=1484864874]
+offset_left = -225.0
+offset_top = 37.0
+offset_right = -160.0
+offset_bottom = 60.0
+text = "HWoods"
+
+[node name="BonesSource" parent="IngContainer/HauntedWoods" unique_id=1576724473 instance=ExtResource("19_mkcq8")]
+position = Vector2(35, 35)
+
+[node name="EctoplasmSource" parent="IngContainer/HauntedWoods" unique_id=209372972 instance=ExtResource("20_xn3bl")]
+position = Vector2(35, 68)
+
+[node name="NightshadeSource" parent="IngContainer/HauntedWoods" unique_id=1235620572 instance=ExtResource("21_ul8to")]
+position = Vector2(35, 97)
+
+[node name="GreatOak" type="Label" parent="IngContainer" unique_id=2113135754]
+offset_left = -289.0
+offset_top = 40.0
+offset_right = -246.0
+offset_bottom = 63.0
+text = "GOak"
+
+[node name="WhiteLilySource" parent="IngContainer/GreatOak" unique_id=1594282832 instance=ExtResource("22_xn3bl")]
+position = Vector2(21, 34)
 
 [node name="Brambles" type="Node2D" parent="." unique_id=565983660]
 position = Vector2(140, 47)

@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://dt1vfurhe0byl"]
+[gd_scene format=3 uid="uid://bgmsabj0pdoao"]
 
-[ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/harvestable.gd" id="1_kys51"]
-[ext_resource type="Resource" uid="uid://c7fubxo5e4tfv" path="res://items/ingredients/lichen.tres" id="2_t3rom"]
-[ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="3_pwas5"]
-[ext_resource type="Texture2D" uid="uid://jk45prbur3ni" path="res://assets/lichen_placeholder.png" id="4_b6bya"]
-[ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_yo57u"]
+[ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/harvestable.gd" id="1_e83jw"]
+[ext_resource type="Resource" uid="uid://cheql10orv8jv" path="res://items/ingredients/cattail.tres" id="2_e83jw"]
+[ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="3_q0l1u"]
+[ext_resource type="Texture2D" uid="uid://bs35jeollxo4t" path="res://assets/cattail_placeholder.png" id="4_75yvu"]
+[ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_36fyr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_478de"]
 radius = 18.0
@@ -12,26 +12,26 @@ radius = 18.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_478de"]
 size = Vector2(9, 12)
 
-[node name="LichenSource" type="StaticBody2D" unique_id=2094764493]
+[node name="CattailSource" type="StaticBody2D" unique_id=2094764493]
 collision_layer = 5
 collision_mask = 0
-script = ExtResource("1_kys51")
-item = ExtResource("2_t3rom")
+script = ExtResource("1_e83jw")
+item = ExtResource("2_e83jw")
 amount = 1
 
 [node name="Interactable" type="Node" parent="." unique_id=1953840483]
-script = ExtResource("3_pwas5")
+script = ExtResource("3_q0l1u")
 metadata/_custom_type_script = "uid://bw0jtgebb15w5"
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=177816685]
 position = Vector2(0, -8)
-texture = ExtResource("4_b6bya")
+texture = ExtResource("4_75yvu")
 
 [node name="HarvestedSprite" type="Sprite2D" parent="." unique_id=1752622817]
 visible = false
 modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
 position = Vector2(0, -8)
-texture = ExtResource("4_b6bya")
+texture = ExtResource("4_75yvu")
 
 [node name="CollectableRadius" type="Area2D" parent="." unique_id=1398148609]
 
@@ -43,7 +43,7 @@ debug_color = Color(0, 0.6392157, 0.3764706, 0.05490196)
 [node name="Text" type="Sprite2D" parent="." unique_id=1905620591]
 z_index = 1
 position = Vector2(5, 11)
-texture = ExtResource("5_yo57u")
+texture = ExtResource("5_36fyr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=393281659]
 position = Vector2(0.5, -8)
