@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_aixmo"]
 [ext_resource type="Texture2D" uid="uid://bvmrols8p84if" path="res://assets/mushrooms.png" id="1_dt5vi"]
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_mlexi"]
 
 [resource]
 script = ExtResource("1_aixmo")
 name = "Mushroom"
 icon = ExtResource("1_dt5vi")
-description = "testing"
+description = "A quaint little mushroom common in wooded areas, a staple in any respectable brewer’s ingredient pantry. When night falls, the faint luminescence of the white parts becomes apparent."
 id = "mushroom"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

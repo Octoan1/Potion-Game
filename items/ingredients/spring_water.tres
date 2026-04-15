@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://g5rn3sho0rpy"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_sd0o5"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_ksps3"]
+[ext_resource type="Texture2D" uid="uid://cpgasq15glh80" path="res://assets/spring_water_placeholder.png" id="2_myw43"]
+
+[resource]
+script = ExtResource("2_ksps3")
+name = "Spring Water"
+icon = ExtResource("2_myw43")
+description = "water from an abandoned well. The various mosses and fungi growing at the bottom seemed to have imbued it with the ability to soothe stomachaches. You know it didn’t always do that, you used to fetch it every day after all."
+id = "spring_water"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

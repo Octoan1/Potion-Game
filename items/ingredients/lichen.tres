@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c7fubxo5e4tfv"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_gscac"]
+[ext_resource type="Texture2D" uid="uid://jk45prbur3ni" path="res://assets/lichen_placeholder.png" id="2_ejbv0"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_qsu5f"]
+
+[resource]
+script = ExtResource("2_qsu5f")
+name = "Lichen"
+icon = ExtResource("2_ejbv0")
+id = "lichen"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

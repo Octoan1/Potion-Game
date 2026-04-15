@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dasle11tf6ihl"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_817mr"]
+[ext_resource type="Texture2D" uid="uid://cltxtwus716qm" path="res://assets/leaf_placeholder.png" id="2_85uax"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_mrnsc"]
+
+[resource]
+script = ExtResource("2_mrnsc")
+name = "Leaf"
+icon = ExtResource("2_85uax")
+description = "A small, furled leaf taken from the Ascor plant. A plant well-known by soldiers as well as brewers because when rubbed between the fingers, it enhances one’s dexterity and causes muscle tissue to heal faster."
+id = "leaf"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"
