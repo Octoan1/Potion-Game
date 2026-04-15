@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cxppfnq53ngsf"]
+
+[ext_resource type="Script" uid="uid://bt57pgg0jqpql" path="res://entities/objects/wall/water.gd" id="1_isais"]
+[ext_resource type="Texture2D" uid="uid://bgrnyhkda30py" path="res://assets/water_placeholder.png" id="2_wrnke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4q007"]
+size = Vector2(16, 16)
+
+[node name="Water" type="Area2D" unique_id=2095682866]
+script = ExtResource("1_isais")
+push_direction = null
+push_strength = 25.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1599389792]
+shape = SubResource("RectangleShape2D_4q007")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1781333960]
+texture = ExtResource("2_wrnke")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

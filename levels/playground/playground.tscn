@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://drypmt4ns83cs" path="res://entities/objects/wall/bramble.tscn" id="9_ic5gw"]
 [ext_resource type="PackedScene" uid="uid://dfmb46i8lkn1m" path="res://entities/objects/eye_plant/eye_plant.tscn" id="9_jnc0c"]
 [ext_resource type="PackedScene" uid="uid://bt7tael7u8tyw" path="res://entities/objects/cauldron/cauldron.tscn" id="10_qukmk"]
+[ext_resource type="PackedScene" uid="uid://cxppfnq53ngsf" path="res://entities/objects/wall/water.tscn" id="11_hq5yy"]
 
 [node name="Playground" type="Node2D" unique_id=1178197563]
 
@@ -23,6 +24,13 @@ position = Vector2(-146, -41)
 target_scene = "res://levels/playground/playground_cave.tscn"
 target_door_id = "cave_exit"
 door_id = "cave_entrance"
+
+[node name="Label" type="Label" parent="Door" unique_id=953085525]
+offset_left = -19.0
+offset_top = -29.0
+offset_right = 98.0
+offset_bottom = -6.0
+text = "cave"
 
 [node name="Marker2D" type="Marker2D" parent="Door" unique_id=2000545798]
 position = Vector2(0, 20)
@@ -57,60 +65,92 @@ respawn_time = 0.1
 position = Vector2(-165, 65)
 respawn_time = 0.1
 
-[node name="Node2D" type="Node2D" parent="." unique_id=565983660]
+[node name="Brambles" type="Node2D" parent="." unique_id=565983660]
 position = Vector2(140, 47)
 
-[node name="Bramble" parent="Node2D" unique_id=64385398 instance=ExtResource("9_ic5gw")]
+[node name="Bramble" parent="Brambles" unique_id=64385398 instance=ExtResource("9_ic5gw")]
 position = Vector2(-72, -46)
 
-[node name="Bramble2" parent="Node2D" unique_id=651804681 instance=ExtResource("9_ic5gw")]
+[node name="Bramble2" parent="Brambles" unique_id=651804681 instance=ExtResource("9_ic5gw")]
 position = Vector2(-44, -46)
 
-[node name="Bramble3" parent="Node2D" unique_id=48162905 instance=ExtResource("9_ic5gw")]
+[node name="Bramble3" parent="Brambles" unique_id=48162905 instance=ExtResource("9_ic5gw")]
 position = Vector2(-71, -73)
 
-[node name="Bramble4" parent="Node2D" unique_id=1002833585 instance=ExtResource("9_ic5gw")]
+[node name="Bramble4" parent="Brambles" unique_id=1002833585 instance=ExtResource("9_ic5gw")]
 position = Vector2(-43, -73)
 
-[node name="Bramble5" parent="Node2D" unique_id=7423020 instance=ExtResource("9_ic5gw")]
+[node name="Bramble5" parent="Brambles" unique_id=7423020 instance=ExtResource("9_ic5gw")]
 position = Vector2(-15, -45)
 
-[node name="Bramble6" parent="Node2D" unique_id=1787281058 instance=ExtResource("9_ic5gw")]
+[node name="Bramble6" parent="Brambles" unique_id=1787281058 instance=ExtResource("9_ic5gw")]
 position = Vector2(13, -45)
 
-[node name="Bramble7" parent="Node2D" unique_id=463445275 instance=ExtResource("9_ic5gw")]
+[node name="Bramble7" parent="Brambles" unique_id=463445275 instance=ExtResource("9_ic5gw")]
 position = Vector2(-14, -72)
 
-[node name="Bramble8" parent="Node2D" unique_id=2021763911 instance=ExtResource("9_ic5gw")]
+[node name="Bramble8" parent="Brambles" unique_id=2021763911 instance=ExtResource("9_ic5gw")]
 position = Vector2(14, -72)
 
-[node name="Bramble9" parent="Node2D" unique_id=720165985 instance=ExtResource("9_ic5gw")]
+[node name="Bramble9" parent="Brambles" unique_id=720165985 instance=ExtResource("9_ic5gw")]
 position = Vector2(-72, -99)
 
-[node name="Bramble10" parent="Node2D" unique_id=1485065463 instance=ExtResource("9_ic5gw")]
+[node name="Bramble10" parent="Brambles" unique_id=1485065463 instance=ExtResource("9_ic5gw")]
 position = Vector2(-44, -99)
 
-[node name="Bramble11" parent="Node2D" unique_id=1160975058 instance=ExtResource("9_ic5gw")]
+[node name="Bramble11" parent="Brambles" unique_id=1160975058 instance=ExtResource("9_ic5gw")]
 position = Vector2(-71, -126)
 
-[node name="Bramble12" parent="Node2D" unique_id=2145239105 instance=ExtResource("9_ic5gw")]
+[node name="Bramble12" parent="Brambles" unique_id=2145239105 instance=ExtResource("9_ic5gw")]
 position = Vector2(-43, -126)
 
-[node name="Bramble13" parent="Node2D" unique_id=232379320 instance=ExtResource("9_ic5gw")]
+[node name="Bramble13" parent="Brambles" unique_id=232379320 instance=ExtResource("9_ic5gw")]
 position = Vector2(-15, -98)
 
-[node name="Bramble14" parent="Node2D" unique_id=867600046 instance=ExtResource("9_ic5gw")]
+[node name="Bramble14" parent="Brambles" unique_id=867600046 instance=ExtResource("9_ic5gw")]
 position = Vector2(13, -98)
 
-[node name="Bramble15" parent="Node2D" unique_id=1538534805 instance=ExtResource("9_ic5gw")]
+[node name="Bramble15" parent="Brambles" unique_id=1538534805 instance=ExtResource("9_ic5gw")]
 position = Vector2(-14, -125)
 
-[node name="Bramble16" parent="Node2D" unique_id=1746454661 instance=ExtResource("9_ic5gw")]
+[node name="Bramble16" parent="Brambles" unique_id=1746454661 instance=ExtResource("9_ic5gw")]
 position = Vector2(14, -125)
 
-[node name="Label" type="Label" parent="." unique_id=953085525]
-offset_left = -165.0
-offset_top = -70.0
-offset_right = -48.0
-offset_bottom = -47.0
-text = "cave"
+[node name="Water" parent="." unique_id=2095682866 instance=ExtResource("11_hq5yy")]
+position = Vector2(-54, -95)
+
+[node name="Water2" parent="." unique_id=107710413 instance=ExtResource("11_hq5yy")]
+position = Vector2(-21, -95)
+push_direction = Vector2(0, 1)
+
+[node name="Water3" parent="." unique_id=813662202 instance=ExtResource("11_hq5yy")]
+position = Vector2(-21, -111)
+push_direction = Vector2(0, 1)
+
+[node name="Water4" parent="." unique_id=1510908702 instance=ExtResource("11_hq5yy")]
+position = Vector2(-21, -127)
+push_direction = Vector2(0, 1)
+
+[node name="Water5" parent="." unique_id=1089300845 instance=ExtResource("11_hq5yy")]
+position = Vector2(-5, -95)
+push_direction = Vector2(0, 1)
+
+[node name="Water6" parent="." unique_id=1884118778 instance=ExtResource("11_hq5yy")]
+position = Vector2(-5, -111)
+push_direction = Vector2(0, 1)
+
+[node name="Water7" parent="." unique_id=1101608942 instance=ExtResource("11_hq5yy")]
+position = Vector2(-5, -127)
+push_direction = Vector2(0, 1)
+
+[node name="Water8" parent="." unique_id=979676295 instance=ExtResource("11_hq5yy")]
+position = Vector2(11, -95)
+push_direction = Vector2(0, 1)
+
+[node name="Water9" parent="." unique_id=143552769 instance=ExtResource("11_hq5yy")]
+position = Vector2(11, -111)
+push_direction = Vector2(0, 1)
+
+[node name="Water10" parent="." unique_id=2072383078 instance=ExtResource("11_hq5yy")]
+position = Vector2(11, -127)
+push_direction = Vector2(0, 1)

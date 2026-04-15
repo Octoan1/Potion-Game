@@ -12,6 +12,8 @@ class_name Player
 var original_max_speed: float = max_speed
 @export var acceleration: float = 1700.0
 @export var friction: float = 1700.0
+var external_velocity: Vector2 = Vector2.ZERO
+var river_force: Vector2 = Vector2.ZERO
 
 @export_category("Health")
 @export var health: float = 100.0
@@ -40,24 +42,37 @@ func _physics_process(delta: float) -> void:
 	
 	# player movement
 	var direction: Vector2 = input[InputController.InputType.MOVE]
+	
+	# river
+	velocity += river_force
+	river_force = Vector2.ZERO
+	
 	handle_movement(direction, delta)
 	move_and_slide()
+
+func apply_external_force(force: Vector2) -> void:
+	external_velocity += force
 
 
 func handle_movement(direction: Vector2, delta: float) -> void:
 	if direction:
 		# physical changes
-		velocity = velocity.move_toward(direction * max_speed, acceleration * delta)
+		var input_velocity: Vector2 = velocity.move_toward(direction * max_speed, acceleration * delta)
+		velocity = input_velocity + external_velocity
 		
 		# visual changes
 		animated_sprite_2d.flip_h = direction.x > 0
 		animated_sprite_2d.play("walk")
 	else:
 		# physical changes
-		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+		var input_velocity: Vector2 = velocity.move_toward(Vector2.ZERO, friction * delta) # no input vel
+		velocity = input_velocity + external_velocity
 		
 		# visual changes
 		animated_sprite_2d.play("default")
+	
+	# reset external velocity so it doesnt compound
+	external_velocity = Vector2.ZERO
 
 
 func toggle_inventory() -> void:

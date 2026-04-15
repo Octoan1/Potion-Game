@@ -156,6 +156,9 @@ func load_inventory() -> void:
 		child.queue_free()
 
 	for item in PlayerInventory.items:
+		if item.type != item.ItemType.INGREDIENT:
+			continue
+		
 		var slot: Control = slot_scene.instantiate()
 		grid.add_child(slot)
 

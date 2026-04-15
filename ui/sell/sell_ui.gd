@@ -52,7 +52,7 @@ func load_inventory() -> void:
 		child.queue_free()
 
 	for item in PlayerInventory.items:
-		if item.type != 1:
+		if item.type != item.ItemType.POTION:
 			continue
 		
 		var slot: Control = slot_scene.instantiate()
