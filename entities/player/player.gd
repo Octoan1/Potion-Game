@@ -25,6 +25,7 @@ var river_force: Vector2 = Vector2.ZERO
 @onready var light_source: Node2D = $PotionEffectsContainer/LightSource
 var light_boost_on: bool = false
 var in_dark_area: bool = false
+@export var freeze_area: PackedScene
 
 
 func _physics_process(delta: float) -> void:
@@ -116,7 +117,12 @@ func get_closest_interactable() -> Node2D:
 			closest_dist = distance
 	
 	return closest
-		
+	
+# ===== PLAYER DEATH =====
+func reset_level() -> void:
+	var level_manager: Node = get_tree().root.get_node("Main").get_node("LevelManager")
+	level_manager.call_deferred("load_level", "res://levels/playground/playground.tscn")
+	
 # ===== POTION EFFECT HANDLING =====
 func heal(amount: int) -> void:
 	health += amount
@@ -151,3 +157,10 @@ func _on_light_source_light_boost_ended() -> void:
 	light_boost_on = false
 	if not in_dark_area:
 		hide_light()
+		
+func freeze(_radius: float) -> void:
+	print("fuck")
+	var new_freeze_area: Area2D = freeze_area.instantiate()
+	new_freeze_area.global_position = self.global_position
+	
+	stationary_potion_effects_container.add_child(new_freeze_area)

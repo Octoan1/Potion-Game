@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpx7st7a7vvu3" path="res://assets/lilguy.png" id="2_abrql"]
 [ext_resource type="PackedScene" uid="uid://cxp0jfue8lyds" path="res://entities/player/potion_effects/burn_area.tscn" id="2_bls4j"]
 [ext_resource type="Script" uid="uid://dh65w2ghpwat5" path="res://entities/player/input_controller.gd" id="2_sglur"]
+[ext_resource type="PackedScene" uid="uid://wb03u4vl2l4m" path="res://entities/player/potion_effects/freeze_area.tscn" id="3_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://ee66nt40cf30" path="res://entities/player/potion_effects/light_source.tscn" id="3_fkugw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abrql"]
@@ -47,8 +48,11 @@ size = Vector2(8, 3)
 radius = 20.024984
 
 [node name="Player" type="CharacterBody2D" unique_id=807103536 groups=["Player"]]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_onrkg")
 burn_area = ExtResource("2_bls4j")
+freeze_area = ExtResource("3_8fjmc")
 
 [node name="InputController" type="Node" parent="." unique_id=1248782435]
 script = ExtResource("2_sglur")

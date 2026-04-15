@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dtbn2yjdlf63h" path="res://entities/ingredient_sources/haunted_woods/ectoplasm_source.tscn" id="20_xn3bl"]
 [ext_resource type="PackedScene" uid="uid://q4s05vkv3r3a" path="res://entities/ingredient_sources/haunted_woods/nightshade_source.tscn" id="21_ul8to"]
 [ext_resource type="PackedScene" uid="uid://dt1vfurhe0byl" path="res://entities/ingredient_sources/great_oak/white_lily_source.tscn" id="22_xn3bl"]
+[ext_resource type="PackedScene" uid="uid://27qbpbjvxyx1" path="res://entities/monster/ghost.tscn" id="26_sgh2e"]
 
 [node name="Playground" type="Node2D" unique_id=1178197563]
 
@@ -254,3 +255,9 @@ push_direction = Vector2(0, 1)
 [node name="Water10" parent="Water" unique_id=2072383078 instance=ExtResource("11_hq5yy")]
 position = Vector2(11, -127)
 push_direction = Vector2(0, 1)
+
+[node name="Monsters" type="Node2D" parent="." unique_id=309002471]
+position = Vector2(-27, -95)
+
+[node name="Ghost" parent="Monsters" unique_id=1881988643 instance=ExtResource("26_sgh2e")]
+position = Vector2(-228, -41)

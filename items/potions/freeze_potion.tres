@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://jsn4h1x65n0y"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_vy2cq"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_khfsw"]
+[ext_resource type="Texture2D" uid="uid://ctfff3p1jclew" path="res://assets/super potion.png" id="2_ns72c"]
+[ext_resource type="Script" uid="uid://d1nb0py6dwbf4" path="res://items/effects/freeze_effect.gd" id="2_uh3df"]
+
+[sub_resource type="Resource" id="Resource_0v0a5"]
+script = ExtResource("2_uh3df")
+metadata/_custom_type_script = "uid://d1nb0py6dwbf4"
+
+[resource]
+script = ExtResource("2_khfsw")
+name = "Freeze Potion"
+icon = ExtResource("2_ns72c")
+type = 1
+id = "freeze_potion"
+effects = Array[ExtResource("1_vy2cq")]([SubResource("Resource_0v0a5")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

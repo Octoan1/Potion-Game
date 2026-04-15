@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://27qbpbjvxyx1"]
+
+[ext_resource type="Script" uid="uid://ocip8nteinmr" path="res://entities/monster/ghost.gd" id="1_3amut"]
+[ext_resource type="Texture2D" uid="uid://be8semijf346t" path="res://assets/spirit_placeholder-Sheet.png" id="1_4usjo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4usjo"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4usjo"]
+atlas = ExtResource("1_4usjo")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enrxj"]
+atlas = ExtResource("1_4usjo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gtr7w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4usjo")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enrxj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3amut"]
+radius = 60.0
+height = 220.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enrxj"]
+radius = 8.0
+
+[node name="Ghost" type="CharacterBody2D" unique_id=1881988643 groups=["Ghost"]]
+z_index = 1
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_3amut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1183173062]
+shape = SubResource("CircleShape2D_4usjo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1973606665]
+sprite_frames = SubResource("SpriteFrames_gtr7w")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=463222203]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1439872088 groups=["Ghost"]]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_3amut")
+debug_color = Color(0.2904761, 0.07145964, 0.14625186, 0.41960785)
+metadata/_edit_lock_ = true
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1103553823]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1963205105]
+shape = SubResource("CircleShape2D_enrxj")
+debug_color = Color(0.9969527, 0, 0.18565953, 0.41960785)
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
