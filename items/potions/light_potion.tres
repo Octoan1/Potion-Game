@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_8cuyp"]
 [ext_resource type="Texture2D" uid="uid://d0ein0bd8wdki" path="res://assets/light_potion_temp.png" id="1_epi77"]
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_i4qau"]
+[ext_resource type="Script" uid="uid://caaymku2q7squ" path="res://items/effects/light_effect.gd" id="2_jnnl4"]
+
+[sub_resource type="Resource" id="Resource_gb04q"]
+script = ExtResource("2_jnnl4")
+new_texture_scale = 2.25
+metadata/_custom_type_script = "uid://caaymku2q7squ"
 
 [resource]
 script = ExtResource("1_8cuyp")
@@ -9,4 +16,5 @@ name = "Light Potion"
 icon = ExtResource("1_epi77")
 type = 1
 id = "light_potion"
+effects = Array[ExtResource("1_i4qau")]([SubResource("Resource_gb04q")])
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

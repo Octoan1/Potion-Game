@@ -11,9 +11,11 @@ extends Control
 
 
 func _ready() -> void:
+
 	get_tree().paused = true
 	PlayerInventory.drinking = false
 	$/root/Main/CanvasLayer/PlayerInventoryUI.visible = false
+	GameState.cauldron_3_slot = true # just doing 3 slots nows
 	slot3.visible = GameState.cauldron_3_slot
 	load_inventory()
 

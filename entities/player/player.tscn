@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpx7st7a7vvu3" path="res://assets/lilguy.png" id="2_abrql"]
 [ext_resource type="PackedScene" uid="uid://cxp0jfue8lyds" path="res://entities/player/potion_effects/burn_area.tscn" id="2_bls4j"]
 [ext_resource type="Script" uid="uid://dh65w2ghpwat5" path="res://entities/player/input_controller.gd" id="2_sglur"]
+[ext_resource type="PackedScene" uid="uid://ee66nt40cf30" path="res://entities/player/potion_effects/light_source.tscn" id="3_fkugw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abrql"]
 atlas = ExtResource("2_abrql")
@@ -55,6 +56,11 @@ metadata/_custom_type_script = "uid://dh65w2ghpwat5"
 
 [node name="StatPotionEffectsContainer" type="Node" parent="." unique_id=281477]
 
+[node name="PotionEffectsContainer" type="Node2D" parent="." unique_id=278488593]
+
+[node name="LightSource" parent="PotionEffectsContainer" unique_id=1163353561 instance=ExtResource("3_fkugw")]
+visible = false
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1897133777]
 sprite_frames = SubResource("SpriteFrames_fkugw")
 
@@ -69,3 +75,5 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=2073000444]
 shape = SubResource("CircleShape2D_abrql")
 debug_color = Color(0, 0.6392157, 0.38431373, 0.05490196)
+
+[connection signal="light_boost_ended" from="PotionEffectsContainer/LightSource" to="." method="_on_light_source_light_boost_ended"]

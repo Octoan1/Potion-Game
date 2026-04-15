@@ -18,7 +18,12 @@ var original_max_speed: float = max_speed
 
 @export_category("Potion Effects")
 @onready var stationary_potion_effects_container: Node = $StatPotionEffectsContainer
+@onready var potion_effects_container: Node2D = $PotionEffectsContainer
 @export var burn_area: PackedScene
+@onready var light_source: Node2D = $PotionEffectsContainer/LightSource
+var light_boost_on: bool = false
+var in_dark_area: bool = false
+
 
 func _physics_process(delta: float) -> void:
 	var input := input_controller.get_input()
@@ -110,10 +115,24 @@ func apply_speed_boost(amount: float, duration: float) -> void:
 	if max_speed < original_max_speed:
 		max_speed = original_max_speed
 
-func burn(radius: float) -> void:
+func burn(_radius: float) -> void:
 	var new_burn_area: Area2D = burn_area.instantiate()
 	new_burn_area.global_position = self.global_position
 	
 	stationary_potion_effects_container.add_child(new_burn_area)
 			
-		
+func hide_light() -> void:
+	light_source.hide()
+	
+func show_light() -> void:
+	light_source.show()
+
+func apply_light_boost(new_texture_scale: float, duration: float) -> void:
+	light_source.boost(new_texture_scale, duration)
+	light_boost_on = true
+	show_light()
+	
+func _on_light_source_light_boost_ended() -> void:
+	light_boost_on = false
+	if not in_dark_area:
+		hide_light()
