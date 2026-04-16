@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cjcretjonwb1e"]
+
+[ext_resource type="Texture2D" uid="uid://bsu2lp03xgw4p" path="res://assets/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_05.png" id="1_y5myg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chlwx"]
+size = Vector2(94, 144)
+
+[node name="Tree41" type="Sprite2D" unique_id=211524469]
+texture = ExtResource("1_y5myg")
+region_enabled = true
+region_rect = Rect2(0, 0, 112, 160)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1712508909]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1897408405]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_chlwx")

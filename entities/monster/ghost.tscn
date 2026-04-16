@@ -43,7 +43,7 @@ radius = 8.0
 [node name="Ghost" type="CharacterBody2D" unique_id=1881988643 groups=["Ghost"]]
 z_index = 1
 collision_layer = 8
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("1_3amut")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1183173062]

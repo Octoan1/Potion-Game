@@ -11,7 +11,7 @@ class_name Player
 @export var max_speed: float = 150.0
 var original_max_speed: float = max_speed
 @export var acceleration: float = 1700.0
-@export var friction: float = 1700.0
+@export var friction: float = 1000.0
 var external_velocity: Vector2 = Vector2.ZERO
 var river_force: Vector2 = Vector2.ZERO
 
@@ -46,11 +46,12 @@ func _physics_process(delta: float) -> void:
 	# player movement
 	var direction: Vector2 = input[InputController.InputType.MOVE]
 	
+	handle_movement(direction, delta)
+	
 	# river
 	velocity += river_force
-	river_force = Vector2.ZERO
-	
-	handle_movement(direction, delta)
+	velocity = velocity.limit_length(max_speed * 1.5)
+	river_force = Vector2.ZERO # reset for next frame
 	move_and_slide()
 
 func apply_external_force(force: Vector2) -> void:
@@ -61,7 +62,7 @@ func handle_movement(direction: Vector2, delta: float) -> void:
 	if direction:
 		# physical changes
 		var input_velocity: Vector2 = velocity.move_toward(direction * max_speed, acceleration * delta)
-		velocity = input_velocity + external_velocity
+		velocity = input_velocity
 		
 		# visual changes
 		animated_sprite_2d.flip_h = direction.x > 0
@@ -69,7 +70,7 @@ func handle_movement(direction: Vector2, delta: float) -> void:
 	else:
 		# physical changes
 		var input_velocity: Vector2 = velocity.move_toward(Vector2.ZERO, friction * delta) # no input vel
-		velocity = input_velocity + external_velocity
+		velocity = input_velocity
 		
 		# visual changes
 		animated_sprite_2d.play("default")
@@ -131,7 +132,7 @@ func get_closest_interactable() -> Node2D:
 # ===== PLAYER DEATH =====
 func reset_level() -> void:
 	var level_manager: Node = get_tree().root.get_node("Main").get_node("LevelManager")
-	level_manager.call_deferred("load_level", "res://levels/playground/playground.tscn")
+	level_manager.call_deferred("load_level", "res://levels/outside.tscn")
 	
 # ===== POTION EFFECT HANDLING =====
 func heal(amount: int) -> void:

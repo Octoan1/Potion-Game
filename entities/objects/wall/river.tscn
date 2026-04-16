@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d2w1m2j42gjxj"]
+
+[ext_resource type="Script" uid="uid://kxtbj7w7v3ni" path="res://entities/objects/wall/river.gd" id="1_rrqel"]
+
+[node name="River" type="Area2D" unique_id=774657934]
+script = ExtResource("1_rrqel")
+push_strength = 2000.0

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://gl63pe8ok716"]
+
+[ext_resource type="Texture2D" uid="uid://b737oqs0vyuha" path="res://assets/Pixel Crawler - Free Pack/Environment/Props/Static/Vegetation.png" id="1_e43sl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nj85"]
+radius = 13.0
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1146802925]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1555859510]
+texture = ExtResource("1_e43sl")
+region_enabled = true
+region_rect = Rect2(192, 64, 48, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=234248986]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_2nj85")
