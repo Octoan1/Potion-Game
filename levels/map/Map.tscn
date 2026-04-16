@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://k3vxsaxn4sho"]
+
+[ext_resource type="PackedScene" path="res://levels/map/Layer_7_0.tscn" id="0_id"]
+[ext_resource type="PackedScene" path="res://levels/map/Layer_6_1.tscn" id="1_id"]
+[ext_resource type="PackedScene" path="res://levels/map/Layer_3_2.tscn" id="2_id"]
+[ext_resource type="PackedScene" path="res://levels/map/Layer_4_3.tscn" id="3_id"]
+[ext_resource type="PackedScene" path="res://levels/map/Layer_2_4.tscn" id="4_id"]
+[ext_resource type="PackedScene" path="res://levels/map/Layer_5_5.tscn" id="5_id"]
+[ext_resource type="PackedScene" path="res://levels/map/Layer_2_6.tscn" id="6_id"]
+[ext_resource type="PackedScene" path="res://levels/map/Layer_0_7.tscn" id="7_id"]
+
+[node name="map" type="Node2D" unique_id=40533410]
+
+[node name="Layer_0_7" parent="." unique_id=147261435 instance=ExtResource("7_id")]
+
+[node name="Layer_2_6" parent="." unique_id=611427680 instance=ExtResource("6_id")]
+
+[node name="Layer_5_5" parent="." unique_id=831582656 instance=ExtResource("5_id")]
+
+[node name="Layer_2_4" parent="." unique_id=1560720398 instance=ExtResource("4_id")]
+
+[node name="Layer_4_3" parent="." unique_id=797114981 instance=ExtResource("3_id")]
+
+[node name="Layer_3_2" parent="." unique_id=808248651 instance=ExtResource("2_id")]
+
+[node name="Layer_6_1" parent="." unique_id=175187398 instance=ExtResource("1_id")]
+visible = false
+
+[node name="Layer_7_0" parent="." unique_id=1444644250 instance=ExtResource("0_id")]
+visible = false
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=2059063250]
+position = Vector2(109, 486)

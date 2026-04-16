@@ -28,7 +28,11 @@ func load_level(path: String = starting_level) -> void:
 
 func place_player() -> void:
 	if next_door_id == "":
+		var spawn_point: Marker2D = get_tree().get_first_node_in_group("spawn_point")
+		if spawn_point:
+			player.global_position = spawn_point.global_position
 		return
+		
 	
 	var doors: Array[Node] = get_tree().get_nodes_in_group("doors")
 	

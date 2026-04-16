@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cm0j8uwqu4s0a"]
 
-[ext_resource type="Script" uid="uid://dcagsloyks726" path="res://levels/cave.gd" id="1_y8lej"]
+[ext_resource type="Script" uid="uid://dcagsloyks726" path="res://levels/old/cave.gd" id="1_y8lej"]
 [ext_resource type="TileSet" uid="uid://ditavxpwkejwt" path="res://assets/test_tileset.tres" id="2_1fr7q"]
 [ext_resource type="PackedScene" uid="uid://ihsppejsfafh" path="res://entities/objects/door/door.tscn" id="5_povwj"]
 [ext_resource type="PackedScene" uid="uid://dfmb46i8lkn1m" path="res://entities/objects/eye_plant/eye_plant.tscn" id="9_sptxb"]

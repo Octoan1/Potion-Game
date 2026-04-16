@@ -33,7 +33,6 @@ shape = SubResource("CircleShape2D_084cg")
 debug_color = Color(0.23921569, 0.62352943, 0.39607844, 0.09411765)
 
 [node name="Text" type="Sprite2D" parent="." unique_id=732592035]
-visible = false
 z_index = 1
 position = Vector2(7, 17)
 texture = ExtResource("3_w5eqq")
