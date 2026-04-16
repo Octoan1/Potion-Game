@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dtennrtvww8ql" path="res://ui/recipe_book/recipe_book.tscn" id="6_qy63d"]
 [ext_resource type="PackedScene" uid="uid://cnrtjsuigcr7v" path="res://ui/recipe_book/recipe_book_ui.tscn" id="7_6et1j"]
 [ext_resource type="Texture2D" uid="uid://dq4fyyvpsq6pn" path="res://assets/heart_icon_placeholder.png" id="7_etqu2"]
+[ext_resource type="PackedScene" uid="uid://dgydlru8idsan" path="res://ui/win_screen.tscn" id="8_etqu2"]
 
 [node name="Main" type="Node2D" unique_id=311730625]
 
@@ -16,11 +17,12 @@ script = ExtResource("2_ifaiv")
 starting_level = "res://levels/outside.tscn"
 player = NodePath("../Player")
 
-[node name="Player" parent="." unique_id=807103536 node_paths=PackedStringArray("inventory_ui", "health_container") instance=ExtResource("1_2262g")]
+[node name="Player" parent="." unique_id=807103536 node_paths=PackedStringArray("inventory_ui", "health_container", "win_screen") instance=ExtResource("1_2262g")]
 z_index = 1
 position = Vector2(136, 480)
 inventory_ui = NodePath("../CanvasLayer/PlayerInventoryUI")
 health_container = NodePath("../CanvasLayer/HeartHBoxContainer")
+win_screen = NodePath("../CanvasLayer/WinScreen")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1770425059]
 
@@ -63,6 +65,9 @@ grow_vertical = 2
 layout_mode = 2
 texture = ExtResource("7_etqu2")
 stretch_mode = 4
+
+[node name="WinScreen" parent="CanvasLayer" unique_id=982246015 instance=ExtResource("8_etqu2")]
+visible = false
 
 [node name="DebuggerTool" type="Node" parent="." unique_id=533554427]
 process_mode = 3

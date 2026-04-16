@@ -31,6 +31,8 @@
 [ext_resource type="PackedScene" uid="uid://jkkr8mcyhq2f" path="res://entities/ingredient_sources/haunted_woods/bones_source.tscn" id="27_r8gff"]
 [ext_resource type="PackedScene" uid="uid://q4s05vkv3r3a" path="res://entities/ingredient_sources/haunted_woods/nightshade_source.tscn" id="28_bbdtm"]
 [ext_resource type="PackedScene" uid="uid://dt1vfurhe0byl" path="res://entities/ingredient_sources/great_oak/white_lily_source.tscn" id="30_r8gff"]
+[ext_resource type="PackedScene" uid="uid://dx6nsn71kn58c" path="res://entities/ingredient_sources/great_oak/wood.tscn" id="32_qr7kf"]
+[ext_resource type="PackedScene" uid="uid://bs4ke45mwaia7" path="res://entities/ingredient_sources/great_oak/ancient_bark_source.tscn" id="33_4gjfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vovx"]
 size = Vector2(126, 147)
@@ -132,7 +134,7 @@ position = Vector2(1017, 245)
 shape = SubResource("CapsuleShape2D_ue7d7")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=2066781430 groups=["spawn_point"]]
-position = Vector2(136, 480)
+position = Vector2(156, 478)
 
 [node name="Door" parent="." unique_id=1104737495 instance=ExtResource("2_isq0c")]
 position = Vector2(79, 457)
@@ -1842,3 +1844,9 @@ position = Vector2(1287, 329)
 
 [node name="WhiteLilySource" parent="GreatOak" unique_id=451905161 instance=ExtResource("30_r8gff")]
 position = Vector2(-329, 38)
+
+[node name="Wood" parent="GreatOak" unique_id=912633156 instance=ExtResource("32_qr7kf")]
+position = Vector2(-287, 82)
+
+[node name="AncientBarkSource" parent="GreatOak" unique_id=1051519354 instance=ExtResource("33_4gjfk")]
+position = Vector2(-304, -23)

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cr8dg5p05sg1d"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_ub3no"]
+[ext_resource type="Texture2D" uid="uid://cqhby7iehn6wx" path="res://assets/ancient_bark_placeholder.png" id="2_ub3no"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="3_feycc"]
+
+[resource]
+script = ExtResource("3_feycc")
+name = "Ancient Bark"
+icon = ExtResource("2_ub3no")
+description = "A thick and weathered piece of bark offered by the Great Oak. The knots and whorls on its surface are twisted into letters that simply read “SAVE”."
+id = "ancient_bark"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

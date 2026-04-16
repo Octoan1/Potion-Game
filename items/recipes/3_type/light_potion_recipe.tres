@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_vyich"]
 [ext_resource type="Resource" uid="uid://c7fubxo5e4tfv" path="res://items/ingredients/lichen.tres" id="2_fei52"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="2_logqd"]
-[ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/beetle.tres" id="3_fbi0l"]
-[ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="4_4redb"]
+[ext_resource type="Resource" uid="uid://kis42q4vodd7" path="res://items/ingredients/root.tres" id="3_fei52"]
+[ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="4_tqrbn"]
 [ext_resource type="Resource" uid="uid://by3bahjs3lpqa" path="res://items/potions/light_potion.tres" id="5_scvgm"]
 
 [resource]
 script = ExtResource("2_logqd")
 recipe_name = "Light Potion Recipe"
 recipe_id = "light_potion_recipe"
-ingredients = Array[ExtResource("1_vyich")]([ExtResource("2_fei52"), ExtResource("4_4redb"), ExtResource("3_fbi0l")])
+ingredients = Array[ExtResource("1_vyich")]([ExtResource("2_fei52"), ExtResource("3_fei52"), ExtResource("4_tqrbn")])
 result = ExtResource("5_scvgm")
 metadata/_custom_type_script = "uid://ciee7sgvou518"

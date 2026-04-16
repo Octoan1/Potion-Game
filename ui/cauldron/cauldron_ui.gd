@@ -14,6 +14,8 @@ extends Control
 @onready var result_icon: TextureRect = $Panel/ResultHBoxContainer2/ResultIcon
 @onready var hide_result: Timer = $HideResult
 
+@export var placeholder_potion: Item
+
 func _ready() -> void:
 
 	get_tree().paused = true
@@ -82,16 +84,22 @@ func brew() -> void:
 	var recipe: Recipe = get_matching_recipe()
 
 	if recipe == null:
-		PlayerInventory.add_item(slot1.item)
+		#PlayerInventory.add_item(slot1.item)
 		slot1.clear_item()
-		PlayerInventory.add_item(slot2.item)
+		#PlayerInventory.add_item(slot2.item)
 		slot2.clear_item()
 		if slot3.item:
-			PlayerInventory.add_item(slot3.item)
+			#PlayerInventory.add_item(slot3.item)
 			slot3.clear_item()
 		
 		print("Invalid combo")
-		result_label.text = "Invalid combo"
+		#result_label.text = "Invalid combo"
+		# not final
+		slot1.clear_item()
+		slot2.clear_item()
+		slot3.clear_item()
+		result_label.text = "Created: Placeholder Potion"
+		PlayerInventory.add_item(placeholder_potion)
 		result_icon.hide()
 		show_result()
 	

@@ -15,6 +15,7 @@ metadata/_custom_type_script = "uid://o8wwu67eu27p"
 script = ExtResource("4_wjwe0")
 name = "Speed Potion"
 icon = ExtResource("3_4cu5n")
+description = "Makes you run fast enough to push against moving currents"
 type = 1
 id = "speed_potion"
 effects = Array[ExtResource("1_20h1s")]([SubResource("Resource_usbpk")])

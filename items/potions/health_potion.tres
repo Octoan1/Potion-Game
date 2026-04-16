@@ -7,12 +7,14 @@
 
 [sub_resource type="Resource" id="Resource_45db6"]
 script = ExtResource("2_q078c")
+amount = 1
 metadata/_custom_type_script = "uid://dwqqpn5co2xck"
 
 [resource]
 script = ExtResource("2_7sjbl")
 name = "Health Potion"
 icon = ExtResource("1_r414l")
+description = "Heals you very nicely"
 type = 1
 id = "health_potion"
 effects = Array[ExtResource("1_0kaec")]([SubResource("Resource_45db6")])

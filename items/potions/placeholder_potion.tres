@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b7ahsg6v8ac1l"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_p5cjj"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_3x3ov"]
+[ext_resource type="Texture2D" uid="uid://bhql4bmjr0bss" path="res://assets/placeholder_potion.png" id="2_w1f40"]
+
+[resource]
+script = ExtResource("2_3x3ov")
+name = "Placeholder Potion"
+icon = ExtResource("2_w1f40")
+description = "Currently does nothing :("
+type = 1
+id = "placeholder_potion"
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

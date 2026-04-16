@@ -13,6 +13,7 @@ metadata/_custom_type_script = "uid://cya5rp11b727r"
 script = ExtResource("1_6isrp")
 name = "Fire Potion"
 icon = ExtResource("1_sqq6a")
+description = "Can maybe burn something blocking your path.."
 type = 1
 id = "fire_potion"
 effects = Array[ExtResource("1_ty47a")]([SubResource("Resource_tpbxp")])

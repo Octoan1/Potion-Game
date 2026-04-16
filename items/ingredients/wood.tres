@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_lrkpy")
-name = "Ancient Bark"
+name = "Wood"
 icon = ExtResource("1_tl7qj")
-description = "A thick and weathered piece of bark offered by the Great Oak. The knots and whorls on its surface are twisted into letters that simply read “SAVE”."
+description = "wood"
 id = "wood"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

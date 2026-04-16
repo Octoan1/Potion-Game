@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cpw66480sih20"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_226a1"]
+[ext_resource type="Texture2D" uid="uid://b1o3mracg0qg" path="res://assets/star_potion_placeholder.png" id="2_imsmb"]
+[ext_resource type="Script" uid="uid://cuxtf8uqc0syx" path="res://items/effects/win_game_effect.gd" id="2_m4xlb"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="2_ot0bn"]
+
+[sub_resource type="Resource" id="Resource_8ctf0"]
+script = ExtResource("2_m4xlb")
+metadata/_custom_type_script = "uid://cuxtf8uqc0syx"
+
+[resource]
+script = ExtResource("2_ot0bn")
+name = "Win Game Potion"
+icon = ExtResource("2_imsmb")
+description = "I wonder what happens when you drink it.."
+type = 1
+id = "win_game_potion"
+effects = Array[ExtResource("1_226a1")]([SubResource("Resource_8ctf0")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

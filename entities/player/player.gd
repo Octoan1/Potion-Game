@@ -29,6 +29,8 @@ var light_boost_on: bool = false
 var in_dark_area: bool = false
 @export var freeze_area: PackedScene
 
+@export var win_screen: Control
+
 
 func _physics_process(delta: float) -> void:
 	var input := input_controller.get_input()
@@ -183,3 +185,7 @@ func freeze_follow(_radius: float) -> void:
 	new_freeze_area.global_position = self.global_position
 	
 	potion_effects_container.add_child(new_freeze_area)
+	
+func win() -> void:
+	win_screen.show()
+	get_tree().paused = true
