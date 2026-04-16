@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bcwyv4c8ak0u6" path="res://assets/inventory_slot_test.png" id="1_biitc"]
 [ext_resource type="Script" uid="uid://c84e4l8kb4qgs" path="res://ui/recipe_book/recipe_row.gd" id="1_favm3"]
+[ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="2_0hspc"]
 [ext_resource type="Texture2D" uid="uid://dpx8bwp842y7m" path="res://assets/ui/plus.png" id="3_je33t"]
 [ext_resource type="Texture2D" uid="uid://dqrfxuvopcilx" path="res://assets/ui/equals.png" id="4_0hspc"]
 
@@ -15,7 +16,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_favm3")
 
+[node name="InventorySlot" parent="." unique_id=411698676 instance=ExtResource("2_0hspc")]
+layout_mode = 2
+show_item_count = false
+
 [node name="Ingredient1" type="TextureRect" parent="." unique_id=314383269]
+visible = false
 layout_mode = 2
 texture = ExtResource("1_biitc")
 stretch_mode = 2
@@ -24,7 +30,12 @@ stretch_mode = 2
 layout_mode = 2
 texture = ExtResource("3_je33t")
 
+[node name="InventorySlot2" parent="." unique_id=406008940 instance=ExtResource("2_0hspc")]
+layout_mode = 2
+show_item_count = false
+
 [node name="Ingredient2" type="TextureRect" parent="." unique_id=426690839]
+visible = false
 layout_mode = 2
 texture = ExtResource("1_biitc")
 stretch_mode = 2
@@ -33,7 +44,12 @@ stretch_mode = 2
 layout_mode = 2
 texture = ExtResource("3_je33t")
 
+[node name="InventorySlot3" parent="." unique_id=1533546733 instance=ExtResource("2_0hspc")]
+layout_mode = 2
+show_item_count = false
+
 [node name="Ingredient3" type="TextureRect" parent="." unique_id=2146748719]
+visible = false
 layout_mode = 2
 texture = ExtResource("1_biitc")
 stretch_mode = 2
@@ -42,7 +58,12 @@ stretch_mode = 2
 layout_mode = 2
 texture = ExtResource("4_0hspc")
 
+[node name="InventorySlot4" parent="." unique_id=896011034 instance=ExtResource("2_0hspc")]
+layout_mode = 2
+show_item_count = false
+
 [node name="Result" type="TextureRect" parent="." unique_id=831792935]
+visible = false
 layout_mode = 2
 texture = ExtResource("1_biitc")
 stretch_mode = 2

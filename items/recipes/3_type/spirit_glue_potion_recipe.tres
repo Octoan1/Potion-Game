@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://c3ld1gydfsrj"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_6wa2p"]
+[ext_resource type="Resource" uid="uid://jsn4h1x65n0y" path="res://items/potions/freeze_potion.tres" id="2_njjwi"]
+[ext_resource type="Resource" uid="uid://b6l531hnwcrwe" path="res://items/ingredients/newt.tres" id="2_oy2do"]
+[ext_resource type="Resource" uid="uid://cheql10orv8jv" path="res://items/ingredients/cattail.tres" id="3_yujsr"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="3_yypkd"]
+[ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="4_oy2do"]
+
+[resource]
+script = ExtResource("3_yypkd")
+recipe_name = "Spirit Repellent Potion Recipe"
+recipe_id = "spirit_repellent_potion_recipe"
+ingredients = Array[ExtResource("1_6wa2p")]([ExtResource("2_oy2do"), ExtResource("3_yujsr"), ExtResource("4_oy2do")])
+result = ExtResource("2_njjwi")
+metadata/_custom_type_script = "uid://ciee7sgvou518"

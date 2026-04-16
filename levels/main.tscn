@@ -18,7 +18,7 @@ player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=807103536 node_paths=PackedStringArray("inventory_ui", "health_container") instance=ExtResource("1_2262g")]
 z_index = 1
-position = Vector2(180, 485)
+position = Vector2(136, 480)
 inventory_ui = NodePath("../CanvasLayer/PlayerInventoryUI")
 health_container = NodePath("../CanvasLayer/HeartHBoxContainer")
 

@@ -169,3 +169,4 @@ one_shot = true
 [connection signal="item_clicked" from="Panel/HBoxContainer/IngredientSlot1" to="." method="_on_ingredient_slot_1_item_clicked"]
 [connection signal="item_clicked" from="Panel/HBoxContainer/IngredientSlot2" to="." method="_on_ingredient_slot_2_item_clicked"]
 [connection signal="item_clicked" from="Panel/HBoxContainer/IngredientSlot3" to="." method="_on_ingredient_slot_3_item_clicked"]
+[connection signal="timeout" from="HideResult" to="." method="_on_hide_result_timeout"]

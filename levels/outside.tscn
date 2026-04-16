@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bgmsabj0pdoao" path="res://entities/ingredient_sources/pond/cattail_source.tscn" id="19_jqj3t"]
 [ext_resource type="PackedScene" uid="uid://d2w1m2j42gjxj" path="res://entities/objects/wall/river.tscn" id="20_png5n"]
 [ext_resource type="PackedScene" uid="uid://b5kc6ku45igp1" path="res://entities/ingredient_sources/pond/newt_source.tscn" id="20_ue7d7"]
+[ext_resource type="PackedScene" uid="uid://c1vdxl0wnxnbe" path="res://entities/ingredient_sources/pond/roe_source.tscn" id="24_bbdtm"]
 [ext_resource type="PackedScene" uid="uid://27qbpbjvxyx1" path="res://entities/monster/ghost.tscn" id="25_8g2li"]
 [ext_resource type="PackedScene" uid="uid://dtbn2yjdlf63h" path="res://entities/ingredient_sources/haunted_woods/ectoplasm_source.tscn" id="26_n0bls"]
 [ext_resource type="PackedScene" uid="uid://jkkr8mcyhq2f" path="res://entities/ingredient_sources/haunted_woods/bones_source.tscn" id="27_r8gff"]
@@ -1597,6 +1598,21 @@ position = Vector2(1006, 792)
 
 [node name="NewtSource3" parent="Pond_River" unique_id=2073897661 instance=ExtResource("20_ue7d7")]
 position = Vector2(756, 856)
+
+[node name="RoeSource" parent="Pond_River" unique_id=271986253 instance=ExtResource("24_bbdtm")]
+position = Vector2(572, 675)
+
+[node name="RoeSource2" parent="Pond_River" unique_id=1051151789 instance=ExtResource("24_bbdtm")]
+position = Vector2(350, 686)
+
+[node name="RoeSource3" parent="Pond_River" unique_id=90384675 instance=ExtResource("24_bbdtm")]
+position = Vector2(180, 697)
+
+[node name="RoeSource4" parent="Pond_River" unique_id=975411898 instance=ExtResource("24_bbdtm")]
+position = Vector2(675, 674)
+
+[node name="RoeSource5" parent="Pond_River" unique_id=2043537750 instance=ExtResource("24_bbdtm")]
+position = Vector2(835, 652)
 
 [node name="Brambles" type="Node2D" parent="." unique_id=878354786]
 position = Vector2(212, 182)

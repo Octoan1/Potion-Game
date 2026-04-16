@@ -14,7 +14,7 @@ font_size = 3
 outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 
-[node name="ItemToolTip" type="Control" unique_id=661902251]
+[node name="ItemToolTip" type="Control" unique_id=661902251 groups=["tooltip"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

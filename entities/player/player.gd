@@ -173,8 +173,13 @@ func _on_light_source_light_boost_ended() -> void:
 		hide_light()
 		
 func freeze(_radius: float) -> void:
-	print("fuck")
 	var new_freeze_area: Area2D = freeze_area.instantiate()
 	new_freeze_area.global_position = self.global_position
 	
 	stationary_potion_effects_container.add_child(new_freeze_area)
+	
+func freeze_follow(_radius: float) -> void:
+	var new_freeze_area: Area2D = freeze_area.instantiate()
+	new_freeze_area.global_position = self.global_position
+	
+	potion_effects_container.add_child(new_freeze_area)

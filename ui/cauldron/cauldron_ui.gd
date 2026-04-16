@@ -73,8 +73,10 @@ func add_ingredient(item: Item) -> void:
 # BREW
 # =========================
 func brew() -> void:
-	if slot1.item == null or slot2.item == null:
-		$Panel/ResultLabel.text = "Need at least 2 Ingredients"
+	if slot1.item == null or slot2.item == null or slot3.item == null:
+		result_label.text = "Need 3 Ingredients"
+		result_icon.hide()
+		show_result()
 		return
 
 	var recipe: Recipe = get_matching_recipe()
@@ -90,6 +92,8 @@ func brew() -> void:
 		
 		print("Invalid combo")
 		result_label.text = "Invalid combo"
+		result_icon.hide()
+		show_result()
 	
 	else:
 		slot1.clear_item()
@@ -109,15 +113,22 @@ func brew() -> void:
 		#var tween: Tween = create_tween()
 		#tween.tween_property(result_icon, "scale", Vector2.ONE, 2.5)
 		#await tween.finished
-		hide_result.start()
-		await hide_result.timeout
+		result_icon.show()
+		show_result()
+		#await hide_result.timeout
 		
-		result_h_box_container_2.hide()
+		#result_h_box_container_2.hide()
 		
 
 	load_inventory()
 	update_ui()
 
+func show_result() -> void:
+	hide_result.start()
+	result_h_box_container_2.show()
+
+func _on_hide_result_timeout() -> void:
+	result_h_box_container_2.hide()
 
 # =========================
 # MATCHING SYSTEM

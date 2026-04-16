@@ -23,6 +23,7 @@ func remove_gold(amount: int = 1) -> void:
 	update_gold.emit(gold)
 	
 # ===== RECIPE BOOK =====
+var has_discover_all_recipes: bool = false
 var discovered_recipes: Dictionary[String, bool] = {}
 
 func discover_recipe(recipe: Recipe) -> void:

@@ -5,9 +5,16 @@ extends Control
 
 @onready var list: VBoxContainer = $ScrollContainer/RecipeList
 
+@onready var tooltip: ItemTooltip = preload("res://ui/item_tool_tip.tscn").instantiate()
 
 func _ready() -> void:
+	add_child(tooltip)
+	tooltip.hide()
+	tooltip.add_to_group("tooltip")
+	
 	load_recipes()
+	
+	
 
 
 func load_recipes() -> void:
@@ -19,6 +26,8 @@ func load_recipes() -> void:
 		list.add_child(row)
 
 		var discovered: bool = GameState.is_recipe_discovered(recipe)
+		if GameState.has_discover_all_recipes:
+			discovered = true
 		row.setup(recipe, discovered)
 
 func _input(event: InputEvent) -> void:

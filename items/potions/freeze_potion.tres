@@ -7,13 +7,13 @@
 
 [sub_resource type="Resource" id="Resource_0v0a5"]
 script = ExtResource("2_uh3df")
-metadata/_custom_type_script = "uid://d1nb0py6dwbf4"
 
 [resource]
 script = ExtResource("2_khfsw")
-name = "Freeze Potion"
+name = "Spirit Glue Potion"
 icon = ExtResource("2_ns72c")
+description = "Spirits get stuck on spirit glue, well known fact."
 type = 1
-id = "freeze_potion"
+id = "spirit_glue_potion"
 effects = Array[ExtResource("1_vy2cq")]([SubResource("Resource_0v0a5")])
 metadata/_custom_type_script = "uid://bsj305oo16mvm"
