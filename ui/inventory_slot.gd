@@ -9,8 +9,11 @@ signal item_clicked(item: Item)
 @onready var amount: Label = $ItemAmount
 @onready var item: Item = null
 
+# cauldron stuff
 @onready var cauldron_icon: Texture = preload("res://assets/cauldron_slot.png")
 @export var for_cauldron: bool = false
+@onready var disabled_overlay: TextureRect = $DisabledOverlay # red X image
+var disabled: bool = false
 
 #@onready var show_name_timer: Timer = $ShowNameTimer
 #@onready var item_name: Label = $ItemName
@@ -42,6 +45,9 @@ func clear_item() -> void:
 	amount.text = "-1"
 
 func _gui_input(event: InputEvent) -> void:
+	if disabled:
+		return
+	
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if item != null:
 			item_clicked.emit(item)
@@ -82,3 +88,13 @@ func _on_show_name_timer_timeout() -> void:
 		#item_name.text = item.name
 	#else:
 		#item_name.text = "Empty"
+		
+func set_disabled(value: bool) -> void:
+	disabled = value
+	disabled_overlay.visible = value
+	
+	# optional: dim icon
+	if value:
+		modulate = Color(1, 0.5, 0.5)
+	else:
+		modulate = Color.WHITE

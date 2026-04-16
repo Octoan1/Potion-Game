@@ -8,5 +8,6 @@
 script = ExtResource("2_rco1h")
 name = "White Lily"
 icon = ExtResource("2_28ofw")
+description = "A rare and peculiar flower that only sprouts in places that are brimming with loss. It is not too late."
 id = "white_lily"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

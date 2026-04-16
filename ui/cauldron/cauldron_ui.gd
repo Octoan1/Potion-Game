@@ -1,6 +1,6 @@
 extends Control
 
-@export var recipe_list: Array[Recipe]
+@export var recipe_database: RecipeDatabase
 
 @export var slot_scene: PackedScene
 @onready var grid: GridContainer = $InventoryGrid
@@ -38,8 +38,16 @@ func _process(_delta: float) -> void:
 # =========================
 # ADD INGREDIENT
 # =========================
+func is_item_already_used(item: Item) -> bool:
+	return slot1.item == item or slot2.item == item or slot3.item == item
+
 func add_ingredient(item: Item) -> void:
 	if not PlayerInventory.has_item(item, 1):
+		return
+		
+	# prevent dupes
+	if is_item_already_used(item):
+		print("Already used this item")
 		return
 	
 	if slot1.item == null:
@@ -81,7 +89,7 @@ func brew() -> void:
 			slot3.clear_item()
 		
 		print("Invalid combo")
-		$Panel/ResultLabel.text = "Invalid combo"
+		result_label.text = "Invalid combo"
 	
 	else:
 		slot1.clear_item()
@@ -157,7 +165,7 @@ func get_matching_recipe() -> Recipe:
 	if slot2.item: items.append(slot2.item)
 	if slot3.item: items.append(slot3.item)
 
-	for recipe in recipe_list:
+	for recipe in recipe_database.recipe_list:
 		if matches_recipe(items, recipe):
 			return recipe
 	
@@ -180,6 +188,13 @@ func load_inventory() -> void:
 
 		var amount: int = PlayerInventory.items[item]
 		slot.set_item(item, amount)
+
+		#slot.item_clicked.connect(add_ingredient)
+		
+		if is_item_already_used(item):
+			slot.set_disabled(true)
+		else:
+			slot.set_disabled(false)
 
 		slot.item_clicked.connect(add_ingredient)
 

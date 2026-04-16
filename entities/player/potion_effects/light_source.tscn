@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://ee66nt40cf30"]
 
-[ext_resource type="Script" path="res://entities/player/potion_effects/light_source.gd" id="1_88qgs"]
+[ext_resource type="Script" uid="uid://mr57iltsbtju" path="res://entities/player/potion_effects/light_source.gd" id="1_88qgs"]
 [ext_resource type="Texture2D" uid="uid://oieb8ggjrs4b" path="res://assets/point_light.png" id="2_88qgs"]
 
 [node name="LightSource" type="Node2D" unique_id=1163353561]
 script = ExtResource("1_88qgs")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=335910638]
-energy = 0.5
+energy = 0.1
 texture = ExtResource("2_88qgs")
 texture_scale = 0.7
 

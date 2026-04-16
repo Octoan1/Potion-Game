@@ -8,5 +8,6 @@
 script = ExtResource("2_3vsek")
 name = "Small Crystal"
 icon = ExtResource("2_lr55d")
+description = "A glowing crystal found in the heart of the caves, warm to the touch. It will restore warmth to her body once more."
 id = "small_crystal"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="3_j08ga"]
 [ext_resource type="Texture2D" uid="uid://c1neawxans5ul" path="res://assets/luminescent_fungus_placeholder.png" id="4_20gjv"]
 [ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_5bqhy"]
+[ext_resource type="Texture2D" uid="uid://oieb8ggjrs4b" path="res://assets/point_light.png" id="6_20gjv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_478de"]
 radius = 18.0
@@ -48,6 +49,14 @@ texture = ExtResource("5_5bqhy")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=393281659]
 position = Vector2(0.5, -8)
 shape = SubResource("RectangleShape2D_478de")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2029521575]
+position = Vector2(0, -8)
+color = Color(0.3254902, 1, 1, 1)
+energy = 0.01
+texture = ExtResource("6_20gjv")
+texture_scale = 0.4
+height = 950.0
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="body_entered" from="CollectableRadius" to="." method="_on_collectable_radius_body_entered"]

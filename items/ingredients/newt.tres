@@ -8,5 +8,6 @@
 script = ExtResource("2_otn6e")
 name = "Newt"
 icon = ExtResource("2_aqvk2")
+description = "A slimy newt grabbed out of the mud lining a pond. Newt tails are common symbols of good luck in these parts and are sometimes carried in pockets to protect from fell omens. You opted for a metal charm for the sake of neatness while searching and travelling."
 id = "newt"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

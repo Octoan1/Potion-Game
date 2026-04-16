@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c4plyfkdh7m2q" path="res://ui/inventory_slot.gd" id="1_d1f1n"]
 [ext_resource type="Texture2D" uid="uid://bcwyv4c8ak0u6" path="res://assets/inventory_slot_test.png" id="2_6t8ig"]
 [ext_resource type="Texture2D" uid="uid://beudpvgy8o2rf" path="res://assets/ui/inv_highlight.png" id="2_tld60"]
+[ext_resource type="Texture2D" uid="uid://drwar7cykpatl" path="res://assets/disabled_icon.png" id="4_t5oqt"]
 [ext_resource type="FontFile" uid="uid://bk5yds786fbr6" path="res://assets/ui/numbers.png" id="4_tld60"]
 
 [node name="InventorySlot" type="Control" unique_id=411698676]
@@ -27,6 +28,15 @@ offset_top = 2.0
 offset_right = 18.0
 offset_bottom = 18.0
 texture = ExtResource("2_6t8ig")
+
+[node name="DisabledOverlay" type="TextureRect" parent="." unique_id=1729606591]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+texture = ExtResource("4_t5oqt")
 
 [node name="ItemAmount" type="Label" parent="." unique_id=386135916]
 layout_mode = 0

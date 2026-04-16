@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://80kl10p8d3vr" path="res://entities/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cpx7st7a7vvu3" path="res://assets/lilguy.png" id="2_abrql"]
 [ext_resource type="PackedScene" uid="uid://cxp0jfue8lyds" path="res://entities/player/potion_effects/burn_area.tscn" id="2_bls4j"]
+[ext_resource type="PackedScene" uid="uid://bsjmoltin8arl" path="res://ui/player/heart_icon.tscn" id="2_qiwj3"]
 [ext_resource type="Script" uid="uid://dh65w2ghpwat5" path="res://entities/player/input_controller.gd" id="2_sglur"]
 [ext_resource type="PackedScene" uid="uid://wb03u4vl2l4m" path="res://entities/player/potion_effects/freeze_area.tscn" id="3_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://ee66nt40cf30" path="res://entities/player/potion_effects/light_source.tscn" id="3_fkugw"]
@@ -47,9 +48,13 @@ size = Vector2(8, 3)
 [sub_resource type="CircleShape2D" id="CircleShape2D_abrql"]
 radius = 20.024984
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8fjmc"]
+light_mode = 1
+
 [node name="Player" type="CharacterBody2D" unique_id=807103536 groups=["Player"]]
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_onrkg")
+heart_icon_scene = ExtResource("2_qiwj3")
 burn_area = ExtResource("2_bls4j")
 freeze_area = ExtResource("3_8fjmc")
 
@@ -79,4 +84,20 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_abrql")
 debug_color = Color(0, 0.6392157, 0.38431373, 0.05490196)
 
+[node name="DarkGrabLabel" type="Label" parent="." unique_id=1627017111]
+visible = false
+material = SubResource("CanvasItemMaterial_8fjmc")
+offset_left = -24.0
+offset_top = -11.0
+offset_right = 25.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 5
+text = "its too dark!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="DarkGrabLabel" unique_id=659788624]
+one_shot = true
+
 [connection signal="light_boost_ended" from="PotionEffectsContainer/LightSource" to="." method="_on_light_source_light_boost_ended"]
+[connection signal="timeout" from="DarkGrabLabel/Timer" to="." method="_on_timer_timeout"]

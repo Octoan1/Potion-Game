@@ -8,5 +8,6 @@
 script = ExtResource("2_qsu5f")
 name = "Lichen"
 icon = ExtResource("2_ejbv0")
+description = "A chunk of lichen found growing on an abandoned well. It doesn’t glow on its own but it absorbs sunlight and releases it gradually in small amounts. A small consolation for the regret of letting the well get like this."
 id = "lichen"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

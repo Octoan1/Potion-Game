@@ -8,5 +8,6 @@
 script = ExtResource("2_ekoae")
 name = "Luminescent Fungus"
 icon = ExtResource("2_2jm8t")
+description = "The glowing secretions of this fungus make it prized among painters, although few know that it repels evil as well as darkness. You once used it to paint glowing stars all over your mother’s ceiling to cheer her up."
 id = "luminescent_fungus"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

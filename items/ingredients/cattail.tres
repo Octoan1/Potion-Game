@@ -8,5 +8,6 @@
 script = ExtResource("2_o0fyd")
 name = "Cattail"
 icon = ExtResource("2_766fn")
+description = "A slender reed pulled from the mucky shores of the pond. The seeds itch at the throat when consumed but strengthen one’s spirit. "
 id = "cattail"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

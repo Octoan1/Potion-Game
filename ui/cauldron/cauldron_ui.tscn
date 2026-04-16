@@ -1,13 +1,8 @@
 [gd_scene format=3 uid="uid://jw0xa4522p3u"]
 
 [ext_resource type="Script" uid="uid://b8x1tejp1yxsf" path="res://ui/cauldron/cauldron_ui.gd" id="1_noiky"]
-[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="2_oaa8u"]
-[ext_resource type="Resource" uid="uid://v2cv4qv407xs" path="res://items/recipes/3_type/fire_potion_recipe.tres" id="3_hxuau"]
+[ext_resource type="Resource" uid="uid://bephiqa1vhwqb" path="res://items/recipes/recipe_database.tres" id="2_oaa8u"]
 [ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="5_hrby0"]
-[ext_resource type="Resource" uid="uid://cp1eeqkxc7kwc" path="res://items/recipes/3_type/swiftness_potion_recipe.tres" id="5_tupx3"]
-[ext_resource type="Resource" uid="uid://c3ld1gydfsrj" path="res://items/recipes/3_type/spirit_repellent_potion.tres" id="6_tupx3"]
-[ext_resource type="Resource" uid="uid://dabxifjlt1cg3" path="res://items/recipes/3_type/healing_potion_recipe.tres" id="7_1uavu"]
-[ext_resource type="Resource" uid="uid://1x5pbth32jou" path="res://items/recipes/3_type/light_potion_recipe.tres" id="7_2qsyq"]
 [ext_resource type="Texture2D" uid="uid://c1kvinxlfbyc8" path="res://assets/brewing area.png" id="10_1uavu"]
 [ext_resource type="Texture2D" uid="uid://yv8njp175auf" path="res://assets/cauldron_slot.png" id="10_j4hgf"]
 
@@ -20,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_noiky")
-recipe_list = Array[ExtResource("2_oaa8u")]([ExtResource("3_hxuau"), ExtResource("7_2qsyq"), ExtResource("5_tupx3"), ExtResource("6_tupx3"), ExtResource("7_1uavu")])
+recipe_database = ExtResource("2_oaa8u")
 slot_scene = ExtResource("5_hrby0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1032425472]

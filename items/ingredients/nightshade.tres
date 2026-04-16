@@ -8,5 +8,6 @@
 script = ExtResource("2_xd4jl")
 name = "Nightshade"
 icon = ExtResource("2_x4mjb")
+description = "A flower used for a variety of potent poisons. Just one plant is enough to make a whole keg’s worth of liquid dangerous if not deadly."
 id = "nightshade"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

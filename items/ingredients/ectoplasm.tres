@@ -8,5 +8,6 @@
 script = ExtResource("2_mqguh")
 name = "Ectoplasm"
 icon = ExtResource("2_0y686")
+description = "A sort of viscous goo found in areas frequented by spirits of the dead. They used to be your play companions, but they never forgave you for leaving her even if it was for her sake."
 id = "ectoplasm"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

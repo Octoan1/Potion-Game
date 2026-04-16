@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bsjmoltin8arl"]
+
+[ext_resource type="Texture2D" uid="uid://dq4fyyvpsq6pn" path="res://assets/heart_icon_placeholder.png" id="1_lbnpp"]
+
+[node name="HeartIcon" type="TextureRect" unique_id=2042829033]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_lbnpp")

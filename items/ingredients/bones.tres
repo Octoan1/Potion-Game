@@ -8,5 +8,6 @@
 script = ExtResource("2_7ea4i")
 name = "Bones"
 icon = ExtResource("2_8f135")
+description = "Remnants of the bodies once inhabited by the spirits of this wood, still holding the power of the ancestors they belonged to. She will not meet the same fate as the others. She will not."
 id = "bones"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

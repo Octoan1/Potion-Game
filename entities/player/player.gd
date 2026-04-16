@@ -16,7 +16,9 @@ var external_velocity: Vector2 = Vector2.ZERO
 var river_force: Vector2 = Vector2.ZERO
 
 @export_category("Health")
-@export var health: float = 100.0
+@export var health: int = 1
+@export var health_container: HBoxContainer
+@export var heart_icon_scene: PackedScene
 
 @export_category("Potion Effects")
 @onready var stationary_potion_effects_container: Node = $StatPotionEffectsContainer
@@ -83,7 +85,10 @@ func close_inventory() -> void:
 	inventory_ui.visible = false
 
 
-func try_interact() -> void:
+func _on_timer_timeout() -> void:
+	$DarkGrabLabel.hide()
+
+func try_interact() -> void:	
 	for area: Area2D in $InteractionArea.get_overlapping_areas():
 		var body: Node2D = area.get_parent()
 		if body.has_method("interact"):
@@ -94,8 +99,13 @@ func try_interact() -> void:
 	#print("Closet: ", closest)
 	#print("Closest parent: ", closest.get_parent())
 	
+	if in_dark_area and not closest.is_in_group("doors") and not light_boost_on:
+		$DarkGrabLabel.show()
+		$DarkGrabLabel/Timer.start()
+		return
+	
 	# interact
-	var interactable: Interactable =	 closest.get_node("Interactable")
+	var interactable: Interactable = closest.get_node("Interactable")
 	interactable.interact()
 	
 			
@@ -126,6 +136,9 @@ func reset_level() -> void:
 # ===== POTION EFFECT HANDLING =====
 func heal(amount: int) -> void:
 	health += amount
+	for i in range(amount):
+		var heart: TextureRect = heart_icon_scene.instantiate()
+		health_container.add_child(heart)
 
 func apply_speed_boost(amount: float, duration: float) -> void:
 	max_speed *= amount

@@ -31,7 +31,9 @@ func _process(delta: float) -> void:
 func boost(new_texture_scale: float, duration: float) -> void:
 	var tween: Tween = create_tween()
 	tween.tween_property(light, "texture_scale", new_texture_scale, 1.5)
+	#tween.tween_property(light, "energy", 0.5, 1.5)
 	await tween.finished
+	light.energy = 0.5
 	
 	curr_base_scale = new_texture_scale 
 	
@@ -42,6 +44,8 @@ func boost(new_texture_scale: float, duration: float) -> void:
 func _on_potion_duration_timeout() -> void:
 	var tween: Tween = create_tween()
 	tween.tween_property(light, "texture_scale", base_scale, 1.5)
+	#tween.tween_property(light, "energy", 0.1, 1.5)
+	light.energy = 0.1
 	
 	curr_base_scale = base_scale
 	light_boost_ended.emit()

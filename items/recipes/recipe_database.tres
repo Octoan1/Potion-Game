@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeDatabase" format=3 uid="uid://bephiqa1vhwqb"]
+
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="1_bea55"]
+[ext_resource type="Resource" uid="uid://v2cv4qv407xs" path="res://items/recipes/3_type/fire_potion_recipe.tres" id="2_0fcky"]
+[ext_resource type="Script" uid="uid://ehmxpyyjvs77" path="res://items/recipes/recipe_database.gd" id="2_bi0nn"]
+[ext_resource type="Resource" uid="uid://1x5pbth32jou" path="res://items/recipes/3_type/light_potion_recipe.tres" id="3_gybg5"]
+[ext_resource type="Resource" uid="uid://cp1eeqkxc7kwc" path="res://items/recipes/3_type/swiftness_potion_recipe.tres" id="4_fh46u"]
+[ext_resource type="Resource" uid="uid://c3ld1gydfsrj" path="res://items/recipes/3_type/spirit_repellent_potion.tres" id="5_e5bwt"]
+[ext_resource type="Resource" uid="uid://dabxifjlt1cg3" path="res://items/recipes/3_type/healing_potion_recipe.tres" id="6_gybg5"]
+
+[resource]
+script = ExtResource("2_bi0nn")
+recipe_list = Array[ExtResource("1_bea55")]([ExtResource("2_0fcky"), ExtResource("3_gybg5"), ExtResource("4_fh46u"), ExtResource("5_e5bwt"), ExtResource("6_gybg5")])
+metadata/_custom_type_script = "uid://ehmxpyyjvs77"

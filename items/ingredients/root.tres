@@ -6,7 +6,8 @@
 
 [resource]
 script = ExtResource("2_dms3x")
-name = "Root"
+name = "Gnarled Root"
 icon = ExtResource("2_k87lw")
-id = "root"
+description = "A knob from one of the Great Oak’s far-reaching roots, shed by the tree as a gift. The living roots of the tree seem to twitch happily when touched by the sap dripping from it."
+id = "gnarled_root"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

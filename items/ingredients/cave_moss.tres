@@ -8,5 +8,6 @@
 script = ExtResource("2_6qnbw")
 name = "Cave Moss"
 icon = ExtResource("2_1tcop")
+description = "A fluffy chunk of moss partial to the damp walls of caves. You feel like you get the urge to bounce off the walls just from the smell of it. "
 id = "cave_moss"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"

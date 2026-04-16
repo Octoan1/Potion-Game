@@ -1,6 +1,6 @@
 extends Control
 
-@export var recipe_list: Array[Recipe]
+@export var recipe_database: RecipeDatabase
 @export var recipe_row_scene: PackedScene
 
 @onready var list: VBoxContainer = $ScrollContainer/RecipeList
@@ -14,7 +14,7 @@ func load_recipes() -> void:
 	for child: Node in list.get_children():
 		child.queue_free()
 
-	for recipe: Recipe in recipe_list:
+	for recipe: Recipe in recipe_database.recipe_list:
 		var row: RecipeRow = recipe_row_scene.instantiate() as RecipeRow
 		list.add_child(row)
 

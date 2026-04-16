@@ -8,5 +8,6 @@
 script = ExtResource("2_envqf")
 name = "Roe"
 icon = ExtResource("2_hdj3g")
+description = "A cluster of gooey fish eggs laid carefully by a mature scarletfin fish. Little pearls of a mother’s love will surely bring hers back."
 id = "roe"
 metadata/_custom_type_script = "uid://bsj305oo16mvm"
