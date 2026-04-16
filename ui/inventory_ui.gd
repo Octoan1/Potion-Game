@@ -2,9 +2,14 @@ extends Control
 
 @export var slot_scene: PackedScene
 @onready var grid: GridContainer = $Panel/GridContainer
+@onready var tooltip: ItemTooltip = preload("res://ui/item_tool_tip.tscn").instantiate()
 
 
 func _ready() -> void:
+	add_child(tooltip)
+	tooltip.hide()
+	tooltip.add_to_group("tooltip")
+	
 	update_inventory()
 	PlayerInventory.inventory_updated.connect(update_inventory)
 

@@ -15,10 +15,10 @@ slot_scene = ExtResource("2_wij5n")
 
 [node name="Panel" type="Panel" parent="." unique_id=514469460]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 29.0
-offset_right = 208.0
-offset_bottom = 107.0
+offset_left = 38.0
+offset_top = 18.0
+offset_right = 218.0
+offset_bottom = 111.0
 
 [node name="GridContainer" type="GridContainer" parent="Panel" unique_id=578912659]
 layout_mode = 1
@@ -31,4 +31,4 @@ offset_right = -4.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 5
+columns = 7

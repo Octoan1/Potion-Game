@@ -23,6 +23,7 @@ func load_recipes() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("recipe_book"):
+		move_to_front()
 		load_recipes()
 		self.visible = not self.visible
 	if event.is_action_pressed("ui_cancel"):

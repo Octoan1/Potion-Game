@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://dabxifjlt1cg3" path="res://items/recipes/3_type/healing_potion_recipe.tres" id="7_1uavu"]
 [ext_resource type="Resource" uid="uid://1x5pbth32jou" path="res://items/recipes/3_type/light_potion_recipe.tres" id="7_2qsyq"]
 [ext_resource type="Texture2D" uid="uid://c1kvinxlfbyc8" path="res://assets/brewing area.png" id="10_1uavu"]
+[ext_resource type="Texture2D" uid="uid://yv8njp175auf" path="res://assets/cauldron_slot.png" id="10_j4hgf"]
 
 [node name="CauldronUI" type="Control" unique_id=698506239]
 process_mode = 2
@@ -31,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_1uavu")
 
-[node name="Panel" type="Panel" parent="." unique_id=1448362670]
+[node name="Panel" type="Control" parent="." unique_id=2117542904]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,63 +42,133 @@ grow_vertical = 2
 
 [node name="BrewButton" type="Button" parent="Panel" unique_id=1589638975]
 layout_mode = 0
-offset_left = 92.0
-offset_top = 69.0
-offset_right = 145.0
-offset_bottom = 100.0
+offset_left = 106.0
+offset_top = 116.0
+offset_right = 159.0
+offset_bottom = 141.0
+theme_override_font_sizes/font_size = 12
 text = "Brew!"
 
-[node name="ResultLabel" type="Label" parent="Panel" unique_id=1642385389]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 34.0
-offset_top = -37.0
-offset_right = 91.0
-offset_bottom = -14.0
-grow_vertical = 0
+[node name="ResultHBoxContainer2" type="HBoxContainer" parent="Panel" unique_id=815351739]
+visible = false
+layout_mode = 0
+offset_left = 42.0
+offset_top = 94.0
+offset_right = 218.0
+offset_bottom = 111.0
+alignment = 1
+
+[node name="ResultLabel" type="Label" parent="Panel/ResultHBoxContainer2" unique_id=1642385389]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "Result: "
+
+[node name="ResultIcon" type="TextureRect" parent="Panel/ResultHBoxContainer2" unique_id=614210032]
+layout_mode = 2
+texture = ExtResource("10_j4hgf")
+stretch_mode = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=435026409]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 36.0
-offset_right = 156.0
-offset_bottom = 76.0
+offset_left = 92.0
+offset_top = 59.0
+offset_right = 171.0
+offset_bottom = 79.0
 alignment = 1
 
 [node name="IngredientSlot1" parent="Panel/HBoxContainer" unique_id=411698676 instance=ExtResource("5_hrby0")]
 layout_mode = 2
 show_item_count = false
+for_cauldron = true
+
+[node name="CauldronIcon" type="TextureRect" parent="Panel/HBoxContainer/IngredientSlot1" unique_id=473697709]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_j4hgf")
 
 [node name="IngredientSlot2" parent="Panel/HBoxContainer" unique_id=1286564138 instance=ExtResource("5_hrby0")]
 layout_mode = 2
 show_item_count = false
+for_cauldron = true
+
+[node name="CauldronIcon2" type="TextureRect" parent="Panel/HBoxContainer/IngredientSlot2" unique_id=518525494]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_j4hgf")
 
 [node name="IngredientSlot3" parent="Panel/HBoxContainer" unique_id=828386002 instance=ExtResource("5_hrby0")]
 visible = false
 layout_mode = 2
 show_item_count = false
+for_cauldron = true
+
+[node name="CauldronIcon3" type="TextureRect" parent="Panel/HBoxContainer/IngredientSlot3" unique_id=1436738081]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_j4hgf")
 
 [node name="Label" type="Label" parent="." unique_id=410243958]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -81.5
-offset_right = 81.5
-offset_bottom = 23.0
+offset_left = -126.0
+offset_top = 119.0
+offset_right = 37.0
+offset_bottom = 142.0
 grow_horizontal = 2
-text = "Cauldron: (presss [esc] to close)"
+theme_override_font_sizes/font_size = 6
+text = "Press [Esc] or [Tab] to close
+Press [R] to open Recipe Book"
 
 [node name="InventoryGrid" type="GridContainer" parent="." unique_id=532482846]
-layout_mode = 0
-offset_left = 175.0
-offset_top = 31.0
-offset_right = 215.0
-offset_bottom = 71.0
-columns = 3
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -108.5
+offset_top = 6.0
+offset_right = 108.5
+offset_bottom = 46.0
+grow_horizontal = 2
+columns = 9
+
+[node name="HideResult" type="Timer" parent="." unique_id=1263253504]
+wait_time = 1.5
+one_shot = true
 
 [connection signal="pressed" from="Panel/BrewButton" to="." method="_on_brew_button_pressed"]
 [connection signal="item_clicked" from="Panel/HBoxContainer/IngredientSlot1" to="." method="_on_ingredient_slot_1_item_clicked"]

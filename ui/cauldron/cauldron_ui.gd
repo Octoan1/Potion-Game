@@ -9,6 +9,10 @@ extends Control
 @onready var slot2: InventorySlot = $Panel/HBoxContainer/IngredientSlot2
 @onready var slot3: InventorySlot = $Panel/HBoxContainer/IngredientSlot3
 
+@onready var result_h_box_container_2: HBoxContainer = $Panel/ResultHBoxContainer2
+@onready var result_label: Label = $Panel/ResultHBoxContainer2/ResultLabel
+@onready var result_icon: TextureRect = $Panel/ResultHBoxContainer2/ResultIcon
+@onready var hide_result: Timer = $HideResult
 
 func _ready() -> void:
 
@@ -89,7 +93,19 @@ func brew() -> void:
 		# Discover recipe
 		GameState.discover_recipe(recipe)
 		
-		$Panel/ResultLabel.text = "Created: " + recipe.result.name
+		result_h_box_container_2.show()
+		result_label.text = "Created: " + recipe.result.name
+		
+		result_icon.texture = recipe.result.icon
+		#result_icon.scale = Vector2.ONE * 0.1
+		#var tween: Tween = create_tween()
+		#tween.tween_property(result_icon, "scale", Vector2.ONE, 2.5)
+		#await tween.finished
+		hide_result.start()
+		await hide_result.timeout
+		
+		result_h_box_container_2.hide()
+		
 
 	load_inventory()
 	update_ui()

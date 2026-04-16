@@ -44,6 +44,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="ItemName" type="Label" parent="." unique_id=30757842]
+visible = false
 layout_mode = 0
 offset_left = 6.0
 offset_top = 11.0
