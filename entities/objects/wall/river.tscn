@@ -3,5 +3,6 @@
 [ext_resource type="Script" uid="uid://kxtbj7w7v3ni" path="res://entities/objects/wall/river.gd" id="1_rrqel"]
 
 [node name="River" type="Area2D" unique_id=774657934]
+collision_mask = 3
 script = ExtResource("1_rrqel")
 push_strength = 2000.0
