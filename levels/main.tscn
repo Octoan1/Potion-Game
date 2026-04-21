@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cnrtjsuigcr7v" path="res://ui/recipe_book/recipe_book_ui.tscn" id="7_6et1j"]
 [ext_resource type="Texture2D" uid="uid://dq4fyyvpsq6pn" path="res://assets/heart_icon_placeholder.png" id="7_etqu2"]
 [ext_resource type="PackedScene" uid="uid://dgydlru8idsan" path="res://ui/win_screen.tscn" id="8_etqu2"]
+[ext_resource type="AudioStream" uid="uid://bij73v6pwxogn" path="res://audio/woods.mp3" id="10_jw1n3"]
 
 [node name="Main" type="Node2D" unique_id=311730625]
 
@@ -19,7 +20,7 @@ player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=807103536 node_paths=PackedStringArray("inventory_ui", "health_container", "win_screen") instance=ExtResource("1_2262g")]
 z_index = 1
-position = Vector2(136, 480)
+position = Vector2(156, 478)
 inventory_ui = NodePath("../CanvasLayer/PlayerInventoryUI")
 health_container = NodePath("../CanvasLayer/HeartHBoxContainer")
 win_screen = NodePath("../CanvasLayer/WinScreen")
@@ -72,3 +73,10 @@ visible = false
 [node name="DebuggerTool" type="Node" parent="." unique_id=533554427]
 process_mode = 3
 script = ExtResource("6_5k4jt")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=965803419]
+process_mode = 3
+stream = ExtResource("10_jw1n3")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true

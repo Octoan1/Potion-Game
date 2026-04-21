@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c05s0nb1riqo5"]
+
+[ext_resource type="Texture2D" uid="uid://cbnnnkilf1eva" path="res://assets/grass.png" id="1_fik6v"]
+[ext_resource type="Shader" uid="uid://cy4givemmmpfq" path="res://entities/objects/grass/grass.gdshader" id="1_ug0ti"]
+[ext_resource type="Texture2D" uid="uid://dr8h0e88e812g" path="res://assets/grass2.png" id="3_cdbap"]
+[ext_resource type="Texture2D" uid="uid://davaatgpik1pd" path="res://assets/grass3.png" id="3_ra3wp"]
+[ext_resource type="Script" uid="uid://cewvok78cyi6l" path="res://entities/objects/grass/grass.gd" id="4_ra3wp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_exg1n"]
+shader = ExtResource("1_ug0ti")
+shader_parameter/strength = 1.206000057285
+shader_parameter/speed = 2.0
+shader_parameter/frequency = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05rk7"]
+atlas = ExtResource("1_fik6v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p63qp"]
+atlas = ExtResource("3_ra3wp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcmj6"]
+atlas = ExtResource("3_cdbap")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p63qp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05rk7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p63qp")
+}],
+"loop": true,
+"name": &"flower",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcmj6")
+}],
+"loop": true,
+"name": &"grass2",
+"speed": 5.0
+}]
+
+[node name="Grass" type="AnimatedSprite2D" unique_id=890151456]
+material = SubResource("ShaderMaterial_exg1n")
+sprite_frames = SubResource("SpriteFrames_p63qp")
+script = ExtResource("4_ra3wp")

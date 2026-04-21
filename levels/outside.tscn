@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dpt74j45tnj5i" path="res://entities/ingredient_sources/1_starting_area/leaf_source.tscn" id="14_pxy48"]
 [ext_resource type="PackedScene" uid="uid://gl63pe8ok716" path="res://entities/objects/wall/tiny_dead_tree.tscn" id="15_43xds"]
 [ext_resource type="PackedScene" uid="uid://cnehq1ntvmk25" path="res://entities/ingredient_sources/1_starting_area/mushroom_source.tscn" id="15_xi4s4"]
+[ext_resource type="PackedScene" uid="uid://c05s0nb1riqo5" path="res://entities/objects/grass/grass.tscn" id="16_35tpi"]
 [ext_resource type="PackedScene" uid="uid://ciapkpcev7tv7" path="res://entities/ingredient_sources/abondoned_well/root_source.tscn" id="16_absnv"]
 [ext_resource type="PackedScene" uid="uid://drypmt4ns83cs" path="res://entities/objects/wall/bramble.tscn" id="16_pxy48"]
 [ext_resource type="PackedScene" uid="uid://br4j3dhflxfek" path="res://entities/ingredient_sources/abondoned_well/spring_water_source.tscn" id="17_png5n"]
@@ -181,6 +182,19 @@ region_rect = Rect2(0, 0, 112, 160)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vegetation/Trees/BigTrees/Tree15/StaticBody2D" unique_id=1813182483]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_chlwx")
+
+[node name="Tree113" type="Sprite2D" parent="Vegetation/Trees/BigTrees" unique_id=1474407094]
+position = Vector2(595, 329)
+texture = ExtResource("11_wiund")
+region_enabled = true
+region_rect = Rect2(0, 0, 112, 160)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Vegetation/Trees/BigTrees/Tree113" unique_id=854211683]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vegetation/Trees/BigTrees/Tree113/StaticBody2D" unique_id=254603042]
 position = Vector2(-2, 2)
 shape = SubResource("RectangleShape2D_chlwx")
 
@@ -757,6 +771,32 @@ collision_mask = 0
 position = Vector2(-2, 2)
 shape = SubResource("RectangleShape2D_chlwx")
 
+[node name="Tree114" type="Sprite2D" parent="Vegetation/Trees/BigTrees" unique_id=1693240432]
+position = Vector2(-41, 567)
+texture = ExtResource("11_wiund")
+region_enabled = true
+region_rect = Rect2(0, 0, 112, 160)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Vegetation/Trees/BigTrees/Tree114" unique_id=1404134463]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vegetation/Trees/BigTrees/Tree114/StaticBody2D" unique_id=132371680]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_chlwx")
+
+[node name="Tree115" type="Sprite2D" parent="Vegetation/Trees/BigTrees" unique_id=1102149872]
+position = Vector2(-60, 572)
+texture = ExtResource("11_wiund")
+region_enabled = true
+region_rect = Rect2(0, 0, 112, 160)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Vegetation/Trees/BigTrees/Tree115" unique_id=74593053]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vegetation/Trees/BigTrees/Tree115/StaticBody2D" unique_id=1909383772]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_chlwx")
+
 [node name="Tree42" type="Sprite2D" parent="Vegetation/Trees/BigTrees" unique_id=1795684123]
 position = Vector2(-93, 179)
 texture = ExtResource("11_wiund")
@@ -1030,6 +1070,21 @@ position = Vector2(101, 77)
 
 [node name="Tree74" parent="Vegetation/Trees/BigTrees" unique_id=1723480502 instance=ExtResource("12_ue7d7")]
 position = Vector2(-11, 784)
+
+[node name="Tree116" parent="Vegetation/Trees/BigTrees" unique_id=2009308361 instance=ExtResource("12_ue7d7")]
+position = Vector2(-88, 604)
+
+[node name="Tree117" parent="Vegetation/Trees/BigTrees" unique_id=899803063 instance=ExtResource("12_ue7d7")]
+position = Vector2(-104, 688)
+
+[node name="Tree118" parent="Vegetation/Trees/BigTrees" unique_id=1235507456 instance=ExtResource("12_ue7d7")]
+position = Vector2(-180, 611)
+
+[node name="Tree119" parent="Vegetation/Trees/BigTrees" unique_id=1002609460 instance=ExtResource("12_ue7d7")]
+position = Vector2(-96, 752)
+
+[node name="Tree120" parent="Vegetation/Trees/BigTrees" unique_id=1387558808 instance=ExtResource("12_ue7d7")]
+position = Vector2(-168, 744)
 
 [node name="Tree80" parent="Vegetation/Trees/BigTrees" unique_id=2112245596 instance=ExtResource("12_ue7d7")]
 position = Vector2(126, 794)
@@ -1498,6 +1553,134 @@ position = Vector2(1309, 366)
 
 [node name="StaticBody2D4" parent="Vegetation/TinyDeadTrees" unique_id=1535589333 instance=ExtResource("15_43xds")]
 position = Vector2(1451, 232)
+
+[node name="GrassContainer" type="Node2D" parent="Vegetation" unique_id=1402775551]
+
+[node name="Grass" parent="Vegetation/GrassContainer" unique_id=644532763 instance=ExtResource("16_35tpi")]
+position = Vector2(452, 332)
+
+[node name="Grass2" parent="Vegetation/GrassContainer" unique_id=1246807324 instance=ExtResource("16_35tpi")]
+position = Vector2(417, 411)
+
+[node name="Grass3" parent="Vegetation/GrassContainer" unique_id=1000090280 instance=ExtResource("16_35tpi")]
+position = Vector2(452, 450)
+
+[node name="Grass4" parent="Vegetation/GrassContainer" unique_id=972627468 instance=ExtResource("16_35tpi")]
+position = Vector2(434, 500)
+
+[node name="Grass5" parent="Vegetation/GrassContainer" unique_id=376270342 instance=ExtResource("16_35tpi")]
+position = Vector2(474, 563)
+
+[node name="Grass6" parent="Vegetation/GrassContainer" unique_id=1618447098 instance=ExtResource("16_35tpi")]
+position = Vector2(393, 552)
+
+[node name="Grass7" parent="Vegetation/GrassContainer" unique_id=1795737554 instance=ExtResource("16_35tpi")]
+position = Vector2(329, 596)
+
+[node name="Grass8" parent="Vegetation/GrassContainer" unique_id=241740739 instance=ExtResource("16_35tpi")]
+position = Vector2(163, 615)
+
+[node name="Grass9" parent="Vegetation/GrassContainer" unique_id=7061842 instance=ExtResource("16_35tpi")]
+position = Vector2(97, 579)
+
+[node name="Grass10" parent="Vegetation/GrassContainer" unique_id=1221867351 instance=ExtResource("16_35tpi")]
+position = Vector2(167, 490)
+
+[node name="Grass11" parent="Vegetation/GrassContainer" unique_id=1000893445 instance=ExtResource("16_35tpi")]
+position = Vector2(231, 438)
+
+[node name="Grass12" parent="Vegetation/GrassContainer" unique_id=1152061802 instance=ExtResource("16_35tpi")]
+position = Vector2(265, 384)
+
+[node name="Grass13" parent="Vegetation/GrassContainer" unique_id=2009075702 instance=ExtResource("16_35tpi")]
+position = Vector2(234, 347)
+
+[node name="Grass14" parent="Vegetation/GrassContainer" unique_id=1172177318 instance=ExtResource("16_35tpi")]
+position = Vector2(208, 267)
+
+[node name="Grass15" parent="Vegetation/GrassContainer" unique_id=216423628 instance=ExtResource("16_35tpi")]
+position = Vector2(189, 215)
+
+[node name="Grass16" parent="Vegetation/GrassContainer" unique_id=1861684572 instance=ExtResource("16_35tpi")]
+position = Vector2(133, 211)
+
+[node name="Grass17" parent="Vegetation/GrassContainer" unique_id=900201183 instance=ExtResource("16_35tpi")]
+position = Vector2(118, 176)
+
+[node name="Grass18" parent="Vegetation/GrassContainer" unique_id=1121136976 instance=ExtResource("16_35tpi")]
+position = Vector2(61, 214)
+
+[node name="Grass19" parent="Vegetation/GrassContainer" unique_id=289443906 instance=ExtResource("16_35tpi")]
+position = Vector2(40, 190)
+
+[node name="Grass20" parent="Vegetation/GrassContainer" unique_id=1259790117 instance=ExtResource("16_35tpi")]
+position = Vector2(24, 272)
+
+[node name="Grass21" parent="Vegetation/GrassContainer" unique_id=1227635028 instance=ExtResource("16_35tpi")]
+position = Vector2(340, 249)
+
+[node name="Grass22" parent="Vegetation/GrassContainer" unique_id=633948502 instance=ExtResource("16_35tpi")]
+position = Vector2(381, 185)
+
+[node name="Grass23" parent="Vegetation/GrassContainer" unique_id=1689281951 instance=ExtResource("16_35tpi")]
+position = Vector2(445, 229)
+
+[node name="Grass24" parent="Vegetation/GrassContainer" unique_id=1971211665 instance=ExtResource("16_35tpi")]
+position = Vector2(495, 298)
+
+[node name="Grass25" parent="Vegetation/GrassContainer" unique_id=638586046 instance=ExtResource("16_35tpi")]
+position = Vector2(399, 348)
+
+[node name="Grass26" parent="Vegetation/GrassContainer" unique_id=319911523 instance=ExtResource("16_35tpi")]
+position = Vector2(381, 425)
+
+[node name="Grass27" parent="Vegetation/GrassContainer" unique_id=876153305 instance=ExtResource("16_35tpi")]
+position = Vector2(340, 454)
+
+[node name="Grass28" parent="Vegetation/GrassContainer" unique_id=1648201467 instance=ExtResource("16_35tpi")]
+position = Vector2(510, 426)
+
+[node name="Grass29" parent="Vegetation/GrassContainer" unique_id=425138075 instance=ExtResource("16_35tpi")]
+position = Vector2(462, 383)
+
+[node name="Grass30" parent="Vegetation/GrassContainer" unique_id=1125559264 instance=ExtResource("16_35tpi")]
+position = Vector2(509, 332)
+
+[node name="Grass31" parent="Vegetation/GrassContainer" unique_id=346883942 instance=ExtResource("16_35tpi")]
+position = Vector2(505, 205)
+
+[node name="Grass32" parent="Vegetation/GrassContainer" unique_id=1508087006 instance=ExtResource("16_35tpi")]
+position = Vector2(233, 300)
+
+[node name="Grass33" parent="Vegetation/GrassContainer" unique_id=859981098 instance=ExtResource("16_35tpi")]
+position = Vector2(237, 235)
+
+[node name="Grass34" parent="Vegetation/GrassContainer" unique_id=1752637337 instance=ExtResource("16_35tpi")]
+position = Vector2(262, 467)
+
+[node name="Grass35" parent="Vegetation/GrassContainer" unique_id=31936429 instance=ExtResource("16_35tpi")]
+position = Vector2(226, 392)
+
+[node name="Grass36" parent="Vegetation/GrassContainer" unique_id=422401480 instance=ExtResource("16_35tpi")]
+position = Vector2(168, 551)
+
+[node name="Grass37" parent="Vegetation/GrassContainer" unique_id=1179546915 instance=ExtResource("16_35tpi")]
+position = Vector2(110, 611)
+
+[node name="Grass38" parent="Vegetation/GrassContainer" unique_id=594632383 instance=ExtResource("16_35tpi")]
+position = Vector2(210, 618)
+
+[node name="Grass39" parent="Vegetation/GrassContainer" unique_id=1906182302 instance=ExtResource("16_35tpi")]
+position = Vector2(40, 486)
+
+[node name="Grass40" parent="Vegetation/GrassContainer" unique_id=877575388 instance=ExtResource("16_35tpi")]
+position = Vector2(54, 555)
+
+[node name="Grass41" parent="Vegetation/GrassContainer" unique_id=1514693382 instance=ExtResource("16_35tpi")]
+position = Vector2(518, 535)
+
+[node name="Grass42" parent="Vegetation/GrassContainer" unique_id=1816290702 instance=ExtResource("16_35tpi")]
+position = Vector2(605, 597)
 
 [node name="StartingArea" type="Node2D" parent="." unique_id=1058647754]
 

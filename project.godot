@@ -37,6 +37,7 @@ window/stretch/scale_mode="integer"
 
 folder_colors={
 "res://assets/": "purple",
+"res://audio/": "pink",
 "res://components/": "gray",
 "res://entities/": "yellow",
 "res://items/": "orange",
