@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_e3d1n"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="2_h10uf"]
 [ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="2_noyqh"]
-[ext_resource type="Resource" uid="uid://bp41a0e1ijl6e" path="res://items/ingredients/nightshade.tres" id="3_noyqh"]
-[ext_resource type="Resource" uid="uid://bbxhath2ufk1b" path="res://items/ingredients/bones.tres" id="4_ntjci"]
+[ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="3_noyqh"]
+[ext_resource type="Resource" uid="uid://cgsnx5k4vs65n" path="res://items/ingredients/small_crystal.tres" id="4_ntjci"]
 [ext_resource type="Resource" uid="uid://dm6yarqb04u28" path="res://items/potions/health_potion.tres" id="5_4y3qj"]
 
 [resource]

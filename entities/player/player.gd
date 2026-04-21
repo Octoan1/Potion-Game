@@ -181,6 +181,7 @@ func freeze(_radius: float) -> void:
 	stationary_potion_effects_container.add_child(new_freeze_area)
 	
 func freeze_follow(_radius: float) -> void:
+	print("follow")
 	var new_freeze_area: Area2D = freeze_area.instantiate()
 	new_freeze_area.global_position = self.global_position
 	

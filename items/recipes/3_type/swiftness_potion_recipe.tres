@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_4msca"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="2_3x8v4"]
+[ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_divof"]
 [ext_resource type="Resource" uid="uid://cgsnx5k4vs65n" path="res://items/ingredients/small_crystal.tres" id="3_divof"]
-[ext_resource type="Resource" uid="uid://c3acp4okqlqtq" path="res://items/ingredients/cave_moss.tres" id="3_xvnbk"]
-[ext_resource type="Resource" uid="uid://bl53jregs6s1c" path="res://items/ingredients/luminescent_fungus.tres" id="4_vrmb8"]
+[ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="3_vrmb8"]
 [ext_resource type="Resource" uid="uid://b2g3cygpeylqv" path="res://items/potions/speed_potion.tres" id="5_divof"]
 
 [resource]
 script = ExtResource("2_3x8v4")
 recipe_name = "Swiftness Potion Recipe"
 recipe_id = "swiftness_potion_recipe"
-ingredients = Array[ExtResource("1_4msca")]([ExtResource("3_xvnbk"), ExtResource("3_divof"), ExtResource("4_vrmb8")])
+ingredients = Array[ExtResource("1_4msca")]([ExtResource("2_divof"), ExtResource("3_vrmb8"), ExtResource("3_divof")])
 result = ExtResource("5_divof")
 metadata/_custom_type_script = "uid://ciee7sgvou518"

@@ -1862,36 +1862,6 @@ position = Vector2(83, -30)
 [node name="Bramble24" parent="Brambles" unique_id=1455540795 instance=ExtResource("16_pxy48")]
 position = Vector2(99, -30)
 
-[node name="Bramble26" parent="Brambles" unique_id=456727327 instance=ExtResource("16_pxy48")]
-position = Vector2(-45, -14)
-
-[node name="Bramble27" parent="Brambles" unique_id=1065260525 instance=ExtResource("16_pxy48")]
-position = Vector2(-29, -14)
-
-[node name="Bramble28" parent="Brambles" unique_id=2012978065 instance=ExtResource("16_pxy48")]
-position = Vector2(-13, -14)
-
-[node name="Bramble29" parent="Brambles" unique_id=1426135053 instance=ExtResource("16_pxy48")]
-position = Vector2(3, -14)
-
-[node name="Bramble30" parent="Brambles" unique_id=74484457 instance=ExtResource("16_pxy48")]
-position = Vector2(19, -14)
-
-[node name="Bramble31" parent="Brambles" unique_id=977323650 instance=ExtResource("16_pxy48")]
-position = Vector2(19, -14)
-
-[node name="Bramble32" parent="Brambles" unique_id=1634727150 instance=ExtResource("16_pxy48")]
-position = Vector2(35, -14)
-
-[node name="Bramble33" parent="Brambles" unique_id=51547851 instance=ExtResource("16_pxy48")]
-position = Vector2(51, -14)
-
-[node name="Bramble34" parent="Brambles" unique_id=2006261586 instance=ExtResource("16_pxy48")]
-position = Vector2(67, -14)
-
-[node name="Bramble35" parent="Brambles" unique_id=158419505 instance=ExtResource("16_pxy48")]
-position = Vector2(83, -14)
-
 [node name="HauntedWoods" type="Node2D" parent="." unique_id=669014217]
 
 [node name="Monsters" type="Node2D" parent="HauntedWoods" unique_id=676625327]

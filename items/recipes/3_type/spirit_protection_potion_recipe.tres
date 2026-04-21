@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://pcxu4fa32wvr"]
 
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_68ys0"]
-[ext_resource type="Resource" uid="uid://b6l531hnwcrwe" path="res://items/ingredients/newt.tres" id="2_jkn0b"]
-[ext_resource type="Resource" uid="uid://cheql10orv8jv" path="res://items/ingredients/cattail.tres" id="3_imtql"]
-[ext_resource type="Resource" uid="uid://bl53jregs6s1c" path="res://items/ingredients/luminescent_fungus.tres" id="4_xasoe"]
-[ext_resource type="Resource" uid="uid://jsn4h1x65n0y" path="res://items/potions/freeze_potion.tres" id="5_qxy8t"]
+[ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/beetle.tres" id="2_68ys0"]
+[ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="3_jkn0b"]
+[ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="4_imtql"]
+[ext_resource type="Resource" uid="uid://baox8wavamtu" path="res://items/potions/spirit_shield_potion.tres" id="5_68ys0"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_pfxd7"]
 
 [resource]
 script = ExtResource("6_pfxd7")
 recipe_name = "Spirit Repellent Potion Recipe"
 recipe_id = "spirit_repellent_potion_recipe"
-ingredients = Array[ExtResource("1_68ys0")]([ExtResource("2_jkn0b"), ExtResource("3_imtql"), ExtResource("4_xasoe")])
-result = ExtResource("5_qxy8t")
+ingredients = Array[ExtResource("1_68ys0")]([ExtResource("2_68ys0"), ExtResource("3_jkn0b"), ExtResource("4_imtql")])
+result = ExtResource("5_68ys0")
 metadata/_custom_type_script = "uid://ciee7sgvou518"

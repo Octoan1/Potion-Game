@@ -1,5 +1,5 @@
 extends PotionEffect
-class_name FreezeFollowEffect
+class_name FreezeEffect
 
 @export var radius: float = 100.0
 
