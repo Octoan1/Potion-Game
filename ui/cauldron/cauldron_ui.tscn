@@ -4,6 +4,8 @@
 [ext_resource type="Resource" uid="uid://bephiqa1vhwqb" path="res://items/recipes/recipe_database.tres" id="2_oaa8u"]
 [ext_resource type="Resource" uid="uid://b7ahsg6v8ac1l" path="res://items/potions/placeholder_potion.tres" id="4_hxuau"]
 [ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="5_hrby0"]
+[ext_resource type="AudioStream" uid="uid://dnuspuhc1m8ux" path="res://audio/ui_click_freesound_community-ui-click-43196.mp3" id="7_hrby0"]
+[ext_resource type="AudioStream" uid="uid://dimeup1xk881y" path="res://audio/ui_error_soundshelfstudio-ui-error-pop-515668.mp3" id="8_tupx3"]
 [ext_resource type="Texture2D" uid="uid://c1kvinxlfbyc8" path="res://assets/brewing area.png" id="10_1uavu"]
 [ext_resource type="Texture2D" uid="uid://yv8njp175auf" path="res://assets/cauldron_slot.png" id="10_j4hgf"]
 
@@ -166,6 +168,12 @@ columns = 9
 [node name="HideResult" type="Timer" parent="." unique_id=1263253504]
 wait_time = 1.5
 one_shot = true
+
+[node name="UIClick" type="AudioStreamPlayer" parent="." unique_id=1753210617]
+stream = ExtResource("7_hrby0")
+
+[node name="UIError" type="AudioStreamPlayer" parent="." unique_id=1949760950]
+stream = ExtResource("8_tupx3")
 
 [connection signal="pressed" from="Panel/BrewButton" to="." method="_on_brew_button_pressed"]
 [connection signal="item_clicked" from="Panel/HBoxContainer/IngredientSlot1" to="." method="_on_ingredient_slot_1_item_clicked"]

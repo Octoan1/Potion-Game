@@ -43,4 +43,4 @@ func use_item(item: Item) -> void:
 		if effect:
 			effect.apply(player)
 
-	remove_item(item, 1)
+	#remove_item(item, 1)

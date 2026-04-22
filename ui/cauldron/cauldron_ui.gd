@@ -16,6 +16,9 @@ extends Control
 
 @export var placeholder_potion: Item
 
+@onready var ui_click: AudioStreamPlayer = $UIClick
+@onready var ui_error: AudioStreamPlayer = $UIError
+
 func _ready() -> void:
 
 	get_tree().paused = true
@@ -49,9 +52,11 @@ func add_ingredient(item: Item) -> void:
 		
 	# prevent dupes
 	if is_item_already_used(item):
+		ui_error.play()
 		print("Already used this item")
 		return
 	
+	ui_click.play(0.23)
 	if slot1.item == null:
 		slot1.item = item
 		slot1.icon.texture = item.icon
@@ -79,6 +84,7 @@ func brew() -> void:
 		result_label.text = "Need 3 Ingredients"
 		result_icon.hide()
 		show_result()
+		ui_error.play()
 		return
 
 	var recipe: Recipe = get_matching_recipe()
@@ -92,6 +98,7 @@ func brew() -> void:
 			#PlayerInventory.add_item(slot3.item)
 			slot3.clear_item()
 		
+		ui_error.play()
 		print("Invalid combo")
 		#result_label.text = "Invalid combo"
 		# not final

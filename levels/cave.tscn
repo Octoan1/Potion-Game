@@ -3,9 +3,7 @@
 [ext_resource type="Script" uid="uid://8xhvxvt5i53" path="res://levels/cave.gd" id="1_cnm32"]
 [ext_resource type="TileSet" uid="uid://ditavxpwkejwt" path="res://assets/test_tileset.tres" id="2_w12p8"]
 [ext_resource type="PackedScene" uid="uid://ihsppejsfafh" path="res://entities/objects/door/door.tscn" id="3_oe23n"]
-[ext_resource type="PackedScene" uid="uid://bfkg2qph2t7mc" path="res://entities/ingredient_sources/cave/cave_moss_source.tscn" id="4_0sdw8"]
 [ext_resource type="Texture2D" uid="uid://oieb8ggjrs4b" path="res://assets/point_light.png" id="4_d2gyv"]
-[ext_resource type="PackedScene" uid="uid://qhmnfd6ydyww" path="res://entities/ingredient_sources/cave/luminescent_fungus_source.tscn" id="5_d2gyv"]
 [ext_resource type="PackedScene" uid="uid://dtuhkjvksrvm" path="res://entities/ingredient_sources/cave/small_crystal_source.tscn" id="6_0sdw8"]
 
 [node name="Cave" type="Node2D" unique_id=1178197563]
@@ -45,27 +43,6 @@ text = "press [F] to exit"
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=981334602]
 color = Color(0.06397288, 0.077062406, 0.082581006, 1)
 
-[node name="CaveMossSource" parent="." unique_id=2094764493 instance=ExtResource("4_0sdw8")]
-position = Vector2(272, 63)
-
-[node name="CaveMossSource2" parent="." unique_id=191526936 instance=ExtResource("4_0sdw8")]
-position = Vector2(-247, 34)
-
-[node name="CaveMossSource3" parent="." unique_id=1719384334 instance=ExtResource("4_0sdw8")]
-position = Vector2(6, -123)
-
-[node name="CaveMossSource4" parent="." unique_id=675720817 instance=ExtResource("4_0sdw8")]
-position = Vector2(127, 148)
-
-[node name="LuminescentFungusSource" parent="." unique_id=139450339 instance=ExtResource("5_d2gyv")]
-position = Vector2(85, -30)
-
-[node name="LuminescentFungusSource2" parent="." unique_id=2065104309 instance=ExtResource("5_d2gyv")]
-position = Vector2(-120, -61)
-
-[node name="LuminescentFungusSource3" parent="." unique_id=1568872383 instance=ExtResource("5_d2gyv")]
-position = Vector2(-58, 118)
-
 [node name="SmallCrystalSource" parent="." unique_id=121385880 instance=ExtResource("6_0sdw8")]
 position = Vector2(97, 84)
 
@@ -74,5 +51,14 @@ position = Vector2(251, -51)
 
 [node name="SmallCrystalSource3" parent="." unique_id=317777608 instance=ExtResource("6_0sdw8")]
 position = Vector2(-199, 140)
+
+[node name="SmallCrystalSource4" parent="." unique_id=2094764493 instance=ExtResource("6_0sdw8")]
+position = Vector2(-199, -50)
+
+[node name="SmallCrystalSource5" parent="." unique_id=1185330160 instance=ExtResource("6_0sdw8")]
+position = Vector2(245, 129)
+
+[node name="SmallCrystalSource6" parent="." unique_id=635885405 instance=ExtResource("6_0sdw8")]
+position = Vector2(-45, -22)
 
 [connection signal="used_door" from="Door" to="." method="_on_door_used_door"]

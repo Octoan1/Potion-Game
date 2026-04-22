@@ -24,14 +24,10 @@ script = ExtResource("3_rg2ng")
 metadata/_custom_type_script = "uid://bw0jtgebb15w5"
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=177816685]
-visible = false
-modulate = Color(1, 1, 1, 0)
 position = Vector2(0, -8)
 texture = ExtResource("4_m4xp6")
 
 [node name="HarvestedSprite" type="Sprite2D" parent="." unique_id=1752622817]
-visible = false
-modulate = Color(0.48235294, 0.48235294, 0.48235294, 0)
 position = Vector2(0, -8)
 texture = ExtResource("4_m4xp6")
 

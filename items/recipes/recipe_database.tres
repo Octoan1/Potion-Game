@@ -9,8 +9,10 @@
 [ext_resource type="Resource" uid="uid://c3ld1gydfsrj" path="res://items/recipes/3_type/spirit_glue_potion_recipe.tres" id="5_fh46u"]
 [ext_resource type="Resource" uid="uid://dabxifjlt1cg3" path="res://items/recipes/3_type/healing_potion_recipe.tres" id="6_gybg5"]
 [ext_resource type="Resource" uid="uid://dykm245loshoy" path="res://items/recipes/3_type/win_game_potion_recipe.tres" id="7_fh46u"]
+[ext_resource type="Resource" uid="uid://c7rqauya4ntdx" path="res://items/recipes/3_type/big_potion_recipe.tres" id="9_t6ylo"]
+[ext_resource type="Resource" uid="uid://6vhdfp1hmph2" path="res://items/recipes/3_type/shrink_potion_recipe.tres" id="10_yfpcm"]
 
 [resource]
 script = ExtResource("2_bi0nn")
-recipe_list = Array[ExtResource("1_bea55")]([ExtResource("2_0fcky"), ExtResource("3_gybg5"), ExtResource("4_fh46u"), ExtResource("5_e5bwt"), ExtResource("5_fh46u"), ExtResource("6_gybg5"), ExtResource("7_fh46u")])
+recipe_list = Array[ExtResource("1_bea55")]([ExtResource("2_0fcky"), ExtResource("3_gybg5"), ExtResource("4_fh46u"), ExtResource("5_e5bwt"), ExtResource("5_fh46u"), ExtResource("6_gybg5"), ExtResource("7_fh46u"), ExtResource("9_t6ylo"), ExtResource("10_yfpcm")])
 metadata/_custom_type_script = "uid://ehmxpyyjvs77"

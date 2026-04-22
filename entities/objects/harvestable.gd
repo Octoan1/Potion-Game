@@ -16,11 +16,17 @@ const HARVEST_SOUND = preload("res://audio/creatorshome-sharp-pop-328170.mp3")
 
 var harvested: bool = false
 
+var is_player_close: bool = false
+
 func _ready() -> void: 
 	harvested_sprite.hide()
 	text.hide()
 	base_sprite_scale = base_sprite.scale
 	
+func _process(_fdelta: float) -> void:
+	if is_player_close and not harvested:
+		text.show()
+
 func harvest() -> void:
 	if harvested:
 		return
@@ -54,11 +60,15 @@ func respawn() -> void:
 
 
 func _on_collectable_radius_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		is_player_close = true
 	if body.is_in_group("Player") and not harvested:
 		text.show()
 
 
 func _on_collectable_radius_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		is_player_close = false
 	if body.is_in_group("Player"):
 		text.hide()
 

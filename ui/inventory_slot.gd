@@ -21,6 +21,9 @@ var tooltip: ItemTooltip
 
 var mouse_hovering: bool = false
 
+@onready var ui_click: AudioStreamPlayer = $UIClick
+
+
 func _ready() -> void:
 	if for_cauldron:
 		icon.texture = cauldron_icon
@@ -50,6 +53,7 @@ func _gui_input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if item != null:
+			ui_click.play(0.23)
 			item_clicked.emit(item)
 			
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:

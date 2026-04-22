@@ -8,7 +8,7 @@ class_name Player
 @export var inventory_ui: Control
 
 @export_category("Movement Modifiers")
-@export var max_speed: float = 150.0
+@export var max_speed: float = 120.0
 var original_max_speed: float = max_speed
 @export var acceleration: float = 1700.0
 @export var friction: float = 1000.0
@@ -23,6 +23,7 @@ var river_force: Vector2 = Vector2.ZERO
 @export_category("Potion Effects")
 @onready var stationary_potion_effects_container: Node = $StatPotionEffectsContainer
 @onready var potion_effects_container: Node2D = $PotionEffectsContainer
+var has_speed_effect: bool = false
 @export var burn_area: PackedScene
 @onready var light_source: Node2D = $PotionEffectsContainer/LightSource
 var light_boost_on: bool = false
@@ -30,7 +31,11 @@ var in_dark_area: bool = false
 @export var freeze_area: PackedScene
 
 @export var win_screen: Control
+# size effects
+var original_scale: Vector2
 
+func _ready() -> void:
+	original_scale = self.scale
 
 func _physics_process(delta: float) -> void:
 	var input := input_controller.get_input()
@@ -51,7 +56,10 @@ func _physics_process(delta: float) -> void:
 	handle_movement(direction, delta)
 	
 	# river
-	velocity += river_force
+	if not has_speed_effect:
+		velocity += river_force
+	else:
+		velocity += river_force / 3
 	velocity = velocity.limit_length(max_speed * 1.5)
 	river_force = Vector2.ZERO # reset for next frame
 	move_and_slide()
@@ -145,9 +153,10 @@ func heal(amount: int) -> void:
 
 func apply_speed_boost(amount: float, duration: float) -> void:
 	max_speed *= amount
-	
+	has_speed_effect = true
 	await get_tree().create_timer(duration).timeout
 	
+	has_speed_effect = false
 	max_speed /= amount
 	if max_speed < original_max_speed:
 		max_speed = original_max_speed
@@ -190,3 +199,15 @@ func freeze_follow(_radius: float) -> void:
 func win() -> void:
 	win_screen.show()
 	get_tree().paused = true
+	
+func change_size(new_scale: Vector2, duration: float) -> void:
+	var tween: Tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_OUT)
+	
+	tween.tween_property(self, "scale", new_scale, 2)
+	await get_tree().create_timer(duration).timeout
+
+	var tween2: Tween = create_tween()
+	tween2.set_ease(Tween.EASE_IN)
+	tween2.tween_property(self, "scale", original_scale, 2)

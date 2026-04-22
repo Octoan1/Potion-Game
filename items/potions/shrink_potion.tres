@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://klhq1loiv6be"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_4jsq8"]
+[ext_resource type="Script" uid="uid://hhld5odb7x3m" path="res://items/effects/size_effect.gd" id="2_txanx"]
+[ext_resource type="Texture2D" uid="uid://w66uyv23w2q1" path="res://assets/shrink_potion.png" id="3_4jsq8"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_k6nx4"]
+
+[sub_resource type="Resource" id="Resource_xarg7"]
+script = ExtResource("2_txanx")
+multiplier = Vector2(0.5, 0.5)
+metadata/_custom_type_script = "uid://hhld5odb7x3m"
+
+[resource]
+script = ExtResource("4_k6nx4")
+name = "Shrink Potion"
+icon = ExtResource("3_4jsq8")
+description = "makes u small"
+type = 1
+id = "shrink_potion"
+effects = Array[ExtResource("1_4jsq8")]([SubResource("Resource_xarg7")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"
