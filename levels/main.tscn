@@ -18,12 +18,14 @@ script = ExtResource("2_ifaiv")
 starting_level = "res://levels/outside.tscn"
 player = NodePath("../Player")
 
-[node name="Player" parent="." unique_id=807103536 node_paths=PackedStringArray("inventory_ui", "health_container", "win_screen") instance=ExtResource("1_2262g")]
+[node name="Player" parent="." unique_id=807103536 node_paths=PackedStringArray("inventory_ui", "health_container", "win_screen", "camera", "screen_filter") instance=ExtResource("1_2262g")]
 z_index = 1
 position = Vector2(156, 478)
 inventory_ui = NodePath("../CanvasLayer/PlayerInventoryUI")
 health_container = NodePath("../CanvasLayer/HeartHBoxContainer")
 win_screen = NodePath("../CanvasLayer/WinScreen")
+camera = NodePath("Camera2D")
+screen_filter = NodePath("../CanvasLayer/ScreenFilter")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1770425059]
 
@@ -69,6 +71,14 @@ stretch_mode = 4
 
 [node name="WinScreen" parent="CanvasLayer" unique_id=982246015 instance=ExtResource("8_etqu2")]
 visible = false
+
+[node name="ScreenFilter" type="ColorRect" parent="CanvasLayer" unique_id=1338102896]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="DebuggerTool" type="Node" parent="." unique_id=533554427]
 process_mode = 3

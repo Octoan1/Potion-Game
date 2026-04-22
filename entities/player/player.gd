@@ -29,10 +29,22 @@ var has_speed_effect: bool = false
 var light_boost_on: bool = false
 var in_dark_area: bool = false
 @export var freeze_area: PackedScene
-
 @export var win_screen: Control
 # size effects
 var original_scale: Vector2
+# camera effects
+@export var camera: Camera2D
+# sprite effects
+var is_fish: bool = false
+var is_bird: bool = false
+var is_normal: bool = true
+# screen filter effect
+@export var screen_filter: Control
+
+
+# audio
+@onready var footstep_sound: AudioStreamPlayer = $FootstepSound
+@onready var footstep_timer: Timer = $FootstepSound/FootstepTimer
 
 func _ready() -> void:
 	original_scale = self.scale
@@ -52,7 +64,6 @@ func _physics_process(delta: float) -> void:
 	
 	# player movement
 	var direction: Vector2 = input[InputController.InputType.MOVE]
-	
 	handle_movement(direction, delta)
 	
 	# river
@@ -69,24 +80,46 @@ func apply_external_force(force: Vector2) -> void:
 
 
 func handle_movement(direction: Vector2, delta: float) -> void:
-	if direction:
+	if direction.length() > 0.1:
 		# physical changes
 		var input_velocity: Vector2 = velocity.move_toward(direction * max_speed, acceleration * delta)
 		velocity = input_velocity
 		
+		
 		# visual changes
 		animated_sprite_2d.flip_h = direction.x > 0
-		animated_sprite_2d.play("walk")
+		if is_bird:
+			animated_sprite_2d.play("bird_walk")
+		elif is_fish:
+			animated_sprite_2d.play("fish_walk")
+		else:
+			animated_sprite_2d.play("normal_walk")
+			
+		# footstep
+		if footstep_timer.is_stopped():
+			footstep_timer.start()
+		
 	else:
 		# physical changes
 		var input_velocity: Vector2 = velocity.move_toward(Vector2.ZERO, friction * delta) # no input vel
 		velocity = input_velocity
 		
 		# visual changes
-		animated_sprite_2d.play("default")
+		if is_bird:
+			animated_sprite_2d.play("bird_idle")
+		elif is_fish:
+			animated_sprite_2d.play("fish_idle")
+		else:
+			animated_sprite_2d.play("normal_idle")
+		
+		# footstep
+		footstep_timer.stop()
 	
 	# reset external velocity so it doesnt compound
 	external_velocity = Vector2.ZERO
+
+func _on_footstep_timer_timeout() -> void:
+	footstep_sound.play()
 
 
 func toggle_inventory() -> void:
@@ -211,3 +244,62 @@ func change_size(new_scale: Vector2, duration: float) -> void:
 	var tween2: Tween = create_tween()
 	tween2.set_ease(Tween.EASE_IN)
 	tween2.tween_property(self, "scale", original_scale, 2)
+
+func change_sprite(change: String) -> void:
+	match change:
+		"fish":
+			is_fish = true
+			is_bird = false
+			is_normal = false
+		"bird":
+			is_fish = false
+			is_bird = true
+			is_normal = false
+		"normal":
+			is_fish = false
+			is_bird = false
+			is_normal = true
+
+func change_camera(change: String) -> void:
+	match change:
+		"shaky":
+			var duration := 2
+			var strength := 1.5
+			
+			var original_offset := camera.offset
+			var time := 0.0
+			
+			while time < duration:
+				camera.offset = Vector2(
+					randf_range(-strength, strength),
+					randf_range(-strength, strength)
+				)
+				
+				await get_tree().process_frame
+				time += get_process_delta_time()
+			
+			camera.offset = original_offset
+	
+	await get_tree().create_timer(5).timeout
+	camera.offset = Vector2.ZERO
+	
+func apply_screen_filter(change: String) -> void:
+	var default_mod_a: float = screen_filter.modulate.a
+	match change:
+		"red":
+			screen_filter.modulate = Color(1.0, 0.0, 0.0, 0.6)
+			#screen_filter.modulate = Color.RED
+			screen_filter.show()
+		"orange":
+			screen_filter.modulate = Color(1.0, 0.345, 0.0, 0.6)
+			#screen_filter.modulate = Color.DARK_ORANGE
+			screen_filter.show()
+		"blind":
+			screen_filter.modulate = Color(0,0,0,0.8)
+			#screen_filter.modulate.a = 1
+			screen_filter.show()
+	
+	await get_tree().create_timer(5).timeout
+	screen_filter.hide()
+	screen_filter.modulate.a = default_mod_a
+	screen_filter.modulate = Color.WHITE

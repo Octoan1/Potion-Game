@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b2g3cygpeylqv"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_xihhl"]
+[ext_resource type="Script" uid="uid://o8wwu67eu27p" path="res://items/effects/speed_effect.gd" id="2_juw3u"]
+[ext_resource type="Texture2D" uid="uid://c3i43u7p4g1m6" path="res://assets/speed potion.png" id="3_lxf1x"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_pxmxg"]
+
+[sub_resource type="Resource" id="Resource_usbpk"]
+script = ExtResource("2_juw3u")
+speed_boost = 1.75
+duration = 7.0
+metadata/_custom_type_script = "uid://o8wwu67eu27p"
+
+[resource]
+script = ExtResource("4_pxmxg")
+name = "Swiftness Potion"
+icon = ExtResource("3_lxf1x")
+description = "Makes you run fast enough to push against moving currents"
+type = 1
+id = "swiftness_potion"
+effects = Array[ExtResource("1_xihhl")]([SubResource("Resource_usbpk")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

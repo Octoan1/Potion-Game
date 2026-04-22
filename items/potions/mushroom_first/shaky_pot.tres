@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dmpruare6jtok"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_wtyun"]
+[ext_resource type="Script" uid="uid://d275hw5hxxlsf" path="res://items/effects/camera_effect.gd" id="2_wtyun"]
+[ext_resource type="Texture2D" uid="uid://b51xa5xx6ofkk" path="res://assets/shaky_potion.png" id="3_wtyun"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_wxlmy"]
+
+[sub_resource type="Resource" id="Resource_wue5m"]
+script = ExtResource("2_wtyun")
+sprite = "shaky"
+metadata/_custom_type_script = "uid://d275hw5hxxlsf"
+
+[resource]
+script = ExtResource("4_wxlmy")
+name = "Shaky Potion"
+icon = ExtResource("3_wtyun")
+description = "makes you shaky?"
+type = 1
+id = "shaky_pot"
+effects = Array[ExtResource("1_wtyun")]([SubResource("Resource_wue5m")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

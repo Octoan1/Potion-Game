@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://d0m64j3ieryyc"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_bbwvf"]
+[ext_resource type="Script" uid="uid://dgsc3uqwcnh3l" path="res://items/effects/sprite_effect.gd" id="2_bbwvf"]
+[ext_resource type="Texture2D" uid="uid://bg1ba7yain45y" path="res://assets/fish_potion.png" id="3_bbwvf"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_6prvh"]
+
+[sub_resource type="Resource" id="Resource_j3iil"]
+script = ExtResource("2_bbwvf")
+sprite = "fish"
+metadata/_custom_type_script = "uid://dgsc3uqwcnh3l"
+
+[resource]
+script = ExtResource("4_6prvh")
+name = "Fish Potion"
+icon = ExtResource("3_bbwvf")
+description = "makes you a fish?"
+type = 1
+id = "fish_pot"
+effects = Array[ExtResource("1_bbwvf")]([SubResource("Resource_j3iil")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

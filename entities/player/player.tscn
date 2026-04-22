@@ -7,38 +7,124 @@
 [ext_resource type="Script" uid="uid://dh65w2ghpwat5" path="res://entities/player/input_controller.gd" id="2_sglur"]
 [ext_resource type="PackedScene" uid="uid://wb03u4vl2l4m" path="res://entities/player/potion_effects/freeze_area.tscn" id="3_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://ee66nt40cf30" path="res://entities/player/potion_effects/light_source.tscn" id="3_fkugw"]
+[ext_resource type="Texture2D" uid="uid://ddng4bgh81dg5" path="res://assets/lilbird.png" id="7_bectd"]
+[ext_resource type="Texture2D" uid="uid://crgdi8lglbtjh" path="res://assets/lilfish.png" id="8_wvtmh"]
+[ext_resource type="AudioStream" uid="uid://cr26sbkjv37se" path="res://audio/footstep_514261__jtn191__footstep5.wav" id="10_wvtmh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7thud"]
+atlas = ExtResource("7_bectd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1qjk"]
+atlas = ExtResource("7_bectd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bectd"]
+atlas = ExtResource("7_bectd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvtmh"]
+atlas = ExtResource("7_bectd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ovn"]
+atlas = ExtResource("8_wvtmh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afbqv"]
+atlas = ExtResource("8_wvtmh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx6sm"]
+atlas = ExtResource("8_wvtmh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqrof"]
+atlas = ExtResource("8_wvtmh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wlsy"]
+atlas = ExtResource("2_abrql")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abrql"]
 atlas = ExtResource("2_abrql")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sglur"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2kln"]
 atlas = ExtResource("2_abrql")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bls4j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_we0b7"]
 atlas = ExtResource("2_abrql")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fkugw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_abrql")
+"texture": SubResource("AtlasTexture_7thud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1qjk")
 }],
 "loop": true,
-"name": &"default",
+"name": &"bird_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bectd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvtmh")
+}],
+"loop": true,
+"name": &"bird_walk",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sglur")
+"texture": SubResource("AtlasTexture_j3ovn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bls4j")
+"texture": SubResource("AtlasTexture_afbqv")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"fish_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx6sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqrof")
+}],
+"loop": true,
+"name": &"fish_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wlsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abrql")
+}],
+"loop": true,
+"name": &"normal_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2kln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we0b7")
+}],
+"loop": true,
+"name": &"normal_walk",
 "speed": 5.0
 }]
 
@@ -71,6 +157,8 @@ visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1897133777]
 sprite_frames = SubResource("SpriteFrames_fkugw")
+animation = &"fish_idle"
+frame_progress = 0.06893554
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1074183525]
 position = Vector2(0.5, 0)
@@ -99,5 +187,12 @@ autowrap_mode = 3
 [node name="Timer" type="Timer" parent="DarkGrabLabel" unique_id=659788624]
 one_shot = true
 
+[node name="FootstepSound" type="AudioStreamPlayer" parent="." unique_id=1795720492]
+stream = ExtResource("10_wvtmh")
+
+[node name="FootstepTimer" type="Timer" parent="FootstepSound" unique_id=1938076650]
+wait_time = 0.2
+
 [connection signal="light_boost_ended" from="PotionEffectsContainer/LightSource" to="." method="_on_light_source_light_boost_ended"]
 [connection signal="timeout" from="DarkGrabLabel/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="FootstepSound/FootstepTimer" to="." method="_on_footstep_timer_timeout"]

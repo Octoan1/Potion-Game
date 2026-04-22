@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dtbn2yjdlf63h" path="res://entities/ingredient_sources/haunted_woods/ectoplasm_source.tscn" id="20_xn3bl"]
 [ext_resource type="PackedScene" uid="uid://q4s05vkv3r3a" path="res://entities/ingredient_sources/haunted_woods/nightshade_source.tscn" id="21_ul8to"]
 [ext_resource type="PackedScene" uid="uid://dt1vfurhe0byl" path="res://entities/ingredient_sources/great_oak/white_lily_source.tscn" id="22_xn3bl"]
+[ext_resource type="PackedScene" uid="uid://bs4ke45mwaia7" path="res://entities/ingredient_sources/great_oak/ancient_bark_source.tscn" id="24_tc7ec"]
 [ext_resource type="PackedScene" uid="uid://27qbpbjvxyx1" path="res://entities/monster/ghost.tscn" id="26_sgh2e"]
 
 [node name="Playground" type="Node2D" unique_id=1178197563]
@@ -163,6 +164,9 @@ text = "GOak"
 
 [node name="WhiteLilySource" parent="IngContainer/GreatOak" unique_id=1594282832 instance=ExtResource("22_xn3bl")]
 position = Vector2(21, 34)
+
+[node name="AncientBarkSource" parent="IngContainer/GreatOak" unique_id=912633156 instance=ExtResource("24_tc7ec")]
+position = Vector2(21, 65)
 
 [node name="Brambles" type="Node2D" parent="." unique_id=565983660]
 position = Vector2(140, 47)

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://dkbjm82ess4ca"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_exnt8"]
+[ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_eglmh"]
+[ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="3_exnt8"]
+[ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="4_ke46k"]
+[ext_resource type="Resource" uid="uid://dmpruare6jtok" path="res://items/potions/mushroom_first/shaky_pot.tres" id="6_ke46k"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_vhuav"]
+
+[resource]
+script = ExtResource("6_vhuav")
+recipe_name = "Shaky Potion Recipe"
+recipe_id = "shaky_potion_recipe"
+ingredients = Array[ExtResource("1_exnt8")]([ExtResource("2_eglmh"), ExtResource("3_exnt8"), ExtResource("4_ke46k")])
+result = ExtResource("6_ke46k")
+metadata/_custom_type_script = "uid://ciee7sgvou518"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://ddupt5i1hb0yu"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_c7o0s"]
+[ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_dxsy7"]
+[ext_resource type="Resource" uid="uid://cr8dg5p05sg1d" path="res://items/ingredients/ancient_bark.tres" id="3_xj30j"]
+[ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="4_1ptjm"]
+[ext_resource type="Resource" uid="uid://b0ogph2v4u1up" path="res://items/potions/mushroom_first/orange_pot.tres" id="5_c7o0s"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_p05hg"]
+
+[resource]
+script = ExtResource("6_p05hg")
+recipe_name = "Orange Potion Recipe"
+recipe_id = "orange_potion_recipe"
+ingredients = Array[ExtResource("1_c7o0s")]([ExtResource("2_dxsy7"), ExtResource("3_xj30j"), ExtResource("4_1ptjm")])
+result = ExtResource("5_c7o0s")
+metadata/_custom_type_script = "uid://ciee7sgvou518"
