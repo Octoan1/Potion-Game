@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://by3pmv1uyiwej"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_6p3s5"]
+[ext_resource type="Texture2D" uid="uid://b68u3g6s02s43" path="res://assets/purple_pot.png" id="3_x6ec7"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_4oq0o"]
+
+[resource]
+script = ExtResource("4_4oq0o")
+name = "Paralysis Potion"
+icon = ExtResource("3_x6ec7")
+description = "makes you paralyzed?"
+type = 1
+id = "paralysis_potion"
+effects = Array[ExtResource("1_6p3s5")]([null])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

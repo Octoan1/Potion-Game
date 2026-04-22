@@ -40,6 +40,8 @@ var is_bird: bool = false
 var is_normal: bool = true
 # screen filter effect
 @export var screen_filter: Control
+var rainbow_filter: bool = false
+var rainbow_time: float = 0
 
 
 # audio
@@ -74,6 +76,15 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.limit_length(max_speed * 1.5)
 	river_force = Vector2.ZERO # reset for next frame
 	move_and_slide()
+	
+	# screen rainbow filter 
+	if rainbow_filter:
+		rainbow_time += delta
+		
+		# cycle hue from 0 → 1 over time
+		var hue := fmod(rainbow_time * 0.2, 1.0)
+		
+		screen_filter.modulate = Color.from_hsv(hue, 1.0, 1.0, screen_filter.modulate.a)
 
 func apply_external_force(force: Vector2) -> void:
 	external_velocity += force
@@ -97,6 +108,7 @@ func handle_movement(direction: Vector2, delta: float) -> void:
 			
 		# footstep
 		if footstep_timer.is_stopped():
+			footstep_sound.volume_db = 0
 			footstep_timer.start()
 		
 	else:
@@ -113,13 +125,17 @@ func handle_movement(direction: Vector2, delta: float) -> void:
 			animated_sprite_2d.play("normal_idle")
 		
 		# footstep
+		footstep_sound.volume_db = -30
 		footstep_timer.stop()
 	
 	# reset external velocity so it doesnt compound
 	external_velocity = Vector2.ZERO
 
 func _on_footstep_timer_timeout() -> void:
+	#var orig := footstep_sound.pitch_scale
+	#footstep_sound.pitch_scale = orig + randf_range(-.25, 1.5)
 	footstep_sound.play()
+	#footstep_sound.pitch_scale = orig
 
 
 func toggle_inventory() -> void:
@@ -259,6 +275,11 @@ func change_sprite(change: String) -> void:
 			is_fish = false
 			is_bird = false
 			is_normal = true
+	
+	await get_tree().create_timer(10).timeout
+	is_fish = false
+	is_bird = false
+	is_normal = true
 
 func change_camera(change: String) -> void:
 	match change:
@@ -290,14 +311,38 @@ func apply_screen_filter(change: String) -> void:
 			screen_filter.modulate = Color(1.0, 0.0, 0.0, 0.6)
 			#screen_filter.modulate = Color.RED
 			screen_filter.show()
+			rainbow_filter = false
 		"orange":
 			screen_filter.modulate = Color(1.0, 0.345, 0.0, 0.6)
 			#screen_filter.modulate = Color.DARK_ORANGE
 			screen_filter.show()
+			rainbow_filter = false
+		"yellow":
+			screen_filter.modulate = Color(0.72, 0.579, 0.0, 0.6)
+			screen_filter.show()
+			rainbow_filter = false
+		"green":
+			screen_filter.modulate = Color(0.128, 0.719, 0.0, 0.6)
+			screen_filter.show()
+			rainbow_filter = false
+		"blue":
+			screen_filter.modulate = Color(0.023, 0.617, 1.0, 0.6)
+			screen_filter.show()
+			rainbow_filter = false
+		"purple":
+			screen_filter.modulate = Color(0.466, 0.167, 1.0, 0.6)
+			screen_filter.show()
+			rainbow_filter = false
+		"rainbow":
+			screen_filter.modulate = Color(0.72, 0.579, 0.0, 0.6)
+			screen_filter.show()
+			rainbow_filter = true
 		"blind":
 			screen_filter.modulate = Color(0,0,0,0.8)
 			#screen_filter.modulate.a = 1
 			screen_filter.show()
+			rainbow_filter = false
+
 	
 	await get_tree().create_timer(5).timeout
 	screen_filter.hide()

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c4vaux43w218n"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_y354u"]
+[ext_resource type="Script" uid="uid://l42t1h1vkhgw" path="res://items/effects/screen_filter_effect.gd" id="2_dpkw3"]
+[ext_resource type="Texture2D" uid="uid://b68u3g6s02s43" path="res://assets/purple_pot.png" id="3_altgv"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_c7a07"]
+
+[sub_resource type="Resource" id="Resource_gm0cv"]
+script = ExtResource("2_dpkw3")
+change = "purple"
+metadata/_custom_type_script = "uid://l42t1h1vkhgw"
+
+[resource]
+script = ExtResource("4_c7a07")
+name = "Purple Potion"
+icon = ExtResource("3_altgv")
+description = "makes you purple?"
+type = 1
+id = "purple_potion"
+effects = Array[ExtResource("1_y354u")]([SubResource("Resource_gm0cv")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

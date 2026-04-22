@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bug58sno1qy73"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_qvd61"]
+[ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/beetle.tres" id="2_m2gnt"]
+[ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="3_00r6a"]
+[ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="3_ipveo"]
+[ext_resource type="Resource" uid="uid://cvj86tejp3dds" path="res://items/potions/beetle_first/bird_pot.tres" id="5_m2gnt"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_irsqo"]
+
+[resource]
+script = ExtResource("6_irsqo")
+recipe_name = "Bird Potion Recipe"
+recipe_id = "bird_potion_recipe"
+ingredients = Array[ExtResource("1_qvd61")]([ExtResource("2_m2gnt"), ExtResource("3_00r6a"), ExtResource("3_ipveo")])
+result = ExtResource("5_m2gnt")
+metadata/_custom_type_script = "uid://ciee7sgvou518"

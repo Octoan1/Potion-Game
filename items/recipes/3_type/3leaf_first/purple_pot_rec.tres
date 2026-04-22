@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://dx7gpm3opukiq"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_78w0m"]
+[ext_resource type="Resource" uid="uid://dasle11tf6ihl" path="res://items/ingredients/leaf.tres" id="2_78w0m"]
+[ext_resource type="Resource" uid="uid://cr8dg5p05sg1d" path="res://items/ingredients/ancient_bark.tres" id="3_3a2ec"]
+[ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="4_6ewkg"]
+[ext_resource type="Resource" uid="uid://c4vaux43w218n" path="res://items/potions/leaf_first/purple_pot.tres" id="5_78w0m"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_7jn62"]
+
+[resource]
+script = ExtResource("6_7jn62")
+recipe_name = "Purple Potion Recipe"
+recipe_id = "purple_potion_recipe"
+ingredients = Array[ExtResource("1_78w0m")]([ExtResource("2_78w0m"), ExtResource("3_3a2ec"), ExtResource("4_6ewkg")])
+result = ExtResource("5_78w0m")
+metadata/_custom_type_script = "uid://ciee7sgvou518"

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://qbjlyebcme0p"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_c05wn"]
+[ext_resource type="Script" uid="uid://l42t1h1vkhgw" path="res://items/effects/screen_filter_effect.gd" id="2_ob041"]
+[ext_resource type="Texture2D" uid="uid://b2rnp2oa2viwm" path="res://assets/rainbow_pot.png" id="3_c05wn"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_hw3dx"]
+
+[sub_resource type="Resource" id="Resource_gm0cv"]
+script = ExtResource("2_ob041")
+change = "rainbow"
+metadata/_custom_type_script = "uid://l42t1h1vkhgw"
+
+[resource]
+script = ExtResource("4_hw3dx")
+name = "Rainbow Potion"
+icon = ExtResource("3_c05wn")
+description = "makes you rainbow?"
+type = 1
+id = "rainbow_potion"
+effects = Array[ExtResource("1_c05wn")]([SubResource("Resource_gm0cv")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

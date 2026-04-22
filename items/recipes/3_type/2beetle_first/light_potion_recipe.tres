@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="2_logqd"]
 [ext_resource type="Resource" uid="uid://dasle11tf6ihl" path="res://items/ingredients/leaf.tres" id="3_tqrbn"]
 [ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="4_tqrbn"]
-[ext_resource type="Resource" uid="uid://by3bahjs3lpqa" path="res://items/potions/light_potion.tres" id="5_scvgm"]
+[ext_resource type="Resource" uid="uid://by3bahjs3lpqa" path="res://items/potions/beetle_first/light_potion.tres" id="5_scvgm"]
 
 [resource]
 script = ExtResource("2_logqd")

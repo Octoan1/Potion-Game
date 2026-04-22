@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cer53iakn4q1r"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_ji5cy"]
+[ext_resource type="Script" uid="uid://l42t1h1vkhgw" path="res://items/effects/screen_filter_effect.gd" id="2_ji5cy"]
+[ext_resource type="Texture2D" uid="uid://bvlkxs0ibai5c" path="res://assets/green_pot.png" id="3_ji5cy"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_el18o"]
+
+[sub_resource type="Resource" id="Resource_gm0cv"]
+script = ExtResource("2_ji5cy")
+change = "green"
+metadata/_custom_type_script = "uid://l42t1h1vkhgw"
+
+[resource]
+script = ExtResource("4_el18o")
+name = "Green Potion"
+icon = ExtResource("3_ji5cy")
+description = "makes you green?"
+type = 1
+id = "green_potion"
+effects = Array[ExtResource("1_ji5cy")]([SubResource("Resource_gm0cv")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/beetle.tres" id="2_daqoi"]
 [ext_resource type="Resource" uid="uid://cgsnx5k4vs65n" path="res://items/ingredients/small_crystal.tres" id="3_hyymj"]
 [ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="4_p3xi7"]
-[ext_resource type="Resource" uid="uid://klhq1loiv6be" path="res://items/potions/shrink_potion.tres" id="5_daqoi"]
+[ext_resource type="Resource" uid="uid://klhq1loiv6be" path="res://items/potions/beetle_first/shrink_potion.tres" id="5_daqoi"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_5jleb"]
 
 [resource]

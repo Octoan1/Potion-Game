@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://rty7iho5t7ki"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_ma1yi"]
+[ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="3_k13oh"]
+[ext_resource type="Resource" uid="uid://cr8dg5p05sg1d" path="res://items/ingredients/ancient_bark.tres" id="3_tnsf7"]
+[ext_resource type="Resource" uid="uid://cgsnx5k4vs65n" path="res://items/ingredients/small_crystal.tres" id="4_23ds6"]
+[ext_resource type="Resource" uid="uid://cqoa6gussv53l" path="res://items/potions/crystal+roe_first/yellow_pot.tres" id="5_tnsf7"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_6cn0j"]
+
+[resource]
+script = ExtResource("6_6cn0j")
+recipe_name = "Yellow Potion Recipe"
+recipe_id = "yellow_potion_recipe"
+ingredients = Array[ExtResource("1_ma1yi")]([ExtResource("4_23ds6"), ExtResource("3_tnsf7"), ExtResource("3_k13oh")])
+result = ExtResource("5_tnsf7")
+metadata/_custom_type_script = "uid://ciee7sgvou518"
