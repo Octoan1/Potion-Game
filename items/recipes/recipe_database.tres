@@ -11,8 +11,10 @@
 [ext_resource type="Resource" uid="uid://dykm245loshoy" path="res://items/recipes/3_type/win_game_potion_recipe.tres" id="7_fh46u"]
 [ext_resource type="Resource" uid="uid://c7rqauya4ntdx" path="res://items/recipes/3_type/big_potion_recipe.tres" id="9_t6ylo"]
 [ext_resource type="Resource" uid="uid://6vhdfp1hmph2" path="res://items/recipes/3_type/shrink_potion_recipe.tres" id="10_yfpcm"]
+[ext_resource type="Resource" uid="uid://dlehnwb0cla0i" path="res://items/recipes/3_type/long_potion_recipe.tres" id="11_rdnaq"]
+[ext_resource type="Resource" uid="uid://w76vy612mug7" path="res://items/recipes/3_type/wide_potion_recipe.tres" id="12_kpsyj"]
 
 [resource]
 script = ExtResource("2_bi0nn")
-recipe_list = Array[ExtResource("1_bea55")]([ExtResource("2_0fcky"), ExtResource("3_gybg5"), ExtResource("4_fh46u"), ExtResource("5_e5bwt"), ExtResource("5_fh46u"), ExtResource("6_gybg5"), ExtResource("7_fh46u"), ExtResource("9_t6ylo"), ExtResource("10_yfpcm")])
+recipe_list = Array[ExtResource("1_bea55")]([ExtResource("2_0fcky"), ExtResource("3_gybg5"), ExtResource("4_fh46u"), ExtResource("5_e5bwt"), ExtResource("5_fh46u"), ExtResource("6_gybg5"), ExtResource("7_fh46u"), ExtResource("9_t6ylo"), ExtResource("10_yfpcm"), ExtResource("11_rdnaq"), ExtResource("12_kpsyj")])
 metadata/_custom_type_script = "uid://ehmxpyyjvs77"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://dlehnwb0cla0i"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_5ua4j"]
+[ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/beetle.tres" id="2_tfk1d"]
+[ext_resource type="Resource" uid="uid://dasle11tf6ihl" path="res://items/ingredients/leaf.tres" id="3_5ua4j"]
+[ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="4_cfeki"]
+[ext_resource type="Resource" uid="uid://212pc7rqk2v4" path="res://items/potions/long_potion.tres" id="5_5ua4j"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_x5600"]
+
+[resource]
+script = ExtResource("6_x5600")
+recipe_name = "Long Potion Recipe"
+recipe_id = "long_potion_recipe"
+ingredients = Array[ExtResource("1_5ua4j")]([ExtResource("2_tfk1d"), ExtResource("3_5ua4j"), ExtResource("4_cfeki")])
+result = ExtResource("5_5ua4j")
+metadata/_custom_type_script = "uid://ciee7sgvou518"

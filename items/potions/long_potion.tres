@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://212pc7rqk2v4"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_cjcno"]
+[ext_resource type="Script" uid="uid://hhld5odb7x3m" path="res://items/effects/size_effect.gd" id="2_8mhe0"]
+[ext_resource type="Texture2D" uid="uid://dktne7e16bf4q" path="res://assets/long_potion.png" id="3_cjcno"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_t1y56"]
+
+[sub_resource type="Resource" id="Resource_xarg7"]
+script = ExtResource("2_8mhe0")
+multiplier = Vector2(1, 4)
+metadata/_custom_type_script = "uid://hhld5odb7x3m"
+
+[resource]
+script = ExtResource("4_t1y56")
+name = "Long Potion"
+icon = ExtResource("3_cjcno")
+description = "makes u long"
+type = 1
+id = "long_potion"
+effects = Array[ExtResource("1_cjcno")]([SubResource("Resource_xarg7")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"
