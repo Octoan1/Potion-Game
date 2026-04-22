@@ -19,20 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://gl63pe8ok716" path="res://entities/objects/wall/tiny_dead_tree.tscn" id="15_43xds"]
 [ext_resource type="PackedScene" uid="uid://cnehq1ntvmk25" path="res://entities/ingredient_sources/1_starting_area/mushroom_source.tscn" id="15_xi4s4"]
 [ext_resource type="PackedScene" uid="uid://c05s0nb1riqo5" path="res://entities/objects/grass/grass.tscn" id="16_35tpi"]
-[ext_resource type="PackedScene" uid="uid://ciapkpcev7tv7" path="res://entities/ingredient_sources/abondoned_well/root_source.tscn" id="16_absnv"]
 [ext_resource type="PackedScene" uid="uid://drypmt4ns83cs" path="res://entities/objects/wall/bramble.tscn" id="16_pxy48"]
 [ext_resource type="PackedScene" uid="uid://br4j3dhflxfek" path="res://entities/ingredient_sources/abondoned_well/spring_water_source.tscn" id="17_png5n"]
-[ext_resource type="PackedScene" uid="uid://dto4jclwuu0rh" path="res://entities/ingredient_sources/abondoned_well/lichen_source.tscn" id="18_5ee4b"]
-[ext_resource type="PackedScene" uid="uid://bgmsabj0pdoao" path="res://entities/ingredient_sources/pond/cattail_source.tscn" id="19_jqj3t"]
 [ext_resource type="PackedScene" uid="uid://d2w1m2j42gjxj" path="res://entities/objects/wall/river.tscn" id="20_png5n"]
-[ext_resource type="PackedScene" uid="uid://b5kc6ku45igp1" path="res://entities/ingredient_sources/pond/newt_source.tscn" id="20_ue7d7"]
 [ext_resource type="PackedScene" uid="uid://c1vdxl0wnxnbe" path="res://entities/ingredient_sources/pond/roe_source.tscn" id="24_bbdtm"]
 [ext_resource type="PackedScene" uid="uid://27qbpbjvxyx1" path="res://entities/monster/ghost.tscn" id="25_8g2li"]
 [ext_resource type="PackedScene" uid="uid://dtbn2yjdlf63h" path="res://entities/ingredient_sources/haunted_woods/ectoplasm_source.tscn" id="26_n0bls"]
-[ext_resource type="PackedScene" uid="uid://jkkr8mcyhq2f" path="res://entities/ingredient_sources/haunted_woods/bones_source.tscn" id="27_r8gff"]
-[ext_resource type="PackedScene" uid="uid://q4s05vkv3r3a" path="res://entities/ingredient_sources/haunted_woods/nightshade_source.tscn" id="28_bbdtm"]
-[ext_resource type="PackedScene" uid="uid://dt1vfurhe0byl" path="res://entities/ingredient_sources/great_oak/white_lily_source.tscn" id="30_r8gff"]
-[ext_resource type="PackedScene" uid="uid://dx6nsn71kn58c" path="res://entities/ingredient_sources/great_oak/wood.tscn" id="32_qr7kf"]
 [ext_resource type="PackedScene" uid="uid://bs4ke45mwaia7" path="res://entities/ingredient_sources/great_oak/ancient_bark_source.tscn" id="33_4gjfk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_35tpi"]
@@ -1725,52 +1717,10 @@ position = Vector2(218, 501)
 
 [node name="AbondonedWell" type="Node2D" parent="." unique_id=1444027479]
 
-[node name="RootSource" parent="AbondonedWell" unique_id=2112027836 instance=ExtResource("16_absnv")]
-position = Vector2(284, 143)
-
-[node name="RootSource2" parent="AbondonedWell" unique_id=1179208080 instance=ExtResource("16_absnv")]
-position = Vector2(247, 151)
-
-[node name="RootSource3" parent="AbondonedWell" unique_id=660916870 instance=ExtResource("16_absnv")]
-position = Vector2(181, 147)
-
 [node name="SpringWaterSource" parent="AbondonedWell" unique_id=2027265132 instance=ExtResource("17_png5n")]
 position = Vector2(233, 110)
 
-[node name="LichenSource" parent="AbondonedWell" unique_id=1554840866 instance=ExtResource("18_5ee4b")]
-position = Vector2(201, 89)
-
-[node name="LichenSource2" parent="AbondonedWell" unique_id=1712592381 instance=ExtResource("18_5ee4b")]
-position = Vector2(262, 74)
-
 [node name="Pond_River" type="Node2D" parent="." unique_id=230080930]
-
-[node name="CattailSource" parent="Pond_River" unique_id=1229256605 instance=ExtResource("19_jqj3t")]
-position = Vector2(378, 730)
-
-[node name="CattailSource2" parent="Pond_River" unique_id=1738205842 instance=ExtResource("19_jqj3t")]
-position = Vector2(329, 734)
-
-[node name="CattailSource3" parent="Pond_River" unique_id=1912101 instance=ExtResource("19_jqj3t")]
-position = Vector2(277, 745)
-
-[node name="CattailSource4" parent="Pond_River" unique_id=1686110489 instance=ExtResource("19_jqj3t")]
-position = Vector2(881, 698)
-
-[node name="CattailSource5" parent="Pond_River" unique_id=1119591277 instance=ExtResource("19_jqj3t")]
-position = Vector2(795, 699)
-
-[node name="CattailSource6" parent="Pond_River" unique_id=908615480 instance=ExtResource("19_jqj3t")]
-position = Vector2(663, 718)
-
-[node name="NewtSource" parent="Pond_River" unique_id=1896110389 instance=ExtResource("20_ue7d7")]
-position = Vector2(1108, 857)
-
-[node name="NewtSource2" parent="Pond_River" unique_id=2012687029 instance=ExtResource("20_ue7d7")]
-position = Vector2(1006, 792)
-
-[node name="NewtSource3" parent="Pond_River" unique_id=2073897661 instance=ExtResource("20_ue7d7")]
-position = Vector2(756, 856)
 
 [node name="RoeSource" parent="Pond_River" unique_id=271986253 instance=ExtResource("24_bbdtm")]
 position = Vector2(572, 675)
@@ -1786,6 +1736,60 @@ position = Vector2(675, 674)
 
 [node name="RoeSource5" parent="Pond_River" unique_id=2043537750 instance=ExtResource("24_bbdtm")]
 position = Vector2(835, 652)
+
+[node name="HauntedWoods" type="Node2D" parent="." unique_id=669014217]
+
+[node name="Monsters" type="Node2D" parent="HauntedWoods" unique_id=676625327]
+
+[node name="Ghost" parent="HauntedWoods/Monsters" unique_id=1881988643 instance=ExtResource("25_8g2li")]
+position = Vector2(1312, 234)
+
+[node name="Ghost2" parent="HauntedWoods/Monsters" unique_id=1832772893 instance=ExtResource("25_8g2li")]
+position = Vector2(1524, 307)
+
+[node name="Ghost3" parent="HauntedWoods/Monsters" unique_id=832137814 instance=ExtResource("25_8g2li")]
+position = Vector2(1338, 433)
+
+[node name="Ghost4" parent="HauntedWoods/Monsters" unique_id=1400248442 instance=ExtResource("25_8g2li")]
+position = Vector2(1290, 667)
+
+[node name="Ghost5" parent="HauntedWoods/Monsters" unique_id=1999804854 instance=ExtResource("25_8g2li")]
+position = Vector2(1442, 691)
+
+[node name="Ghost6" parent="HauntedWoods/Monsters" unique_id=1973571087 instance=ExtResource("25_8g2li")]
+position = Vector2(1484, 569)
+
+[node name="GhostBoundary" type="StaticBody2D" parent="HauntedWoods" unique_id=959829896]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HauntedWoods/GhostBoundary" unique_id=490039483]
+position = Vector2(1213, 430.5)
+shape = SubResource("RectangleShape2D_8g2li")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="HauntedWoods/GhostBoundary" unique_id=1671798422]
+position = Vector2(1641, 421)
+shape = SubResource("RectangleShape2D_8g2li")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HauntedWoods/GhostBoundary" unique_id=457180555]
+position = Vector2(1424, 706)
+shape = SubResource("RectangleShape2D_oc28n")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="HauntedWoods/GhostBoundary" unique_id=768120806]
+position = Vector2(1425, 137)
+shape = SubResource("RectangleShape2D_oc28n")
+
+[node name="EctoplasmSource" parent="HauntedWoods" unique_id=64965144 instance=ExtResource("26_n0bls")]
+position = Vector2(1490, 463)
+
+[node name="EctoplasmSource2" parent="HauntedWoods" unique_id=1174547707 instance=ExtResource("26_n0bls")]
+position = Vector2(1287, 329)
+
+[node name="GreatOak" type="Node2D" parent="." unique_id=381948776]
+position = Vector2(1287, 329)
+
+[node name="AncientBarkSource" parent="GreatOak" unique_id=1051519354 instance=ExtResource("33_4gjfk")]
+position = Vector2(-304, -23)
 
 [node name="Brambles" type="Node2D" parent="." unique_id=878354786]
 position = Vector2(212, 182)
@@ -1862,69 +1866,6 @@ position = Vector2(83, -30)
 [node name="Bramble24" parent="Brambles" unique_id=1455540795 instance=ExtResource("16_pxy48")]
 position = Vector2(99, -30)
 
-[node name="HauntedWoods" type="Node2D" parent="." unique_id=669014217]
-
-[node name="Monsters" type="Node2D" parent="HauntedWoods" unique_id=676625327]
-
-[node name="Ghost" parent="HauntedWoods/Monsters" unique_id=1881988643 instance=ExtResource("25_8g2li")]
-position = Vector2(1312, 234)
-
-[node name="Ghost2" parent="HauntedWoods/Monsters" unique_id=1832772893 instance=ExtResource("25_8g2li")]
-position = Vector2(1524, 307)
-
-[node name="Ghost3" parent="HauntedWoods/Monsters" unique_id=832137814 instance=ExtResource("25_8g2li")]
-position = Vector2(1338, 433)
-
-[node name="Ghost4" parent="HauntedWoods/Monsters" unique_id=1400248442 instance=ExtResource("25_8g2li")]
-position = Vector2(1290, 667)
-
-[node name="Ghost5" parent="HauntedWoods/Monsters" unique_id=1999804854 instance=ExtResource("25_8g2li")]
-position = Vector2(1442, 691)
-
-[node name="Ghost6" parent="HauntedWoods/Monsters" unique_id=1973571087 instance=ExtResource("25_8g2li")]
-position = Vector2(1484, 569)
-
-[node name="GhostBoundary" type="StaticBody2D" parent="HauntedWoods" unique_id=959829896]
-collision_layer = 8
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HauntedWoods/GhostBoundary" unique_id=490039483]
-position = Vector2(1213, 430.5)
-shape = SubResource("RectangleShape2D_8g2li")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="HauntedWoods/GhostBoundary" unique_id=1671798422]
-position = Vector2(1641, 421)
-shape = SubResource("RectangleShape2D_8g2li")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HauntedWoods/GhostBoundary" unique_id=457180555]
-position = Vector2(1424, 706)
-shape = SubResource("RectangleShape2D_oc28n")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="HauntedWoods/GhostBoundary" unique_id=768120806]
-position = Vector2(1425, 137)
-shape = SubResource("RectangleShape2D_oc28n")
-
-[node name="EctoplasmSource" parent="HauntedWoods" unique_id=64965144 instance=ExtResource("26_n0bls")]
-position = Vector2(1490, 463)
-
-[node name="EctoplasmSource2" parent="HauntedWoods" unique_id=1174547707 instance=ExtResource("26_n0bls")]
-position = Vector2(1287, 329)
-
-[node name="BonesSource" parent="HauntedWoods" unique_id=97685835 instance=ExtResource("27_r8gff")]
-position = Vector2(1486, 195)
-
-[node name="BonesSource2" parent="HauntedWoods" unique_id=651245791 instance=ExtResource("27_r8gff")]
-position = Vector2(1431, 394)
-
-[node name="BonesSource3" parent="HauntedWoods" unique_id=381667601 instance=ExtResource("27_r8gff")]
-position = Vector2(1269, 515)
-
-[node name="NightshadeSource" parent="HauntedWoods" unique_id=1369010591 instance=ExtResource("28_bbdtm")]
-position = Vector2(1375, 672)
-
-[node name="NightshadeSource2" parent="HauntedWoods" unique_id=735016877 instance=ExtResource("28_bbdtm")]
-position = Vector2(1348, 570)
-
 [node name="River" parent="." unique_id=774657934 node_paths=PackedStringArray("target") instance=ExtResource("20_png5n")]
 position = Vector2(439, 667)
 target = NodePath("Marker2D")
@@ -1969,15 +1910,3 @@ polygon = PackedVector2Array(772, -255, 761, -284, 745, -332, 716, -395, 712, -5
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="River3" unique_id=1964808560]
 polygon = PackedVector2Array(772, -255, 761, -284, 745, -332, 716, -395, 712, -507, 745, -570, 666, -570, 639, -482, 635, -399, 661, -365, 678, -332, 697, -285, 701, -255)
-
-[node name="GreatOak" type="Node2D" parent="." unique_id=381948776]
-position = Vector2(1287, 329)
-
-[node name="WhiteLilySource" parent="GreatOak" unique_id=451905161 instance=ExtResource("30_r8gff")]
-position = Vector2(-329, 38)
-
-[node name="Wood" parent="GreatOak" unique_id=912633156 instance=ExtResource("32_qr7kf")]
-position = Vector2(-287, 82)
-
-[node name="AncientBarkSource" parent="GreatOak" unique_id=1051519354 instance=ExtResource("33_4gjfk")]
-position = Vector2(-304, -23)
