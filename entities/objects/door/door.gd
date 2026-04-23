@@ -13,4 +13,5 @@ func _on_interactable_interacted() -> void:
 	level_manager.next_door_id = target_door_id
 	
 	used_door.emit()
+	level_manager.call_deferred("play_door_sound")
 	level_manager.call_deferred("load_level", target_scene)

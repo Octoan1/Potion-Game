@@ -9,6 +9,8 @@ class_name LevelManager
 
 var next_door_id : String = ""
 
+@onready var door_sound: AudioStreamPlayer = $"../DoorSound"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_level(starting_level)
@@ -40,4 +42,7 @@ func place_player() -> void:
 		if door.door_id == next_door_id:
 			player.global_position = door.global_position
 			break
+			
+func play_door_sound() -> void:
+	door_sound.play()
 			

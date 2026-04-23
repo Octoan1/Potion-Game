@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="2_wij5n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wij5n"]
-font_size = 6
+line_spacing = 1.0
+font_size = 4
 
 [node name="InventoryUI" type="Control" unique_id=871811778]
 layout_mode = 3
@@ -39,10 +40,10 @@ columns = 7
 [node name="Label" type="Label" parent="." unique_id=294038708]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 111.0
+offset_top = 120.0
 offset_right = 213.0
-offset_bottom = 144.0
-theme_override_font_sizes/font_size = 5
+offset_bottom = 153.0
+theme_override_font_sizes/font_size = 3
 text = "Press [Tab] or [Esc] close 
 Hover [Mouse] over item to read description
 Press [Right Click] on Potion to use"

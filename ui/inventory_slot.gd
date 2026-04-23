@@ -22,6 +22,7 @@ var tooltip: ItemTooltip
 var mouse_hovering: bool = false
 
 @onready var ui_click: AudioStreamPlayer = $UIClick
+@onready var use_potion: AudioStreamPlayer = $UsePotion
 
 
 func _ready() -> void:
@@ -60,6 +61,7 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		#print("Tried to use item: ", item)
 		if item != null and PlayerInventory.drinking:
+			use_potion.play()
 			PlayerInventory.use_item(item)
 			
 				

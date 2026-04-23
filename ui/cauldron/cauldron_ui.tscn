@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="5_hrby0"]
 [ext_resource type="AudioStream" uid="uid://dnuspuhc1m8ux" path="res://audio/ui_click_freesound_community-ui-click-43196.mp3" id="7_hrby0"]
 [ext_resource type="AudioStream" uid="uid://dimeup1xk881y" path="res://audio/ui_error_soundshelfstudio-ui-error-pop-515668.mp3" id="8_tupx3"]
+[ext_resource type="AudioStream" uid="uid://lhtxxuqmyvbx" path="res://audio/Boil Water.wav" id="9_2qsyq"]
 [ext_resource type="Texture2D" uid="uid://c1kvinxlfbyc8" path="res://assets/brewing area.png" id="10_1uavu"]
 [ext_resource type="Texture2D" uid="uid://yv8njp175auf" path="res://assets/cauldron_slot.png" id="10_j4hgf"]
+[ext_resource type="AudioStream" uid="uid://dlfbgjydmqn2s" path="res://audio/potion_success_meldix-success-340660.mp3" id="10_uj3cv"]
 
 [node name="CauldronUI" type="Control" unique_id=698506239]
 process_mode = 2
@@ -49,11 +51,10 @@ theme_override_font_sizes/font_size = 12
 text = "Brew!"
 
 [node name="ResultHBoxContainer2" type="HBoxContainer" parent="Panel" unique_id=815351739]
-visible = false
 layout_mode = 0
-offset_left = 42.0
+offset_left = 1.0
 offset_top = 94.0
-offset_right = 218.0
+offset_right = 256.0
 offset_bottom = 111.0
 alignment = 1
 
@@ -174,6 +175,14 @@ stream = ExtResource("7_hrby0")
 
 [node name="UIError" type="AudioStreamPlayer" parent="." unique_id=1949760950]
 stream = ExtResource("8_tupx3")
+
+[node name="CauldronBoiling" type="AudioStreamPlayer" parent="." unique_id=784608683]
+stream = ExtResource("9_2qsyq")
+volume_db = -15.0
+autoplay = true
+
+[node name="PotionSuccess" type="AudioStreamPlayer" parent="." unique_id=383854661]
+stream = ExtResource("10_uj3cv")
 
 [connection signal="pressed" from="Panel/BrewButton" to="." method="_on_brew_button_pressed"]
 [connection signal="item_clicked" from="Panel/HBoxContainer/IngredientSlot1" to="." method="_on_ingredient_slot_1_item_clicked"]

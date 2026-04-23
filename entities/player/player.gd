@@ -41,6 +41,7 @@ var original_scale: Vector2
 var is_fish: bool = false
 var is_bird: bool = false
 var is_normal: bool = true
+var is_snake: bool = false
 # screen filter effect
 @export var screen_filter: Control
 var rainbow_filter: bool = false
@@ -50,6 +51,9 @@ var rainbow_time: float = 0
 # audio
 @onready var footstep_sound: AudioStreamPlayer = $FootstepSound
 @onready var footstep_timer: Timer = $FootstepSound/FootstepTimer
+
+# death
+@export var fade_rect: ColorRect
 
 func _ready() -> void:
 	original_scale = self.scale
@@ -112,6 +116,8 @@ func handle_movement(direction: Vector2, delta: float) -> void:
 			animated_sprite_2d.play("bird_walk")
 		elif is_fish:
 			animated_sprite_2d.play("fish_walk")
+		elif is_snake:
+			animated_sprite_2d.play("snake_walk")
 		else:
 			animated_sprite_2d.play("normal_walk")
 			
@@ -131,6 +137,8 @@ func handle_movement(direction: Vector2, delta: float) -> void:
 			animated_sprite_2d.play("bird_idle")
 		elif is_fish:
 			animated_sprite_2d.play("fish_idle")
+		elif is_snake:
+			animated_sprite_2d.play("snake_idle")
 		else:
 			animated_sprite_2d.play("normal_idle")
 		
@@ -200,8 +208,27 @@ func get_closest_interactable() -> Node2D:
 	
 # ===== PLAYER DEATH =====
 func reset_level() -> void:
+	#get_tree().paused = true
+	# make sure it's visible and starting transparent
+	fade_rect.visible = true
+	fade_rect.modulate.a = 0.0
+
+	var tween := create_tween()
+
+	# fade to black
+	tween.tween_property(fade_rect, "modulate:a", 1.0, 0.5)
+	await  tween.finished
+
+	# after fade finishes, load level
 	var level_manager: Node = get_tree().root.get_node("Main").get_node("LevelManager")
 	level_manager.call_deferred("load_level", "res://levels/outside.tscn")
+	
+	#await get_tree().create_timer(1).timeout
+	# fade back in
+	tween.tween_property(fade_rect, "modulate:a", 0.0, 0.5)
+	fade_rect.visible = false
+	#get_tree().paused = dfalse
+	
 	
 # ===== POTION EFFECT HANDLING =====
 func heal(amount: int) -> void:
@@ -277,19 +304,28 @@ func change_sprite(change: String) -> void:
 			is_fish = true
 			is_bird = false
 			is_normal = false
+			is_snake = false
 		"bird":
 			is_fish = false
 			is_bird = true
 			is_normal = false
+			is_snake = false
+		"snake":
+			is_fish = false
+			is_bird = false
+			is_normal = false
+			is_snake = true
 		"normal":
 			is_fish = false
 			is_bird = false
 			is_normal = true
+			is_snake = false
 	
 	await get_tree().create_timer(10).timeout
 	is_fish = false
 	is_bird = false
 	is_normal = true
+	is_snake = false
 
 func change_camera(change: String) -> void:
 	match change:

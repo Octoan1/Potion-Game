@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://brp0rducenfbh"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_nsp15"]
+[ext_resource type="Script" uid="uid://dgsc3uqwcnh3l" path="res://items/effects/sprite_effect.gd" id="2_nsp15"]
+[ext_resource type="Texture2D" uid="uid://kgo13lfysjm5" path="res://assets/snake_pot.png" id="3_nsp15"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_h3ojx"]
+
+[sub_resource type="Resource" id="Resource_7uyuf"]
+script = ExtResource("2_nsp15")
+sprite = "snake"
+metadata/_custom_type_script = "uid://dgsc3uqwcnh3l"
+
+[resource]
+script = ExtResource("4_h3ojx")
+name = "Snake Potion"
+icon = ExtResource("3_nsp15")
+description = "make you a snake"
+type = 1
+id = "snake_potion"
+effects = Array[ExtResource("1_nsp15")]([SubResource("Resource_7uyuf")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

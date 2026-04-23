@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dq4fyyvpsq6pn" path="res://assets/heart_icon_placeholder.png" id="7_etqu2"]
 [ext_resource type="PackedScene" uid="uid://dgydlru8idsan" path="res://ui/win_screen.tscn" id="8_etqu2"]
 [ext_resource type="AudioStream" uid="uid://bij73v6pwxogn" path="res://audio/woods.mp3" id="10_jw1n3"]
+[ext_resource type="AudioStream" uid="uid://dxke5k6jyva2t" path="res://audio/door.wav" id="11_xdh4e"]
 
 [node name="Main" type="Node2D" unique_id=311730625]
 
@@ -18,7 +19,7 @@ script = ExtResource("2_ifaiv")
 starting_level = "res://levels/outside.tscn"
 player = NodePath("../Player")
 
-[node name="Player" parent="." unique_id=807103536 node_paths=PackedStringArray("inventory_ui", "health_container", "win_screen", "camera", "screen_filter") instance=ExtResource("1_2262g")]
+[node name="Player" parent="." unique_id=807103536 node_paths=PackedStringArray("inventory_ui", "health_container", "win_screen", "camera", "screen_filter", "fade_rect") instance=ExtResource("1_2262g")]
 z_index = 1
 position = Vector2(156, 478)
 inventory_ui = NodePath("../CanvasLayer/PlayerInventoryUI")
@@ -26,6 +27,7 @@ health_container = NodePath("../CanvasLayer/HeartHBoxContainer")
 win_screen = NodePath("../CanvasLayer/WinScreen")
 camera = NodePath("Camera2D")
 screen_filter = NodePath("../CanvasLayer/ScreenFilter")
+fade_rect = NodePath("../CanvasLayer/FadeToBlack")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1770425059]
 
@@ -80,6 +82,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="FadeToBlack" type="ColorRect" parent="CanvasLayer" unique_id=649100979]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="DebuggerTool" type="Node" parent="." unique_id=533554427]
 process_mode = 3
 script = ExtResource("6_5k4jt")
@@ -90,3 +101,6 @@ stream = ExtResource("10_jw1n3")
 volume_db = -10.0
 autoplay = true
 parameters/looping = true
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="." unique_id=447925503]
+stream = ExtResource("11_xdh4e")

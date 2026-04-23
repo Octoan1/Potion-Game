@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://c3ld1gydfsrj"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_qmtjb"]
+[ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/beetle.tres" id="2_qmtjb"]
+[ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="3_48jal"]
+[ext_resource type="Resource" uid="uid://cgsnx5k4vs65n" path="res://items/ingredients/small_crystal.tres" id="4_sif6q"]
+[ext_resource type="Resource" uid="uid://jsn4h1x65n0y" path="res://items/potions/freeze_potion.tres" id="5_gi0gl"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_iu0b1"]
+
+[resource]
+script = ExtResource("6_iu0b1")
+recipe_name = "Spirit Glue Potion Recipe"
+recipe_id = "spirit_glue_potion_recipe"
+ingredients = Array[ExtResource("1_qmtjb")]([ExtResource("2_qmtjb"), ExtResource("3_48jal"), ExtResource("4_sif6q")])
+result = ExtResource("5_gi0gl")
+metadata/_custom_type_script = "uid://ciee7sgvou518"

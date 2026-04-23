@@ -18,6 +18,8 @@ extends Control
 
 @onready var ui_click: AudioStreamPlayer = $UIClick
 @onready var ui_error: AudioStreamPlayer = $UIError
+@onready var potion_success: AudioStreamPlayer = $PotionSuccess
+
 
 func _ready() -> void:
 
@@ -100,7 +102,7 @@ func brew() -> void:
 		
 		ui_error.play()
 		print("Invalid combo")
-		result_label.text = "Those Ingredients don't mix well"
+		result_label.text = "Those Ingredients don't mix well!"
 		# not final
 		#slot1.clear_item()
 		#slot2.clear_item()
@@ -109,6 +111,22 @@ func brew() -> void:
 		#PlayerInventory.add_item(placeholder_potion)
 		result_icon.hide()
 		show_result()
+	
+	# recipe already discovered
+	elif GameState.is_recipe_discovered(recipe):
+		PlayerInventory.add_item(slot1.item)
+		slot1.clear_item()
+		PlayerInventory.add_item(slot2.item)
+		slot2.clear_item()
+		if slot3.item:
+			PlayerInventory.add_item(slot3.item)
+			slot3.clear_item()
+		
+		ui_error.play()
+		result_label.text = "You already discovered that recipe!"
+		result_icon.hide()
+		show_result()
+		
 	
 	else:
 		slot1.clear_item()
@@ -121,8 +139,9 @@ func brew() -> void:
 		GameState.discover_recipe(recipe)
 		
 		result_h_box_container_2.show()
-		result_label.text = "Created: " + recipe.result.name
+		result_label.text = "Discovered: " + recipe.result.name + "!"
 		
+		potion_success.play()
 		result_icon.texture = recipe.result.icon
 		#result_icon.scale = Vector2.ONE * 0.1
 		#var tween: Tween = create_tween()

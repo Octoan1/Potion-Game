@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ee66nt40cf30" path="res://entities/player/potion_effects/light_source.tscn" id="3_fkugw"]
 [ext_resource type="Texture2D" uid="uid://ddng4bgh81dg5" path="res://assets/lilbird.png" id="7_bectd"]
 [ext_resource type="Texture2D" uid="uid://crgdi8lglbtjh" path="res://assets/lilfish.png" id="8_wvtmh"]
+[ext_resource type="Texture2D" uid="uid://c8ut1p3aolitf" path="res://assets/lilsnake.png" id="10_7thud"]
 [ext_resource type="AudioStream" uid="uid://cr26sbkjv37se" path="res://audio/footstep_514261__jtn191__footstep5.wav" id="10_wvtmh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7thud"]
@@ -57,6 +58,22 @@ region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_we0b7"]
 atlas = ExtResource("2_abrql")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtric"]
+atlas = ExtResource("10_7thud")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyb6c"]
+atlas = ExtResource("10_7thud")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_221hk"]
+atlas = ExtResource("10_7thud")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghoj8"]
+atlas = ExtResource("10_7thud")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fkugw"]
@@ -126,6 +143,28 @@ animations = [{
 "loop": true,
 "name": &"normal_walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtric")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyb6c")
+}],
+"loop": true,
+"name": &"snake_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_221hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghoj8")
+}],
+"loop": true,
+"name": &"snake_walk",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abrql"]
@@ -157,8 +196,8 @@ visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1897133777]
 sprite_frames = SubResource("SpriteFrames_fkugw")
-animation = &"fish_idle"
-frame_progress = 0.06893554
+animation = &"snake_idle"
+frame_progress = 0.7202083
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1074183525]
 position = Vector2(0.5, 0)
