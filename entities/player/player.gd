@@ -225,7 +225,8 @@ func reset_level() -> void:
 	
 	#await get_tree().create_timer(1).timeout
 	# fade back in
-	tween.tween_property(fade_rect, "modulate:a", 0.0, 0.5)
+	tween.stop()
+	#tween.tween_property(fade_rect, "modulate:a", 0.0, 0.5)
 	fade_rect.visible = false
 	#get_tree().paused = dfalse
 	
