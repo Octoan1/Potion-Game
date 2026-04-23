@@ -31,8 +31,12 @@ func load_recipes() -> void:
 		row.setup(recipe, discovered)
 
 func _input(event: InputEvent) -> void:
+	
 	if event.is_action_pressed("recipe_book"):
+		tooltip.show()
 		move_to_front()
+		#grab_focus()
+		#grab_click_focus()
 		load_recipes()
 		self.visible = not self.visible
 	if event.is_action_pressed("ui_cancel"):

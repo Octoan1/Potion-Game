@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dr1auvx4bekq"]
+
+[ext_resource type="Script" uid="uid://843m68yffl77" path="res://entities/objects/sign/sign_ui.gd" id="1_f5h0k"]
+[ext_resource type="Texture2D" uid="uid://dnqkfrgnsi0ta" path="res://assets/ui/sign_ui.png" id="2_yog63"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yog63"]
+line_spacing = 1.0
+font_size = 6
+
+[node name="SignUI" type="Control" unique_id=60750219]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f5h0k")
+
+[node name="Panel" type="Panel" parent="." unique_id=1964484498]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=942833387]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_yog63")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1316075210]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -51.0
+offset_right = 74.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 6
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. q"
+label_settings = SubResource("LabelSettings_yog63")
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="Panel" unique_id=1291409676]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -69.0
+offset_right = -52.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 6
+text = "Press [Esc] to close"

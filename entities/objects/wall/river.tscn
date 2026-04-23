@@ -6,3 +6,6 @@
 collision_mask = 3
 script = ExtResource("1_rrqel")
 push_strength = 2000.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

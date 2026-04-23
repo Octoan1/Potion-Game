@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bsu2lp03xgw4p" path="res://assets/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_05.png" id="1_y5myg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_chlwx"]
-size = Vector2(94, 144)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y5myg"]
+radius = 47.0
+height = 148.0
 
 [node name="Tree41" type="Sprite2D" unique_id=211524469]
 texture = ExtResource("1_y5myg")
@@ -15,4 +16,4 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1897408405]
 position = Vector2(-2, 2)
-shape = SubResource("RectangleShape2D_chlwx")
+shape = SubResource("CapsuleShape2D_y5myg")

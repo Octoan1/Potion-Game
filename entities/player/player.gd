@@ -58,6 +58,11 @@ var rainbow_time: float = 0
 # win game
 @export var recipe_book_screen: Control
 
+@onready var water: Sprite2D = $Water
+var in_water: bool = false
+
+var has_speed_boost: bool = false
+
 func _ready() -> void:
 	original_scale = self.scale
 
@@ -86,6 +91,12 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.limit_length(max_speed * 1.5)
 	river_force = Vector2.ZERO # reset for next frame
 	move_and_slide()
+	
+	# more river
+	#if in_water:
+		#water.show()
+	#else:
+		#water.hide()
 	
 	# screen rainbow filter 
 	if rainbow_filter:
@@ -242,12 +253,17 @@ func heal(amount: int) -> void:
 		health_container.add_child(heart)
 
 func apply_speed_boost(amount: float, duration: float) -> void:
+	if has_speed_boost:
+		return
+		
+	has_speed_boost = true
 	max_speed *= amount
 	has_speed_effect = true
 	await get_tree().create_timer(duration).timeout
 	
 	has_speed_effect = false
 	max_speed /= amount
+	has_speed_boost = false
 	if max_speed < original_max_speed:
 		max_speed = original_max_speed
 

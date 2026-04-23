@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://fau15vs3upnb"]
+
+[ext_resource type="Script" uid="uid://b8c0c3mxwqi58" path="res://entities/objects/sign/sign.gd" id="1_4rfpm"]
+[ext_resource type="Texture2D" uid="uid://bweq6xh00idjx" path="res://assets/sign.png" id="2_fhfxi"]
+[ext_resource type="PackedScene" uid="uid://dr1auvx4bekq" path="res://entities/objects/sign/sign_ui.tscn" id="2_lnw7l"]
+[ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="3_clwjy"]
+[ext_resource type="Texture2D" uid="uid://3xyxup682k3" path="res://assets/iteraction_prompt2.png" id="3_fhfxi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_478de"]
+radius = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_478de"]
+size = Vector2(16, 16)
+
+[node name="Sign" type="StaticBody2D" unique_id=2094764493]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_4rfpm")
+sign_ui_scene = ExtResource("2_lnw7l")
+
+[node name="Interactable" type="Node" parent="." unique_id=1953840483]
+script = ExtResource("3_clwjy")
+metadata/_custom_type_script = "uid://bw0jtgebb15w5"
+
+[node name="BaseSprite" type="Sprite2D" parent="." unique_id=177816685]
+position = Vector2(0, -8)
+texture = ExtResource("2_fhfxi")
+
+[node name="CollectableRadius" type="Area2D" parent="." unique_id=1398148609]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableRadius" unique_id=680156109]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_478de")
+debug_color = Color(0, 0.6392157, 0.3764706, 0.05490196)
+
+[node name="Text" type="Sprite2D" parent="." unique_id=1905620591]
+z_index = 1
+position = Vector2(5, 11)
+texture = ExtResource("3_fhfxi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=393281659]
+position = Vector2(0.5, -8)
+shape = SubResource("RectangleShape2D_478de")
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="body_entered" from="CollectableRadius" to="." method="_on_collectable_radius_body_entered"]
+[connection signal="body_exited" from="CollectableRadius" to="." method="_on_collectable_radius_body_exited"]

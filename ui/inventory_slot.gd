@@ -23,6 +23,7 @@ var mouse_hovering: bool = false
 
 @onready var ui_click: AudioStreamPlayer = $UIClick
 @onready var use_potion: AudioStreamPlayer = $UsePotion
+@onready var ui_error: AudioStreamPlayer = $UIError
 
 
 func _ready() -> void:
@@ -61,7 +62,10 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		#print("Tried to use item: ", item)
 		if item != null and PlayerInventory.drinking:
-			use_potion.play()
+			if item.type == item.ItemType.POTION:
+				use_potion.play()
+			else: 
+				ui_error.play()
 			PlayerInventory.use_item(item)
 			
 				

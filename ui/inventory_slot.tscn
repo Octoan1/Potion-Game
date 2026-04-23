@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bk5yds786fbr6" path="res://assets/ui/numbers.png" id="4_tld60"]
 [ext_resource type="AudioStream" uid="uid://dnuspuhc1m8ux" path="res://audio/ui_click_freesound_community-ui-click-43196.mp3" id="6_nee1q"]
 [ext_resource type="AudioStream" uid="uid://cdojil8ka2my" path="res://audio/Potion Sorting.wav" id="7_yj352"]
+[ext_resource type="AudioStream" uid="uid://dimeup1xk881y" path="res://audio/ui_error_soundshelfstudio-ui-error-pop-515668.mp3" id="8_ighrm"]
 
 [node name="InventorySlot" type="Control" unique_id=411698676]
 custom_minimum_size = Vector2(20, 20)
@@ -69,6 +70,10 @@ stream = ExtResource("6_nee1q")
 
 [node name="UsePotion" type="AudioStreamPlayer" parent="." unique_id=923897862]
 stream = ExtResource("7_yj352")
+
+[node name="UIError" type="AudioStreamPlayer" parent="." unique_id=1089843802]
+stream = ExtResource("8_ighrm")
+volume_db = -10.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

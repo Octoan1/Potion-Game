@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://crgdi8lglbtjh" path="res://assets/lilfish.png" id="8_wvtmh"]
 [ext_resource type="Texture2D" uid="uid://c8ut1p3aolitf" path="res://assets/lilsnake.png" id="10_7thud"]
 [ext_resource type="AudioStream" uid="uid://cr26sbkjv37se" path="res://audio/footstep_514261__jtn191__footstep5.wav" id="10_wvtmh"]
+[ext_resource type="Texture2D" uid="uid://d5fssvgqb2go" path="res://assets/water_on_player.png" id="12_a1qjk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7thud"]
 atlas = ExtResource("7_bectd")
@@ -197,7 +198,7 @@ visible = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1897133777]
 sprite_frames = SubResource("SpriteFrames_fkugw")
 animation = &"snake_idle"
-frame_progress = 0.19268817
+frame_progress = 0.316383
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1074183525]
 position = Vector2(0.5, 0)
@@ -231,6 +232,10 @@ stream = ExtResource("10_wvtmh")
 
 [node name="FootstepTimer" type="Timer" parent="FootstepSound" unique_id=1938076650]
 wait_time = 0.3
+
+[node name="Water" type="Sprite2D" parent="." unique_id=904652886]
+visible = false
+texture = ExtResource("12_a1qjk")
 
 [connection signal="light_boost_ended" from="PotionEffectsContainer/LightSource" to="." method="_on_light_source_light_boost_ended"]
 [connection signal="timeout" from="DarkGrabLabel/Timer" to="." method="_on_timer_timeout"]

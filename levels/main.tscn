@@ -53,6 +53,7 @@ process_priority = 1
 visible = false
 
 [node name="HeartHBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=167973643]
+visible = false
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -63,6 +64,7 @@ offset_bottom = -53.0
 grow_vertical = 2
 
 [node name="Heart" type="TextureRect" parent="CanvasLayer/HeartHBoxContainer" unique_id=1622699621]
+visible = false
 layout_mode = 2
 texture = ExtResource("7_etqu2")
 stretch_mode = 4

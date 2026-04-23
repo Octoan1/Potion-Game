@@ -92,13 +92,13 @@ func brew() -> void:
 	var recipe: Recipe = get_matching_recipe()
 
 	if recipe == null:
-		PlayerInventory.add_item(slot1.item)
-		slot1.clear_item()
-		PlayerInventory.add_item(slot2.item)
-		slot2.clear_item()
-		if slot3.item:
-			PlayerInventory.add_item(slot3.item)
-			slot3.clear_item()
+		#PlayerInventory.add_item(slot1.item)
+		#slot1.clear_item()
+		#PlayerInventory.add_item(slot2.item)
+		#slot2.clear_item()
+		#if slot3.item:
+			#PlayerInventory.add_item(slot3.item)
+			#slot3.clear_item()
 		
 		ui_error.play()
 		print("Invalid combo")

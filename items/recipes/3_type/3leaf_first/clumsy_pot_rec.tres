@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://of7krsm4ejio"]
 
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_2f38y"]
+[ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_2f38y"]
 [ext_resource type="Resource" uid="uid://dasle11tf6ihl" path="res://items/ingredients/leaf.tres" id="2_3bhwt"]
-[ext_resource type="Resource" uid="uid://cr8dg5p05sg1d" path="res://items/ingredients/ancient_bark.tres" id="3_2f38y"]
 [ext_resource type="Resource" uid="uid://dfjsrqxjfvyt3" path="res://items/potions/3leaf_first/clumsy_pot.tres" id="3_ywgea"]
 [ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="4_kdot1"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_574xf"]
@@ -11,6 +11,6 @@
 script = ExtResource("6_574xf")
 recipe_name = "Clumsy Potion Recipe"
 recipe_id = "clumsy_potion_recipe"
-ingredients = Array[ExtResource("1_2f38y")]([ExtResource("2_3bhwt"), ExtResource("3_2f38y"), ExtResource("4_kdot1")])
+ingredients = Array[ExtResource("1_2f38y")]([ExtResource("2_2f38y"), ExtResource("4_kdot1"), ExtResource("2_3bhwt")])
 result = ExtResource("3_ywgea")
 metadata/_custom_type_script = "uid://ciee7sgvou518"

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b554jskeixubl" path="res://entities/objects/harvestable.gd" id="1_jgocu"]
 [ext_resource type="Resource" uid="uid://cr8dg5p05sg1d" path="res://items/ingredients/ancient_bark.tres" id="2_jgocu"]
 [ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="3_1woji"]
-[ext_resource type="Texture2D" uid="uid://cqhby7iehn6wx" path="res://assets/ancient_bark_placeholder.png" id="4_jgocu"]
+[ext_resource type="Texture2D" uid="uid://cp61m8gmxg2l8" path="res://assets/tree bark.png" id="4_jgocu"]
 [ext_resource type="Texture2D" uid="uid://cyklvx0g4345x" path="res://assets/iteraction_prompt.png" id="5_wu6e0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_478de"]

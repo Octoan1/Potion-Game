@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_6y8pr"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="2_1vg3s"]
-[ext_resource type="Resource" uid="uid://byqxbw5txub1t" path="res://items/ingredients/wood.tres" id="2_cy34v"]
+[ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="2_i0rwp"]
 [ext_resource type="Resource" uid="uid://cr8dg5p05sg1d" path="res://items/ingredients/ancient_bark.tres" id="3_i0rwp"]
-[ext_resource type="Resource" uid="uid://d3si3tnkxf1vg" path="res://items/ingredients/white_lily.tres" id="4_yfyof"]
+[ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="4_yfyof"]
 [ext_resource type="Resource" uid="uid://cpw66480sih20" path="res://items/potions/win_game_potion.tres" id="5_i0rwp"]
 
 [resource]
 script = ExtResource("2_1vg3s")
 recipe_name = "Win Game Potion Recipe"
 recipe_id = "win_game_potion_recipe"
-ingredients = Array[ExtResource("1_6y8pr")]([ExtResource("2_cy34v"), ExtResource("3_i0rwp"), ExtResource("4_yfyof")])
+ingredients = Array[ExtResource("1_6y8pr")]([ExtResource("2_i0rwp"), ExtResource("3_i0rwp"), ExtResource("4_yfyof")])
 result = ExtResource("5_i0rwp")
 metadata/_custom_type_script = "uid://ciee7sgvou518"
