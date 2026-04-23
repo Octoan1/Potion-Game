@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dgydlru8idsan"]
 
 [ext_resource type="Script" uid="uid://bd53mrrakxgun" path="res://ui/win_screen.gd" id="1_7dp3f"]
+[ext_resource type="Resource" uid="uid://bephiqa1vhwqb" path="res://items/recipes/recipe_database.tres" id="2_n3yoe"]
 [ext_resource type="AudioStream" uid="uid://dnuspuhc1m8ux" path="res://audio/ui_click_freesound_community-ui-click-43196.mp3" id="2_wex7o"]
 
 [node name="WinScreen" type="Control" unique_id=982246015]
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7dp3f")
+recipe_database = ExtResource("2_n3yoe")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=242720101]
 layout_mode = 1
@@ -21,7 +23,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2627451, 0.2627451, 0.2627451, 0.85490197)
 
-[node name="Label" type="Label" parent="." unique_id=87847010]
+[node name="AskWin" type="Control" parent="." unique_id=1942302363]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="AskWin" unique_id=87847010]
 layout_mode = 0
 offset_left = 32.5
 offset_top = 29.0
@@ -32,29 +39,76 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 13
 text = "Do you want to end the game?"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=343288592]
+[node name="VBoxContainer" type="VBoxContainer" parent="AskWin" unique_id=343288592]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -45.0
+offset_left = 63.0
 offset_top = 60.0
-offset_right = 45.0
+offset_right = 153.0
+offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EndGameButton" type="Button" parent="VBoxContainer" unique_id=226195725]
+[node name="EndGameButton" type="Button" parent="AskWin/VBoxContainer" unique_id=226195725]
 layout_mode = 2
 text = "Yes"
 
-[node name="BackToGameButton" type="Button" parent="VBoxContainer" unique_id=981920910]
+[node name="BackToGameButton" type="Button" parent="AskWin/VBoxContainer" unique_id=981920910]
 layout_mode = 2
 text = "No
 "
 
+[node name="FullWin" type="Control" parent="." unique_id=358088912]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="FullWin" unique_id=955387436]
+layout_mode = 0
+offset_left = 32.5
+offset_top = 29.0
+offset_right = 223.5
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 13
+text = "Congrats! You win!"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="FullWin" unique_id=455616864]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 51.0
+offset_right = 220.0
+offset_bottom = 111.0
+
+[node name="DiscoverLabel" type="Label" parent="FullWin/Panel" unique_id=365786184]
+layout_mode = 0
+offset_left = -2.5
+offset_top = 8.0
+offset_right = 188.5
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 13
+text = "You discovered: x/x potions!
+"
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="FullWin/Panel" unique_id=1974007723]
+layout_mode = 0
+offset_left = -2.5
+offset_top = 35.0
+offset_right = 188.5
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 13
+text = "And won in: time"
+horizontal_alignment = 1
+
 [node name="UIClick" type="AudioStreamPlayer" parent="." unique_id=1021705242]
 stream = ExtResource("2_wex7o")
 
-[connection signal="pressed" from="VBoxContainer/EndGameButton" to="." method="_on_end_game_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/BackToGameButton" to="." method="_on_back_to_game_button_pressed"]
+[connection signal="pressed" from="AskWin/VBoxContainer/EndGameButton" to="." method="_on_end_game_button_pressed"]
+[connection signal="pressed" from="AskWin/VBoxContainer/BackToGameButton" to="." method="_on_back_to_game_button_pressed"]

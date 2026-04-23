@@ -34,3 +34,9 @@ func discover_recipe(recipe: Recipe) -> void:
 
 func is_recipe_discovered(recipe: Recipe) -> bool:
 	return discovered_recipes.has(recipe.recipe_id)
+	
+func get_total_recipes(recipe_database: RecipeDatabase) -> int:
+	return recipe_database.recipe_list.size()
+	
+func get_discovered_count() -> int:
+	return discovered_recipes.size()

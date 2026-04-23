@@ -55,6 +55,9 @@ var rainbow_time: float = 0
 # death
 @export var fade_rect: ColorRect
 
+# win game
+@export var recipe_book_screen: Control
+
 func _ready() -> void:
 	original_scale = self.scale
 
@@ -284,6 +287,7 @@ func freeze_follow(_radius: float) -> void:
 	potion_effects_container.add_child(new_freeze_area)
 	
 func win() -> void:
+	recipe_book_screen.hide()
 	win_screen.show()
 	get_tree().paused = true
 	
