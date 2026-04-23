@@ -117,7 +117,8 @@ func handle_movement(direction: Vector2, delta: float) -> void:
 			
 		# footstep
 		if footstep_timer.is_stopped():
-			footstep_sound.volume_db = 0
+			#footstep_sound.volume_db = 0
+			footstep_sound.play()
 			footstep_timer.start()
 		
 	else:
@@ -134,17 +135,17 @@ func handle_movement(direction: Vector2, delta: float) -> void:
 			animated_sprite_2d.play("normal_idle")
 		
 		# footstep
-		footstep_sound.volume_db = -30
+		#footstep_sound.volume_db = -30
 		footstep_timer.stop()
 	
 	# reset external velocity so it doesnt compound
 	external_velocity = Vector2.ZERO
 
 func _on_footstep_timer_timeout() -> void:
-	#var orig := footstep_sound.pitch_scale
-	#footstep_sound.pitch_scale = orig + randf_range(-.25, 1.5)
+	var orig := footstep_sound.pitch_scale
+	footstep_sound.pitch_scale = orig + randf_range(-.25, 1.5)
 	footstep_sound.play()
-	#footstep_sound.pitch_scale = orig
+	footstep_sound.pitch_scale = orig
 
 
 func toggle_inventory() -> void:

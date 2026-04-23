@@ -191,7 +191,7 @@ one_shot = true
 stream = ExtResource("10_wvtmh")
 
 [node name="FootstepTimer" type="Timer" parent="FootstepSound" unique_id=1938076650]
-wait_time = 0.2
+wait_time = 0.3
 
 [connection signal="light_boost_ended" from="PotionEffectsContainer/LightSource" to="." method="_on_light_source_light_boost_ended"]
 [connection signal="timeout" from="DarkGrabLabel/Timer" to="." method="_on_timer_timeout"]
