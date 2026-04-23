@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c1kvinxlfbyc8" path="res://assets/brewing area.png" id="10_1uavu"]
 [ext_resource type="Texture2D" uid="uid://yv8njp175auf" path="res://assets/cauldron_slot.png" id="10_j4hgf"]
 [ext_resource type="AudioStream" uid="uid://dlfbgjydmqn2s" path="res://audio/potion_success_meldix-success-340660.mp3" id="10_uj3cv"]
+[ext_resource type="AudioStream" uid="uid://cmcgu0a21fq8j" path="res://audio/Simple Latch B.wav" id="11_j4hgf"]
 
 [node name="CauldronUI" type="Control" unique_id=698506239]
 process_mode = 2
@@ -51,6 +52,7 @@ theme_override_font_sizes/font_size = 12
 text = "Brew!"
 
 [node name="ResultHBoxContainer2" type="HBoxContainer" parent="Panel" unique_id=815351739]
+visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_top = 94.0
@@ -146,12 +148,13 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -126.0
-offset_top = 119.0
+offset_top = 107.0
 offset_right = 37.0
 offset_bottom = 142.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 6
 text = "Press [Esc] or [Tab] to close
+[Click] an item to transfer it
 Press [R] to open Recipe Book"
 
 [node name="InventoryGrid" type="GridContainer" parent="." unique_id=532482846]
@@ -183,6 +186,10 @@ autoplay = true
 
 [node name="PotionSuccess" type="AudioStreamPlayer" parent="." unique_id=383854661]
 stream = ExtResource("10_uj3cv")
+
+[node name="EnterExitCauldron" type="AudioStreamPlayer" parent="." unique_id=1294640538]
+stream = ExtResource("11_j4hgf")
+volume_db = -10.0
 
 [connection signal="pressed" from="Panel/BrewButton" to="." method="_on_brew_button_pressed"]
 [connection signal="item_clicked" from="Panel/HBoxContainer/IngredientSlot1" to="." method="_on_ingredient_slot_1_item_clicked"]

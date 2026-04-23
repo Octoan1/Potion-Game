@@ -19,10 +19,11 @@ extends Control
 @onready var ui_click: AudioStreamPlayer = $UIClick
 @onready var ui_error: AudioStreamPlayer = $UIError
 @onready var potion_success: AudioStreamPlayer = $PotionSuccess
+@onready var enter_exit_cauldron: AudioStreamPlayer = $EnterExitCauldron
 
 
 func _ready() -> void:
-
+	enter_exit_cauldron.play()
 	get_tree().paused = true
 	PlayerInventory.drinking = false
 	$/root/Main/CanvasLayer/PlayerInventoryUI.visible = false
@@ -245,6 +246,7 @@ func load_inventory() -> void:
 
 
 func close() -> void:
+	enter_exit_cauldron.play()
 	get_tree().paused = false
 	queue_free()
 	PlayerInventory.drinking = true

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jw0xa4522p3u" path="res://ui/cauldron/cauldron_ui.tscn" id="2_2fjmj"]
 [ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="3_aiytd"]
 [ext_resource type="Texture2D" uid="uid://3xyxup682k3" path="res://assets/iteraction_prompt2.png" id="3_w5eqq"]
+[ext_resource type="AudioStream" uid="uid://cmcgu0a21fq8j" path="res://audio/Simple Latch B.wav" id="6_udvog"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_084cg"]
 radius = 30.016663
@@ -40,6 +41,10 @@ texture = ExtResource("3_w5eqq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=405740088]
 position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_2fjmj")
+
+[node name="EnterExitCauldron" type="AudioStreamPlayer" parent="." unique_id=136381771]
+stream = ExtResource("6_udvog")
+volume_db = -10.0
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
