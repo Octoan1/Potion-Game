@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/beetle.tres" id="2_m2gnt"]
 [ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="3_00r6a"]
 [ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="3_ipveo"]
-[ext_resource type="Resource" uid="uid://cvj86tejp3dds" path="res://items/potions/beetle_first/bird_pot.tres" id="5_m2gnt"]
+[ext_resource type="Resource" uid="uid://cvj86tejp3dds" path="res://items/potions/2beetle_first/bird_pot.tres" id="5_m2gnt"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_irsqo"]
 
 [resource]

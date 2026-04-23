@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="2_xg54q"]
 [ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="4_av78c"]
 [ext_resource type="Resource" uid="uid://cgsnx5k4vs65n" path="res://items/ingredients/small_crystal.tres" id="4_q1gfm"]
-[ext_resource type="Resource" uid="uid://wq5uryj3qwk2" path="res://items/potions/water_first/blue_pot.tres" id="5_xg54q"]
+[ext_resource type="Resource" uid="uid://wq5uryj3qwk2" path="res://items/potions/4water_first/blue_pot.tres" id="5_xg54q"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_olwr4"]
 
 [resource]

@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://dasle11tf6ihl" path="res://items/ingredients/leaf.tres" id="2_78w0m"]
 [ext_resource type="Resource" uid="uid://cr8dg5p05sg1d" path="res://items/ingredients/ancient_bark.tres" id="3_3a2ec"]
 [ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="4_6ewkg"]
-[ext_resource type="Resource" uid="uid://c4vaux43w218n" path="res://items/potions/leaf_first/purple_pot.tres" id="5_78w0m"]
+[ext_resource type="Resource" uid="uid://c4vaux43w218n" path="res://items/potions/3leaf_first/purple_pot.tres" id="5_78w0m"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_7jn62"]
 
 [resource]

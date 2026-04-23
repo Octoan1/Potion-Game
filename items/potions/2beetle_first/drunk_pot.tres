@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://7vpljq85uvkn"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_fh3pk"]
+[ext_resource type="Script" uid="uid://d275hw5hxxlsf" path="res://items/effects/camera_effect.gd" id="2_fh3pk"]
+[ext_resource type="Texture2D" uid="uid://s8nbvaq2m3r4" path="res://assets/drunk_potion.png" id="3_fh3pk"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_nn8dd"]
+
+[sub_resource type="Resource" id="Resource_bexoh"]
+script = ExtResource("2_fh3pk")
+sprite = "drunk"
+metadata/_custom_type_script = "uid://d275hw5hxxlsf"
+
+[resource]
+script = ExtResource("4_nn8dd")
+name = "Drunk Potion"
+icon = ExtResource("3_fh3pk")
+description = "makes you drunk?"
+type = 1
+id = "drunk_potion"
+effects = Array[ExtResource("1_fh3pk")]([SubResource("Resource_bexoh")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

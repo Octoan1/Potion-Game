@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://dasle11tf6ihl" path="res://items/ingredients/leaf.tres" id="2_bjaxe"]
 [ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="3_io5ma"]
 [ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="4_bjaxe"]
-[ext_resource type="Resource" uid="uid://by3pmv1uyiwej" path="res://items/potions/leaf_first/paralysis_pot.tres" id="5_io5ma"]
+[ext_resource type="Resource" uid="uid://by3pmv1uyiwej" path="res://items/potions/3leaf_first/paralysis_pot.tres" id="5_io5ma"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_iblx8"]
 
 [resource]

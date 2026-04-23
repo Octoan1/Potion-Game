@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://nt7eegelsnoe"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_5ng7s"]
+[ext_resource type="Script" uid="uid://d275hw5hxxlsf" path="res://items/effects/camera_effect.gd" id="2_5ng7s"]
+[ext_resource type="Texture2D" uid="uid://b6loug81m52hp" path="res://assets/fisheye_pot.png" id="3_f6w80"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_d3jkg"]
+
+[sub_resource type="Resource" id="Resource_qtbwi"]
+script = ExtResource("2_5ng7s")
+sprite = "squeeze"
+metadata/_custom_type_script = "uid://d275hw5hxxlsf"
+
+[resource]
+script = ExtResource("4_d3jkg")
+name = "Squeeze Potion"
+icon = ExtResource("3_f6w80")
+description = "makes you squeeze?"
+type = 1
+id = "squeeze_potion"
+effects = Array[ExtResource("1_5ng7s")]([SubResource("Resource_qtbwi")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

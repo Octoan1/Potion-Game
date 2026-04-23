@@ -32,6 +32,7 @@ func _ready() -> void:
 	tooltip = get_tree().get_first_node_in_group("tooltip")
 
 func set_item(new_item: Item, count: int) -> void:
+	$ItemAmount.visible = show_item_count
 	if new_item == null:
 		icon.texture = null
 		amount.text = "-1"

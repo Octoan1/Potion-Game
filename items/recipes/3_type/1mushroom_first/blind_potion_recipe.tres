@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_es8mc"]
 [ext_resource type="Resource" uid="uid://cr8dg5p05sg1d" path="res://items/ingredients/ancient_bark.tres" id="3_8c2fw"]
 [ext_resource type="Resource" uid="uid://ukymvtqw220e" path="res://items/ingredients/ectoplasm.tres" id="4_3tbfe"]
-[ext_resource type="Resource" uid="uid://dvi6dihxvuw66" path="res://items/potions/mushroom_first/blind_pot.tres" id="5_3tbfe"]
+[ext_resource type="Resource" uid="uid://dvi6dihxvuw66" path="res://items/potions/1mushroom_first/blind_pot.tres" id="5_3tbfe"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_u5vk7"]
 
 [resource]

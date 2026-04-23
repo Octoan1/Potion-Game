@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/beetle.tres" id="2_68ys0"]
 [ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="3_jkn0b"]
 [ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="4_imtql"]
-[ext_resource type="Resource" uid="uid://baox8wavamtu" path="res://items/potions/beetle_first/spirit_shield_potion.tres" id="5_68ys0"]
+[ext_resource type="Resource" uid="uid://baox8wavamtu" path="res://items/potions/2beetle_first/spirit_shield_potion.tres" id="5_68ys0"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_pfxd7"]
 
 [resource]

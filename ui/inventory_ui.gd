@@ -22,5 +22,7 @@ func update_inventory() -> void:
 		var slot: Control = slot_scene.instantiate()
 		grid.add_child(slot)
 
+		if item.type == item.ItemType.POTION:
+			slot.show_item_count = false
 		var amount: int = PlayerInventory.items[item]
 		slot.set_item(item, amount)

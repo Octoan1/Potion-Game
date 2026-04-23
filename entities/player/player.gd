@@ -142,10 +142,10 @@ func handle_movement(direction: Vector2, delta: float) -> void:
 	external_velocity = Vector2.ZERO
 
 func _on_footstep_timer_timeout() -> void:
-	var orig := footstep_sound.pitch_scale
-	footstep_sound.pitch_scale = orig + randf_range(-.25, 1.5)
+	#var orig := footstep_sound.pitch_scale
+	#footstep_sound.pitch_scale = orig + randf_range(-.25, 1.5)
 	footstep_sound.play()
-	footstep_sound.pitch_scale = orig
+	#footstep_sound.pitch_scale = orig
 
 
 func toggle_inventory() -> void:
@@ -294,7 +294,7 @@ func change_sprite(change: String) -> void:
 func change_camera(change: String) -> void:
 	match change:
 		"shaky":
-			var duration := 2
+			var duration := 5
 			var strength := 1.5
 			
 			var original_offset := camera.offset
@@ -310,6 +310,60 @@ func change_camera(change: String) -> void:
 				time += get_process_delta_time()
 			
 			camera.offset = original_offset
+		
+		"drunk":
+			var duration := 10.0
+			var time := 0.0
+
+			var original_offset := camera.offset
+			var original_rot := camera.rotation
+			var original_zoom := camera.zoom
+
+			while time < duration:
+				var t := time * 2.0
+
+				# wave distortion (smooth, not random)
+				var wave_x := sin(t * 1.5) * 12.0
+				var wave_y := cos(t * 1.2) * 8.0
+
+				camera.offset = original_offset + Vector2(wave_x, wave_y)
+
+				# subtle “focus breathing”
+				var zoom_variation := 1.0 + sin(t * 0.8) * 0.15
+				camera.zoom = original_zoom * Vector2(zoom_variation, zoom_variation)
+
+				# slight rotation wobble
+				camera.rotation = original_rot + sin(t * 0.6) * 0.1
+
+				await get_tree().process_frame
+				time += get_process_delta_time()
+
+			camera.offset = original_offset
+			camera.rotation = original_rot
+			camera.zoom = original_zoom
+		
+		"squeeze":
+			var duration := 5.0
+			var time := 0.0
+
+			var original_zoom := camera.zoom
+
+			while time < duration:
+				var t := time / duration
+
+				# strong center compression (key effect)
+				var squeeze := 1.0 + sin(t * PI) * 0.25
+
+				# asymmetric zoom = lens distortion feel
+				camera.zoom = Vector2(
+					original_zoom.x * squeeze,
+					original_zoom.y * (2.0 - squeeze)
+				)
+
+				await get_tree().process_frame
+				time += get_process_delta_time()
+
+			camera.zoom = original_zoom
 	
 	await get_tree().create_timer(5).timeout
 	camera.offset = Vector2.ZERO

@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://c5ehvlahrnb7h" path="res://items/ingredients/mushroom.tres" id="2_eo51w"]
 [ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="4_uo8mt"]
 [ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="4_x5sda"]
-[ext_resource type="Resource" uid="uid://d0m64j3ieryyc" path="res://items/potions/mushroom_first/fish_pot.tres" id="5_uo8mt"]
+[ext_resource type="Resource" uid="uid://d0m64j3ieryyc" path="res://items/potions/1mushroom_first/fish_pot.tres" id="5_uo8mt"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_1a78e"]
 
 [resource]

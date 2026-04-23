@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dhpdrho0je6vq" path="res://entities/objects/wall/breakable_wall.gd" id="1_lxi2e"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_vtqil"]
-[ext_resource type="Resource" uid="uid://kvshm0esng67" path="res://items/potions/mushroom_first/fire_potion.tres" id="2_l7vcr"]
+[ext_resource type="Resource" uid="uid://kvshm0esng67" path="res://items/potions/1mushroom_first/fire_potion.tres" id="2_l7vcr"]
 [ext_resource type="Texture2D" uid="uid://3xyxup682k3" path="res://assets/iteraction_prompt2.png" id="4_lg5kk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxi2e"]

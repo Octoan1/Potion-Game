@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://cncme354uog5x" path="res://items/ingredients/beetle.tres" id="2_5prr7"]
 [ext_resource type="Resource" uid="uid://cr8dg5p05sg1d" path="res://items/ingredients/ancient_bark.tres" id="3_muboj"]
 [ext_resource type="Resource" uid="uid://cgsnx5k4vs65n" path="res://items/ingredients/small_crystal.tres" id="4_5prr7"]
-[ext_resource type="Resource" uid="uid://qbjlyebcme0p" path="res://items/potions/beetle_first/rainbow_pot.tres" id="5_muboj"]
+[ext_resource type="Resource" uid="uid://qbjlyebcme0p" path="res://items/potions/2beetle_first/rainbow_pot.tres" id="5_muboj"]
 [ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_2ok3m"]
 
 [resource]
