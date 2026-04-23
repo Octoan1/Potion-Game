@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cgsjqvsv4gnj0"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_rsap6"]
+[ext_resource type="Script" uid="uid://dbknhdoln02bs" path="res://items/effects/random_effect.gd" id="2_wsm2h"]
+[ext_resource type="Texture2D" uid="uid://bwoqmfovw24xe" path="res://assets/deaf_potion.png" id="3_rsap6"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_8kxvk"]
+
+[sub_resource type="Resource" id="Resource_7cdq6"]
+script = ExtResource("2_wsm2h")
+effect = "deaf"
+metadata/_custom_type_script = "uid://dbknhdoln02bs"
+
+[resource]
+script = ExtResource("4_8kxvk")
+name = "Deaf Potion"
+icon = ExtResource("3_rsap6")
+description = "makes you deaf?"
+type = 1
+id = "deaf_potion"
+effects = Array[ExtResource("1_rsap6")]([SubResource("Resource_7cdq6")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

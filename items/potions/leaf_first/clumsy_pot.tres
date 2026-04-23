@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dfjsrqxjfvyt3"]
+
+[ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_y04ms"]
+[ext_resource type="Script" uid="uid://dbknhdoln02bs" path="res://items/effects/random_effect.gd" id="2_1lawi"]
+[ext_resource type="Texture2D" uid="uid://ddwpmmljchnl0" path="res://assets/clumsy_pot.png" id="3_y04ms"]
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_c85vk"]
+
+[sub_resource type="Resource" id="Resource_7cdq6"]
+script = ExtResource("2_1lawi")
+effect = "clumsy"
+metadata/_custom_type_script = "uid://dbknhdoln02bs"
+
+[resource]
+script = ExtResource("4_c85vk")
+name = "Clumsy Potion"
+icon = ExtResource("3_y04ms")
+description = "makes you clumsy?"
+type = 1
+id = "clumsy_potion"
+effects = Array[ExtResource("1_y04ms")]([SubResource("Resource_7cdq6")])
+metadata/_custom_type_script = "uid://bsj305oo16mvm"

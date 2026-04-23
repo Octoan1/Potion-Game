@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://b32dtajletqw5"]
+
+[ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="1_io5ma"]
+[ext_resource type="Resource" uid="uid://dasle11tf6ihl" path="res://items/ingredients/leaf.tres" id="2_bjaxe"]
+[ext_resource type="Resource" uid="uid://bbnalqsvybia" path="res://items/ingredients/roe.tres" id="3_io5ma"]
+[ext_resource type="Resource" uid="uid://g5rn3sho0rpy" path="res://items/ingredients/spring_water.tres" id="4_bjaxe"]
+[ext_resource type="Resource" uid="uid://by3pmv1uyiwej" path="res://items/potions/leaf_first/paralysis_pot.tres" id="5_io5ma"]
+[ext_resource type="Script" uid="uid://ciee7sgvou518" path="res://items/recipes/recipe.gd" id="6_iblx8"]
+
+[resource]
+script = ExtResource("6_iblx8")
+recipe_name = "Paralysis Potion Recipe"
+recipe_id = "paralysis_potion_recipe"
+ingredients = Array[ExtResource("1_io5ma")]([ExtResource("2_bjaxe"), ExtResource("3_io5ma"), ExtResource("4_bjaxe")])
+result = ExtResource("5_io5ma")
+metadata/_custom_type_script = "uid://ciee7sgvou518"

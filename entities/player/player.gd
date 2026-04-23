@@ -14,6 +14,9 @@ var original_max_speed: float = max_speed
 @export var friction: float = 1000.0
 var external_velocity: Vector2 = Vector2.ZERO
 var river_force: Vector2 = Vector2.ZERO
+# potion (paralysis / clumsy
+var paralysis_mod: bool = false
+var clumsy_mod: bool = false
 
 @export_category("Health")
 @export var health: int = 1
@@ -92,6 +95,12 @@ func apply_external_force(force: Vector2) -> void:
 
 func handle_movement(direction: Vector2, delta: float) -> void:
 	if direction.length() > 0.1:
+		# ption physical changes
+		if paralysis_mod:
+			direction = Vector2.ZERO
+		elif clumsy_mod:
+			direction *= -1
+		
 		# physical changes
 		var input_velocity: Vector2 = velocity.move_toward(direction * max_speed, acceleration * delta)
 		velocity = input_velocity
@@ -348,3 +357,17 @@ func apply_screen_filter(change: String) -> void:
 	screen_filter.hide()
 	screen_filter.modulate.a = default_mod_a
 	screen_filter.modulate = Color.WHITE
+	
+func apply_random_effect(effect: String) -> void:
+	match effect:
+		"paralysis":
+			paralysis_mod = true
+		"clumsy":
+			clumsy_mod = true
+		"deaf":
+			AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
+			
+	await get_tree().create_timer(7).timeout
+	paralysis_mod = false
+	clumsy_mod = false
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)

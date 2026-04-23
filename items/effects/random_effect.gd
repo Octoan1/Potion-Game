@@ -1,5 +1,5 @@
 extends PotionEffect
-class_name FireEffect
+class_name RandomEffect
 
 @export var effect: String
 

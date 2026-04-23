@@ -1,15 +1,21 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://by3pmv1uyiwej"]
 
 [ext_resource type="Script" uid="uid://cvajtecslfis3" path="res://items/effects/base/potion_effect.gd" id="1_6p3s5"]
-[ext_resource type="Texture2D" uid="uid://b68u3g6s02s43" path="res://assets/purple_pot.png" id="3_x6ec7"]
+[ext_resource type="Script" uid="uid://dbknhdoln02bs" path="res://items/effects/random_effect.gd" id="2_6p3s5"]
+[ext_resource type="Texture2D" uid="uid://b660xuucqdhb3" path="res://assets/paralysis_pot.png" id="2_r6tp8"]
 [ext_resource type="Script" uid="uid://bsj305oo16mvm" path="res://items/item.gd" id="4_4oq0o"]
+
+[sub_resource type="Resource" id="Resource_7cdq6"]
+script = ExtResource("2_6p3s5")
+effect = "paralysis"
+metadata/_custom_type_script = "uid://dbknhdoln02bs"
 
 [resource]
 script = ExtResource("4_4oq0o")
 name = "Paralysis Potion"
-icon = ExtResource("3_x6ec7")
+icon = ExtResource("2_r6tp8")
 description = "makes you paralyzed?"
 type = 1
 id = "paralysis_potion"
-effects = Array[ExtResource("1_6p3s5")]([null])
+effects = Array[ExtResource("1_6p3s5")]([SubResource("Resource_7cdq6")])
 metadata/_custom_type_script = "uid://bsj305oo16mvm"
