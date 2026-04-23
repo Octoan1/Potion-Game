@@ -72,7 +72,9 @@ texture = ExtResource("7_etqu2")
 stretch_mode = 4
 
 [node name="WinScreen" parent="CanvasLayer" unique_id=982246015 instance=ExtResource("8_etqu2")]
+process_mode = 3
 visible = false
+z_index = 2
 
 [node name="ScreenFilter" type="ColorRect" parent="CanvasLayer" unique_id=1338102896]
 visible = false
