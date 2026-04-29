@@ -6,8 +6,11 @@ extends Node2D
 var cauldron_ui: Control
 @onready var enter_exit_cauldron: AudioStreamPlayer = $EnterExitCauldron
 
+func _ready() -> void:
+	text.hide()
 
 func activate_cauldron() -> void:
+	
 	#print("hia")
 	open_ui()
 	#enter_exit_cauldron.play()
@@ -17,11 +20,13 @@ func open_ui() -> void:
 	get_tree().current_scene.get_node("CanvasLayer").add_child(ui)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("enter")
 	if body.is_in_group("Player"):
 		text.show()
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
+	print("exit")
 	if body.is_in_group("Player"):
 		text.hide()
 

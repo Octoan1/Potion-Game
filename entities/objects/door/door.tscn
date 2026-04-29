@@ -5,6 +5,10 @@
 [ext_resource type="Script" uid="uid://bw0jtgebb15w5" path="res://scripts/interactable.gd" id="2_sdjg2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sdjg2"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_icyyl"]
+radius = 21.0
 
 [node name="Door" type="StaticBody2D" unique_id=1104737495 groups=["doors"]]
 collision_layer = 4
@@ -16,6 +20,7 @@ script = ExtResource("2_sdjg2")
 metadata/_custom_type_script = "uid://bw0jtgebb15w5"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1480509697]
+visible = false
 texture = ExtResource("1_bulvb")
 region_enabled = true
 region_rect = Rect2(0, 16, 16, 16)
@@ -23,4 +28,15 @@ region_rect = Rect2(0, 16, 16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265736451]
 shape = SubResource("CircleShape2D_sdjg2")
 
+[node name="CollectableRadius" type="Area2D" parent="." unique_id=225620508]
+position = Vector2(0, 8)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableRadius" unique_id=693534250]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_icyyl")
+debug_color = Color(0, 0.6392157, 0.3764706, 0.05490196)
+
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="body_entered" from="CollectableRadius" to="." method="_on_collectable_radius_body_entered"]
+[connection signal="body_exited" from="CollectableRadius" to="." method="_on_collectable_radius_body_exited"]

@@ -18,11 +18,12 @@ metadata/_edit_lock_ = true
 tile_set = ExtResource("2_w12p8")
 metadata/_edit_lock_ = true
 
-[node name="Door" parent="." unique_id=1685542594 instance=ExtResource("3_oe23n")]
+[node name="Door" parent="." unique_id=1685542594 node_paths=PackedStringArray("text_hint") instance=ExtResource("3_oe23n")]
 position = Vector2(26, 234)
 target_scene = "res://levels/outside.tscn"
 target_door_id = "cave_entrance"
 door_id = "cave_exit"
+text_hint = NodePath("Label")
 
 [node name="SpawnPoint" type="Marker2D" parent="Door" unique_id=761553435]
 position = Vector2(0, 20)

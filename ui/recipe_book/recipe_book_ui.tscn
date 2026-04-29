@@ -63,7 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 5
 text = "Press [Esc] or [R] to close
-(Can also press [Right Click] on Potion to use)"
+[Click] on a discovered potion to add it to use hotbar "
 label_settings = SubResource("LabelSettings_l4ni6")
 
 [node name="Label2" type="Label" parent="." unique_id=358485976]

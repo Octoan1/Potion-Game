@@ -23,6 +23,7 @@ extends Control
 
 
 func _ready() -> void:
+	get_tree().root.get_node("/root/Main/CanvasLayer/Hotbar").hide()
 	enter_exit_cauldron.play()
 	get_tree().paused = true
 	PlayerInventory.drinking = false
@@ -250,6 +251,7 @@ func close() -> void:
 	get_tree().paused = false
 	queue_free()
 	PlayerInventory.drinking = true
+	get_tree().root.get_node("/root/Main/CanvasLayer/Hotbar").show()
 
 
 func update_ui() -> void:

@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cmcgu0a21fq8j" path="res://audio/Simple Latch B.wav" id="6_udvog"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_084cg"]
-radius = 30.016663
+radius = 25.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fjmj"]
 size = Vector2(21, 20)
@@ -27,6 +27,7 @@ metadata/_custom_type_script = "uid://bw0jtgebb15w5"
 texture = ExtResource("1_084cg")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=277285293]
+collision_mask = 2
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=197490257]

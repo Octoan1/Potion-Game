@@ -155,7 +155,7 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 6
 text = "Press [Esc] or [Tab] to close
 [Click] an item to transfer it
-Press [R] to open Recipe Book"
+Press [R] to open Potion Book"
 
 [node name="InventoryGrid" type="GridContainer" parent="." unique_id=532482846]
 layout_mode = 1

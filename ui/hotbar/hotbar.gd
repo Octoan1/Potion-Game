@@ -42,15 +42,15 @@ func drink_slot(index: int) -> void:
 		return
 	
 	# apply effect (you already have this system)
-	#PlayerInventory.drink(item)
+	PlayerInventory.use_item(item)
 	#PlayerInventory.dr
 
 	# remove from inventory
 	#PlayerInventory.remove_item(item, 1)
 
 	# clear slot
-	slots[index] = null
-	container.get_child(index).clear_item()
+	#slots[index] = null
+	#container.get_child(index).clear_item()
 	
 func add_potion(item: Item) -> void:
 	for i in range(slots.size()):
