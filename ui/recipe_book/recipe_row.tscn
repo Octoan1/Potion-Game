@@ -67,3 +67,5 @@ visible = false
 layout_mode = 2
 texture = ExtResource("1_biitc")
 stretch_mode = 2
+
+[connection signal="item_clicked" from="InventorySlot4" to="." method="_on_pressed"]

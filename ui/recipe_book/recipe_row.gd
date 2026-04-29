@@ -1,6 +1,8 @@
 extends HBoxContainer
 class_name RecipeRow
 
+signal add_hotbar(item: Item)
+
 @onready var ing1: InventorySlot = $InventorySlot
 @onready var ing2: InventorySlot = $InventorySlot2
 @onready var ing3: InventorySlot = $InventorySlot3
@@ -76,3 +78,8 @@ func set_unknown(recipe: Recipe) -> void:
 	# Result
 	result.set_item(null, 0)
 	result.icon.texture = unknown_icon
+
+
+func _on_pressed(item: Item) -> void:
+	add_hotbar.emit(item)
+	

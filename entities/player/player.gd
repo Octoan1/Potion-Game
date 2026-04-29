@@ -305,6 +305,9 @@ func freeze_follow(_radius: float) -> void:
 func win() -> void:
 	recipe_book_screen.hide()
 	win_screen.show()
+	
+	win_screen.focus_mode = Control.FOCUS_ALL
+	win_screen.grab_focus()
 	get_tree().paused = true
 	
 func change_size(new_scale: Vector2, duration: float) -> void:

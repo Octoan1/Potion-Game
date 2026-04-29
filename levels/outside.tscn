@@ -1873,6 +1873,24 @@ position = Vector2(225, 29)
 [node name="Grass189" parent="Vegetation/GrassContainer" unique_id=551470684 instance=ExtResource("16_35tpi")]
 position = Vector2(173, 60)
 
+[node name="Grass190" parent="Vegetation/GrassContainer" unique_id=1610029236 instance=ExtResource("16_35tpi")]
+position = Vector2(99, 214)
+
+[node name="Grass191" parent="Vegetation/GrassContainer" unique_id=1023284090 instance=ExtResource("16_35tpi")]
+position = Vector2(83, 243)
+
+[node name="Grass192" parent="Vegetation/GrassContainer" unique_id=504486445 instance=ExtResource("16_35tpi")]
+position = Vector2(34, 235)
+
+[node name="Grass193" parent="Vegetation/GrassContainer" unique_id=238640579 instance=ExtResource("16_35tpi")]
+position = Vector2(22, 216)
+
+[node name="Grass194" parent="Vegetation/GrassContainer" unique_id=256281224 instance=ExtResource("16_35tpi")]
+position = Vector2(169, 231)
+
+[node name="Grass195" parent="Vegetation/GrassContainer" unique_id=505668153 instance=ExtResource("16_35tpi")]
+position = Vector2(141, 234)
+
 [node name="Grass34" parent="Vegetation/GrassContainer" unique_id=1752637337 instance=ExtResource("16_35tpi")]
 position = Vector2(262, 467)
 

@@ -41,14 +41,13 @@ text = "Do you want to end the game?"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AskWin" unique_id=343288592]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 63.0
+anchors_preset = -1
+anchor_right = 6.3880005
+anchor_bottom = 3.6120002
+offset_left = 83.0
 offset_top = 60.0
-offset_right = 153.0
-offset_bottom = 86.0
+offset_right = -82.52002
+offset_bottom = -18.480011
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -98,6 +97,8 @@ text = "You discovered: x/x potions!
 horizontal_alignment = 1
 
 [node name="TimeLabel" type="Label" parent="FullWin/Panel" unique_id=1974007723]
+top_level = true
+z_index = 5
 layout_mode = 0
 offset_left = -2.5
 offset_top = 35.0

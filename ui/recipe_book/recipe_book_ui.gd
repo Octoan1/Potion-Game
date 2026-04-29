@@ -3,6 +3,8 @@ extends Control
 @export var recipe_database: RecipeDatabase
 @export var recipe_row_scene: PackedScene
 
+@export var hotbar: Hotbar
+
 @onready var list: VBoxContainer = $ScrollContainer/RecipeList
 
 @onready var tooltip: ItemTooltip = preload("res://ui/item_tool_tip.tscn").instantiate()
@@ -29,6 +31,29 @@ func load_recipes() -> void:
 		if GameState.has_discover_all_recipes:
 			discovered = true
 		row.setup(recipe, discovered)
+		
+		row.add_hotbar.connect(_on_add_hotbar)
+
+func _on_add_hotbar(item: Item) -> void:
+	# remove if exists
+	for i in range(hotbar.slots.size()):
+		if hotbar.slots[i] == item:
+			hotbar.slots[i] = null
+			hotbar.container.get_child(i).clear_item()
+			return
+	
+	# add to first empty
+	for i in range(hotbar.slots.size()):
+		if hotbar.slots[i] == null:
+			hotbar.set_slot(i, item)
+			return
+	
+	print("hotbar full")
+func get_first_empty_index() -> int:
+	for i in range(hotbar.slots.size()):
+		if hotbar.slots[i] == null:
+			return i
+	return hotbar.slots.size()
 
 func _input(event: InputEvent) -> void:
 	
