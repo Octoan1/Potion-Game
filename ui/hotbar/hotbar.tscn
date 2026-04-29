@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cw8bohuaslw2s" path="res://ui/inventory_slot.tscn" id="1_ciko2"]
 [ext_resource type="Script" uid="uid://dqvpd14hh1oud" path="res://ui/hotbar/hotbar.gd" id="1_qhdb0"]
+[ext_resource type="Texture2D" uid="uid://c15d5y1gkyb11" path="res://assets/empty.png" id="3_75lfc"]
+[ext_resource type="Texture2D" uid="uid://d0embddt4e00g" path="res://assets/hotbar_slot.png" id="4_6orsp"]
 
 [node name="Hotbar" type="Control" unique_id=588074834]
 layout_mode = 3
@@ -13,6 +15,46 @@ grow_vertical = 2
 script = ExtResource("1_qhdb0")
 slot_scene = ExtResource("1_ciko2")
 
+[node name="Visuals" type="HBoxContainer" parent="." unique_id=1054054701]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 124.0
+offset_right = 186.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Visuals" unique_id=2018760371]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("4_6orsp")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="Visuals" unique_id=823272657]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("4_6orsp")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="Visuals" unique_id=578380668]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("4_6orsp")
+stretch_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="Visuals" unique_id=1082891570]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("4_6orsp")
+stretch_mode = 3
+
+[node name="TextureRect5" type="TextureRect" parent="Visuals" unique_id=349483009]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("4_6orsp")
+stretch_mode = 3
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=509265531]
 layout_mode = 1
 anchors_preset = 12
@@ -22,3 +64,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1890206160]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_75lfc")

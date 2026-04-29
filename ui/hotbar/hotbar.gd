@@ -12,8 +12,18 @@ func _ready() -> void:
 	for i in range(5):
 		var slot: InventorySlot = slot_scene.instantiate()
 		slot.show_item_count = false
+		slot.for_hotbar = true
+		slot.get_node("ItemIcon").texture = slot.empty_icon
+		slot.in_hotbar = true
 		container.add_child(slot)
 		slots.append(null)
+		
+#func _process(_delta: float) -> void:
+	#for slot in slots:
+		#if slot is InventorySlot:
+			#if slot.item == null:
+				#slot.clear()
+		
 
 func set_slot(index: int, item: Item) -> void:
 	slots[index] = item
