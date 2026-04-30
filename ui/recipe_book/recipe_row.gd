@@ -3,6 +3,8 @@ class_name RecipeRow
 
 signal add_hotbar(item: Item)
 
+
+
 @onready var ing1: InventorySlot = $InventorySlot
 @onready var ing2: InventorySlot = $InventorySlot2
 @onready var ing3: InventorySlot = $InventorySlot3
@@ -11,6 +13,7 @@ signal add_hotbar(item: Item)
 @onready var plus2: TextureRect = $Plus2
 @onready var plus3: TextureRect = $Plus3
 @onready var equals: TextureRect = $Equals
+
 
 
 func setup(recipe: Recipe, discovered: bool) -> void:

@@ -7,7 +7,7 @@
 line_spacing = 1.0
 font_size = 4
 
-[node name="InventoryUI" type="Control" unique_id=871811778]
+[node name="InventoryUI" type="Control" unique_id=871811778 groups=["ui_screen"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,9 +20,9 @@ slot_scene = ExtResource("2_wij5n")
 [node name="Panel" type="Panel" parent="." unique_id=514469460]
 layout_mode = 0
 offset_left = 38.0
-offset_top = 18.0
+offset_top = 26.0
 offset_right = 218.0
-offset_bottom = 111.0
+offset_bottom = 119.0
 
 [node name="GridContainer" type="GridContainer" parent="Panel" unique_id=578912659]
 layout_mode = 1
@@ -39,10 +39,9 @@ columns = 7
 
 [node name="Label" type="Label" parent="." unique_id=294038708]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 120.0
-offset_right = 213.0
-offset_bottom = 153.0
+offset_left = 1.0
+offset_right = 212.0
+offset_bottom = 33.0
 theme_override_font_sizes/font_size = 3
 text = "Press [Tab] or [Esc] close 
 Hover [Mouse] over item to read description

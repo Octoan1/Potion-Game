@@ -19,6 +19,7 @@ var disabled: bool = false
 @onready var empty_icon: Texture = preload("res://assets/empty.png")
 @export var for_hotbar: bool = false
 var in_hotbar: bool = false # only can drink in hotbar
+							
 
 # drink potion stuff
 @onready var drink_cd_visual: TextureProgressBar = $PotionDrinkCooldownVisual

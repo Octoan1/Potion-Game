@@ -75,7 +75,13 @@ func _physics_process(delta: float) -> void:
 		
 	# player inventory toggling 
 	if input[InputController.InputType.INVENTORY]:
-		toggle_inventory()
+		if inventory_ui.visible == false:
+			close_all_ui()
+			open_inventory()
+		else:
+			close_all_ui()
+			
+		
 	if Input.is_action_just_pressed("ui_cancel"):
 		close_inventory()
 	
@@ -110,6 +116,11 @@ func _physics_process(delta: float) -> void:
 func apply_external_force(force: Vector2) -> void:
 	external_velocity += force
 
+func close_all_ui() -> void:
+	var root := get_tree().root
+	
+	for node in root.get_tree().get_nodes_in_group("ui_screen"):
+		node.hide()
 
 func handle_movement(direction: Vector2, delta: float) -> void:
 	if direction.length() > 0.1:
@@ -172,6 +183,9 @@ func _on_footstep_timer_timeout() -> void:
 
 func toggle_inventory() -> void:
 	inventory_ui.visible = not inventory_ui.visible
+
+func open_inventory() -> void:
+	inventory_ui.visible = true
 
 func close_inventory() -> void:
 	inventory_ui.visible = false

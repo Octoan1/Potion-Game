@@ -11,13 +11,19 @@ extends Control
 
 func _ready() -> void:
 	#add_child(tooltip)
-	tooltip.hide()
-	tooltip.add_to_group("tooltip")
+	#tooltip.hide()
+	#tooltip.add_to_group("tooltip")
+	#tooltip.move_to_front()
+	#tooltip.z_index = 999
 	
 	load_recipes()
 	
 	
-
+func close_all_ui() -> void:
+	var root := get_tree().root
+	
+	for node in root.get_tree().get_nodes_in_group("ui_screen"):
+		node.hide()
 
 func load_recipes() -> void:
 	for child: Node in list.get_children():
@@ -58,11 +64,18 @@ func get_first_empty_index() -> int:
 func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("recipe_book"):
+		#close_all_ui()
 		#tooltip.show()
-		move_to_front()
+		#move_to_front()
 		#grab_focus()
 		#grab_click_focus()
 		load_recipes()
-		self.visible = not self.visible
+		if self.visible == false:
+			close_all_ui()
+			self.visible = true
+		else: 
+			self.visible = false
+		#self.visible = not self.visible
+
 	if event.is_action_pressed("ui_cancel"):
 		self.visible = false

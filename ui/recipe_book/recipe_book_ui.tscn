@@ -9,7 +9,7 @@
 line_spacing = 1.0
 font_size = 4
 
-[node name="RecipeBookUI" type="Control" unique_id=1331740910]
+[node name="RecipeBookUI" type="Control" unique_id=1331740910 groups=["ui_screen"]]
 process_mode = 3
 z_index = 2
 layout_mode = 3

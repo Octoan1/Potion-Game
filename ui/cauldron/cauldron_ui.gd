@@ -23,6 +23,7 @@ extends Control
 
 
 func _ready() -> void:
+	close_all_ui()
 	get_tree().root.get_node("/root/Main/CanvasLayer/Hotbar").hide()
 	enter_exit_cauldron.play()
 	get_tree().paused = true
@@ -32,6 +33,11 @@ func _ready() -> void:
 	slot3.visible = GameState.cauldron_3_slot
 	load_inventory()
 
+func close_all_ui() -> void:
+	var root := get_tree().root
+	
+	for node in root.get_tree().get_nodes_in_group("ui_screen"):
+		node.hide()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):

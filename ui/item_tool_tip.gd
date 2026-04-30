@@ -13,5 +13,5 @@ func set_item(item: Item) -> void:
 		name_label.text = item.name
 		desc_label.text = item.description
 	else:
-		name_label.text = ""
-		desc_label.text = ""
+		name_label.text = "???"
+		desc_label.text = "to be discovered"
