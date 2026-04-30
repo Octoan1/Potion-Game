@@ -57,28 +57,47 @@ func is_item_already_used(item: Item) -> bool:
 	return slot1.item == item or slot2.item == item or slot3.item == item
 
 func add_ingredient(item: Item) -> void:
-	if not PlayerInventory.has_item(item, 1):
+	if slot1.item == item:
+		ui_click.play(0.23)
+		PlayerInventory.add_item(slot1.item)
+		slot1.clear_item()
+		load_inventory()
 		return
 		
-	# prevent dupes
-	if is_item_already_used(item):
-		ui_error.play()
-		print("Already used this item")
+	if slot2.item == item:
+		ui_click.play(0.23)
+		PlayerInventory.add_item(slot2.item)
+		slot2.clear_item()
+		load_inventory()
 		return
-	
+		
+	if slot3.item == item:
+		ui_click.play(0.23)
+		PlayerInventory.add_item(slot3.item)
+		slot3.clear_item()
+		load_inventory()
+		return
+
+	if not PlayerInventory.has_item(item, 1):
+		return
+
 	ui_click.play(0.23)
+
 	if slot1.item == null:
 		slot1.item = item
 		slot1.icon.texture = item.icon
 		PlayerInventory.remove_item(item)
+
 	elif slot2.item == null:
 		slot2.item = item
 		slot2.icon.texture = item.icon
 		PlayerInventory.remove_item(item)
+
 	elif GameState.cauldron_3_slot and slot3.item == null:
 		slot3.item = item
 		slot3.icon.texture = item.icon
 		PlayerInventory.remove_item(item)
+
 	else:
 		print("Slots full")
 
@@ -245,9 +264,9 @@ func load_inventory() -> void:
 		#slot.item_clicked.connect(add_ingredient)
 		
 		if is_item_already_used(item):
-			slot.set_disabled(true)
+			slot.show_disabled(true)
 		else:
-			slot.set_disabled(false)
+			slot.show_disabled(false)
 
 		slot.item_clicked.connect(add_ingredient)
 
