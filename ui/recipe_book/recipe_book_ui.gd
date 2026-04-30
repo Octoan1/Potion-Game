@@ -10,7 +10,7 @@ extends Control
 @onready var tooltip: ItemTooltip = preload("res://ui/item_tool_tip.tscn").instantiate()
 
 func _ready() -> void:
-	add_child(tooltip)
+	#add_child(tooltip)
 	tooltip.hide()
 	tooltip.add_to_group("tooltip")
 	
@@ -58,7 +58,7 @@ func get_first_empty_index() -> int:
 func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("recipe_book"):
-		tooltip.show()
+		#tooltip.show()
 		move_to_front()
 		#grab_focus()
 		#grab_click_focus()

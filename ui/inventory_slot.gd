@@ -25,6 +25,8 @@ var in_hotbar: bool = false # only can drink in hotbar
 @onready var drink_cd_timer: Timer = $PotionDrinkCooldownTimer
 var is_drink_on_cd: bool = false
 
+# recipe book
+@export var in_recipe_book: bool = false
 #@onready var show_name_timer: Timer = $ShowNameTimer
 #@onready var item_name: Label = $ItemName
 var tooltip: ItemTooltip
@@ -112,7 +114,12 @@ func _on_mouse_entered() -> void:
 	if tooltip and item:
 		tooltip.set_item(item)
 		tooltip.show()
-	
+		print("showing1")
+	if in_recipe_book:
+		tooltip.set_item(item)
+		tooltip.show()
+		print("showing")
+	#tooltip.top_level = true
 	mouse_hovering = true
 
 func _on_mouse_exited() -> void:

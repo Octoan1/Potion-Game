@@ -19,6 +19,7 @@ script = ExtResource("1_favm3")
 [node name="InventorySlot" parent="." unique_id=411698676 instance=ExtResource("2_0hspc")]
 layout_mode = 2
 show_item_count = false
+in_recipe_book = true
 
 [node name="Ingredient1" type="TextureRect" parent="." unique_id=314383269]
 visible = false
@@ -33,6 +34,7 @@ texture = ExtResource("3_je33t")
 [node name="InventorySlot2" parent="." unique_id=406008940 instance=ExtResource("2_0hspc")]
 layout_mode = 2
 show_item_count = false
+in_recipe_book = true
 
 [node name="Ingredient2" type="TextureRect" parent="." unique_id=426690839]
 visible = false
@@ -47,6 +49,7 @@ texture = ExtResource("3_je33t")
 [node name="InventorySlot3" parent="." unique_id=1533546733 instance=ExtResource("2_0hspc")]
 layout_mode = 2
 show_item_count = false
+in_recipe_book = true
 
 [node name="Ingredient3" type="TextureRect" parent="." unique_id=2146748719]
 visible = false
@@ -61,6 +64,7 @@ texture = ExtResource("4_0hspc")
 [node name="InventorySlot4" parent="." unique_id=896011034 instance=ExtResource("2_0hspc")]
 layout_mode = 2
 show_item_count = false
+in_recipe_book = true
 
 [node name="Result" type="TextureRect" parent="." unique_id=831792935]
 visible = false
