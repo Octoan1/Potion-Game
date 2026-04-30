@@ -31,15 +31,19 @@ func set_slot(index: int, item: Item) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("hotbar_1"):
-		drink_slot(0)
+		container.get_child(0).try_drink_potion()
 	elif event.is_action_pressed("hotbar_2"):
-		drink_slot(1)
+		#drink_slot(1)
+		container.get_child(1).try_drink_potion()
 	elif event.is_action_pressed("hotbar_3"):
-		drink_slot(2)
+		#drink_slot(2)
+		container.get_child(2).try_drink_potion()
 	elif event.is_action_pressed("hotbar_4"):
-		drink_slot(3)
+		#drink_slot(3)
+		container.get_child(3).try_drink_potion()
 	elif event.is_action_pressed("hotbar_5"):
-		drink_slot(4)
+		#drink_slot(4
+		container.get_child(4).try_drink_potion()
 		
 
 func drink_slot(index: int) -> void:

@@ -20,6 +20,11 @@ var disabled: bool = false
 @export var for_hotbar: bool = false
 var in_hotbar: bool = false # only can drink in hotbar
 
+# drink potion stuff
+@onready var drink_cd_visual: TextureProgressBar = $PotionDrinkCooldownVisual
+@onready var drink_cd_timer: Timer = $PotionDrinkCooldownTimer
+var is_drink_on_cd: bool = false
+
 #@onready var show_name_timer: Timer = $ShowNameTimer
 #@onready var item_name: Label = $ItemName
 var tooltip: ItemTooltip
@@ -37,6 +42,12 @@ func _ready() -> void:
 	$ItemAmount.visible = show_item_count
 	#item_name.hide()
 	tooltip = get_tree().get_first_node_in_group("tooltip")
+
+func _process(_delta: float) -> void:
+	if is_drink_on_cd:
+		var _curr_time: float = drink_cd_timer.wait_time - drink_cd_timer.time_left
+		var progress: float = (drink_cd_timer.time_left / drink_cd_timer.wait_time) * 100
+		drink_cd_visual.value = progress
 
 func set_item(new_item: Item, count: int) -> void:
 	$ItemAmount.visible = show_item_count
@@ -69,14 +80,30 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		#print("Tried to use item: ", item)
 		if in_hotbar and item != null and PlayerInventory.drinking:
-			if item.type == item.ItemType.POTION:
-				use_potion.play()
+			if item.type == item.ItemType.POTION and is_drink_on_cd == false:
+				drink_potion()
 			else: 
 				ui_error.play()
-			PlayerInventory.use_item(item)
+			#PlayerInventory.use_item(item)
 			
-				
+func try_drink_potion() -> void:
+	if item == null:
+		return
+	
+	if item.type == item.ItemType.POTION and is_drink_on_cd == false:
+		drink_potion()
 
+func drink_potion() -> void:
+	use_potion.play()
+	is_drink_on_cd = true
+	drink_cd_timer.start()
+	drink_cd_visual.show()
+	PlayerInventory.use_item(item)
+
+func _on_potion_drink_cooldown_timer_timeout() -> void:
+	print("timer")
+	is_drink_on_cd = false
+	drink_cd_visual.hide()
 
 func _on_mouse_entered() -> void:
 	#if item:

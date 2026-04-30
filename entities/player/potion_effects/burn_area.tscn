@@ -11,6 +11,7 @@ collision_layer = 0
 script = ExtResource("1_40u5t")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1111937047]
+modulate = Color(1, 1, 1, 0.5921569)
 texture = ExtResource("1_ad8s2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=798929820]
@@ -18,7 +19,7 @@ shape = SubResource("CircleShape2D_o0vke")
 debug_color = Color(0.8220609, 0.39941418, 0.10566821, 0.41960785)
 
 [node name="FireLastTimer" type="Timer" parent="." unique_id=637309702]
-wait_time = 2.0
+wait_time = 7.0
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

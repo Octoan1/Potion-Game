@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://dnuspuhc1m8ux" path="res://audio/ui_click_freesound_community-ui-click-43196.mp3" id="6_nee1q"]
 [ext_resource type="AudioStream" uid="uid://cdojil8ka2my" path="res://audio/Potion Sorting.wav" id="7_yj352"]
 [ext_resource type="AudioStream" uid="uid://dimeup1xk881y" path="res://audio/ui_error_soundshelfstudio-ui-error-pop-515668.mp3" id="8_ighrm"]
+[ext_resource type="Texture2D" uid="uid://3mng35fnjvon" path="res://assets/potion_cooldown_border.png" id="9_v3fkg"]
+[ext_resource type="Texture2D" uid="uid://bi5rtjrqveo32" path="res://assets/potion_cooldown_inside.png" id="10_7gmtq"]
 
 [node name="InventorySlot" type="Control" unique_id=411698676]
 custom_minimum_size = Vector2(20, 20)
@@ -75,6 +77,20 @@ stream = ExtResource("7_yj352")
 stream = ExtResource("8_ighrm")
 volume_db = -10.0
 
+[node name="PotionDrinkCooldownVisual" type="TextureProgressBar" parent="." unique_id=1119789661]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 4
+texture_over = ExtResource("9_v3fkg")
+texture_progress = ExtResource("10_7gmtq")
+
+[node name="PotionDrinkCooldownTimer" type="Timer" parent="." unique_id=1980116860]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="timeout" from="ShowNameTimer" to="." method="_on_show_name_timer_timeout"]
+[connection signal="timeout" from="PotionDrinkCooldownTimer" to="." method="_on_potion_drink_cooldown_timer_timeout"]
