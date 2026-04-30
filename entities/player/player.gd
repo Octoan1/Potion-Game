@@ -313,8 +313,9 @@ func freeze_follow(_radius: float) -> void:
 	print("follow")
 	var new_freeze_area: Area2D = freeze_area.instantiate()
 	new_freeze_area.global_position = self.global_position
-	
-	potion_effects_container.add_child(new_freeze_area)
+	#$Test.add_child(new_freeze_area)
+	#new_freeze_area.global_position = self.global_position
+	stationary_potion_effects_container.add_child.call_deferred(new_freeze_area)
 	
 func win() -> void:
 	recipe_book_screen.hide()

@@ -87,10 +87,10 @@ offset_bottom = 111.0
 
 [node name="DiscoverLabel" type="Label" parent="FullWin/Panel" unique_id=365786184]
 layout_mode = 0
-offset_left = -2.5
-offset_top = 8.0
-offset_right = 188.5
-offset_bottom = 47.0
+offset_left = -3.0
+offset_top = 30.0
+offset_right = 188.0
+offset_bottom = 69.0
 theme_override_font_sizes/font_size = 13
 text = "You discovered: x/x potions!
 "
@@ -100,10 +100,10 @@ horizontal_alignment = 1
 top_level = true
 z_index = 5
 layout_mode = 0
-offset_left = -2.5
-offset_top = 35.0
-offset_right = 188.5
-offset_bottom = 74.0
+offset_left = -3.0
+offset_top = 57.0
+offset_right = 188.0
+offset_bottom = 96.0
 theme_override_font_sizes/font_size = 13
 text = "And won in: time"
 horizontal_alignment = 1

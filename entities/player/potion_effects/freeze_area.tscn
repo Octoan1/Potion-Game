@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://wb03u4vl2l4m"]
 
-[ext_resource type="Script" uid="uid://517e8xc0knnt" path="res://entities/player/potion_effects/freeze_area.gd" id="1_e88rg"]
+[ext_resource type="Script" path="res://entities/player/potion_effects/freeze_area.gd" id="1_e88rg"]
 [ext_resource type="Texture2D" uid="uid://dlfloewmrj8vm" path="res://assets/burn_area_placeholder.png" id="1_sm7r2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sm7r2"]
-radius = 32.0
+radius = 47.0
 
 [node name="FreezeArea" type="Area2D" unique_id=1666065001]
 collision_layer = 0
@@ -13,7 +13,8 @@ script = ExtResource("1_e88rg")
 duration = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573494874]
-modulate = Color(0, 0.42352942, 1, 1)
+modulate = Color(0, 0.42352942, 1, 0.6627451)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_sm7r2")
 metadata/_edit_lock_ = true
 
