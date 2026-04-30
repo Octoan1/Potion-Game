@@ -14,6 +14,7 @@ signal item_clicked(item: Item)
 @export var for_cauldron: bool = false
 @onready var disabled_overlay: TextureRect = $DisabledOverlay # red X image
 var disabled: bool = false
+var disabled_visual: bool = false
 
 # hotbar stuff
 @onready var empty_icon: Texture = preload("res://assets/empty.png")
@@ -151,3 +152,14 @@ func set_disabled(value: bool) -> void:
 		modulate = Color(1, 0.5, 0.5)
 	else:
 		modulate = Color.WHITE
+	
+func show_disabled(value: bool) -> void:
+	disabled_visual = value
+	disabled_overlay.visible = value
+	
+	# optional: dim icon
+	if value:
+		modulate = Color(1, 0.5, 0.5)
+	else:
+		modulate = Color.WHITE
+	

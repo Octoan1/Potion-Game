@@ -85,4 +85,8 @@ func set_unknown(recipe: Recipe) -> void:
 
 func _on_pressed(item: Item) -> void:
 	add_hotbar.emit(item)
+	if $InventorySlot4.disabled_visual:
+		$InventorySlot4.show_disabled(false)
+	else:
+		$InventorySlot4.show_disabled(true)
 	
