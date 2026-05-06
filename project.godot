@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Potion Game"
+config/name="Bespoke Brews"
 run/main_scene="uid://jcfu12818ioa"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://digscnlrjixiy"
 
 [autoload]
 
