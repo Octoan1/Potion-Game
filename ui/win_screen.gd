@@ -37,8 +37,8 @@ func _on_end_game_button_pressed() -> void:
 	ask_win.hide()
 	full_win.show()
 	
-	var discovered := GameState.get_discovered_count()
-	var total := GameState.get_total_recipes(recipe_database)
+	var discovered : int = GameState.get_discovered_count()
+	var total : int = GameState.get_total_recipes(recipe_database)
 
 	discover_label.text = "Potions Discovered: %d/%d" % [discovered, total]
 	
